@@ -1,0 +1,3675 @@
+From 62998c23567629ebf798429443bdef28eb7fddfd Mon Sep 17 00:00:00 2001
+From: Leonid Pliushch <leonid.pliushch@gmail.com>
+Date: Tue, 11 May 2021 17:42:16 +0300
+Subject: [PATCH 01/71] termux-keyring: updated @xeffyr gpg key
+
+Add signature.
+---
+ packages/termux-keyring/build.sh   |   2 +-
+ packages/termux-keyring/xeffyr.gpg | Bin 6263 -> 6573 bytes
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/packages/termux-keyring/build.sh b/packages/termux-keyring/build.sh
+index 760980d79..9aa847b08 100644
+--- a/packages/termux-keyring/build.sh
++++ b/packages/termux-keyring/build.sh
+@@ -2,7 +2,7 @@ TERMUX_PKG_HOMEPAGE=https://github.com/termux
+ TERMUX_PKG_DESCRIPTION="GPG public keys for the official Termux repositories"
+ TERMUX_PKG_LICENSE="Apache-2.0"
+ TERMUX_PKG_MAINTAINER="@termux"
+-TERMUX_PKG_VERSION=1.4
++TERMUX_PKG_VERSION=1.5
+ TERMUX_PKG_SKIP_SRC_EXTRACT=true
+ TERMUX_PKG_PLATFORM_INDEPENDENT=true
+ 
+diff --git a/packages/termux-keyring/xeffyr.gpg b/packages/termux-keyring/xeffyr.gpg
+index 8f0b6eca873a8b60186ae2fb5f73acf7b60ddda5..2938338a345d3a9d7cbf55d1747364dbb85d5616 100644
+GIT binary patch
+delta 325
+zcmV-L0lNP8Fs(DN(Gh=%0W$;;0SW*e79j-I6RZRJ7+K&mbwRmreb`%N#iiZ_0$`eW
+zeE<px5O00hTV=(i-pM%!|6x-;PvFIkk9qJ1D_z>puT16Df;l)gFD=(SPe^EL8V<+g
+zX#Ra7Qc(E-p3#N@;wQ|Pewvp2if|_`v)WXLidja9TEL>e$mV~kI{uGcOnyFo)wA@O
+z3C%1un0T{4CnZtn6lLT2;p>I5Fgw{}B<Kw7cEZt79~5!P!GC01LqPA$k&BlN{o90^
+z87SIWST91)6STqGq@}gGRkwm))Z|UhWB{ARWnw4GzOlj=vmqIvZ1LKz*!BCuP2Pj;
+zBrt3#v-q@vm9jXvf9ZbrW!2onq4zbv@!tuC0ZOs_FhS_yQAC(W(hQzh-?vmS=Ek-t
+X<`~~}HD<Rd^(NKsjW}Yn(GjKw-lU^#
+
+delta 12
+TcmZ2${M}%~MZwMN!pqnICUON6
+
+-- 
+2.30.2
+
+
+From fca0d179514fc2afd85951d3c895d5b789d72ddb Mon Sep 17 00:00:00 2001
+From: kcubeterm <kcubeterm@gmail.com>
+Date: Tue, 11 May 2021 22:03:51 +0530
+Subject: [PATCH 02/71] termux-keyring: added @kcubeterm gpg key
+
+---
+ packages/termux-keyring/build.sh      |   1 +
+ packages/termux-keyring/kcubeterm.gpg | Bin 0 -> 1775 bytes
+ 2 files changed, 1 insertion(+)
+ create mode 100644 packages/termux-keyring/kcubeterm.gpg
+
+diff --git a/packages/termux-keyring/build.sh b/packages/termux-keyring/build.sh
+index 9aa847b08..4e60a948d 100644
+--- a/packages/termux-keyring/build.sh
++++ b/packages/termux-keyring/build.sh
+@@ -12,6 +12,7 @@ termux_step_make_install() {
+ 	# Maintainer-specific keys.
+ 	install -Dm600 $TERMUX_PKG_BUILDER_DIR/grimler.gpg $TERMUX_PREFIX/etc/apt/trusted.gpg.d/
+ 	install -Dm600 $TERMUX_PKG_BUILDER_DIR/xeffyr.gpg $TERMUX_PREFIX/etc/apt/trusted.gpg.d/
++	install -Dm600 $TERMUX_PKG_BUILDER_DIR/kcubeterm.gpg $TERMUX_PREFIX/etc/apt/trusted.gpg.d/
+ 
+ 	# Key for automatic builds (via CI).
+ 	install -Dm600 $TERMUX_PKG_BUILDER_DIR/termux-autobuilds.gpg $TERMUX_PREFIX/etc/apt/trusted.gpg.d/
+diff --git a/packages/termux-keyring/kcubeterm.gpg b/packages/termux-keyring/kcubeterm.gpg
+new file mode 100644
+index 0000000000000000000000000000000000000000..2cdd73d7be9898d3ac3083edd03e3ac37bc4a31f
+GIT binary patch
+literal 1775
+zcmV<L1`zp~0SyFTk_w;!2mrPxj0B^jf!uj9a)~4^LfQ>ZBJLsU6gWBR?%g+4_?d+8
+zADy#rUq=(OEl{I_;6e|=T;8QXXf4arS<;Y7;74UV4>o5vD2BOUc-s))C;LOW5S_4U
+zv?y$*-TNO&@7!79+1r_nn6jLK?Pii1Az;qkP9s<9j|^2gN}8jZXm{b0irC*I)t)zj
+z5~aZ}<`K^@2q-K)8UUQ8@uQ_GG`Htn8h;|ra-?@X4EphkJFZI2OP9@$rs6vjWmszf
+zINtHjQwErPG-hu$;if<1_2~zV-=l460pn~&41Q?EN#dyL_wLo=bPJ%+7CHjM)Li>W
+z7=j*$aGJdiiTe#MpLGBc0RRECI!khCb7*d1AZuZ6Xklr2VIU}1VQzFFbZ;PUcWxkU
+zVRCaWDIh#+V|8L>bY*gFKxb`XX>2ZIZ*4w_0XPH`0SEvh1p;7_3ZMcT0|pBT2nPcK
+z1{DYb2?`4Y76JnS0v-VZ7k~f?2@r36*jr`ArQWBd2mq@0Qqrb|j*6G9I5>14Rkfk$
+zszI+006Kz7GejMB&83zRU~?{;D)cD2N2oPZu)<hx>R*G&USst6QLgR~b@;&V0tdTE
+zZBDR=`2rFSh&rh8=6g`0Fv$IwSb+7_B^QGw&S@W3qi}d|-eZM<@y=rw8p5^g-CF5u
+z{(>;=UOp`r7nUt$JJHa0Hq@B3wLpX&oh%Trvpr^EG`%>KG7%(SdUK7`91Y=eP_4}5
+z`VFAhtn47xwXYsq{MG|yYMa=h(8sc#e%cY%;*P8pI;^L^drnj*Qa|s$E^IH!S+^5&
+zGDC0Z6>TV|STnBFUsPj3reD-3=4yC4QvM6AUet*KGXxL;3IH7zAp|>XREpkSqrKBS
+z?(jwOmO(O9SCs_<V49YB0162ZMe>$GGE`TUIhPOraSJBxX@hjptjzSD^E{DlTMm2A
+zfSiC4u7~v$Sxd8$Bd_wJyg1ROPUk|!N^P)AmxiCZ%nbPMU?3^s4M6W=_Rl1BL6=I@
+zFui3v+J-^HN{FIXJnAOTYfG33r^|@|?-wyha+zxsJ#~9<a158xpR<eK**nfQ<V&md
+zL^-HqAF6;esI_Id6sz?yfBnm@o*o62J;FEGB9noD=L0DenV`>GEb2@oHPepMUR_`-
+ztnB77GL??m^XyPIqtYE-eubolCiLbiJUvc4=GM<-ok1Z<msmua=k_7l>Yzsk3Pm17
+zb^Bmj8b05{FOh|gW(*eloqZwO=h00A#3h0bva1u_7xt;VxEUjVT>Pj>VPYQYUvevl
+zTHc&&xNj-m)<R#8Dam9?nW;Z;`uB6Ui0c7eJcb3-1Rwed0wxfsQgPY*mn)5Yk+$oA
+zaxVUZ*TlG>u`3rin5j$7_wb`GdtBI(30oCPHbvgz5gcLjTSV0vzo0;AdF7ZFFRBlD
+z$bYv9)qm8%v=<3g%ZAN^8i?TY8C_Qqi5olXqe#iLgDja42FPN3TxV0L1ZNCZqsY*y
+zsRobOig@*U6tIj?f(K^*@A>9*hm{$LUA`&|Ck!BR0xDPpXgB8$?{X9GAC%$Wy{x8x
+zrX+0aU9CmK3;Q&c8)LBb-fG~J>BXJuxd9CXV3G=;0SExlDUH)aBHvb+!(%JTXX;H{
+z6-PH0wHi@croTJ^Wcg1TK0Qx&>TBkiC?kpk#=mAN=?(3QT1~5|#{cCVF@}>AU&Sn>
+zQbZRgJL~SD?tdq-d@^EC0(5+{6kw1=o$_$7#vn}`s*r5IZ7V-PwX0k~%TnJ}iiG`<
+zL3!Qv*B2~&N~9x=8u#oY$%I8s@&TAE9+tsx(?p03uy(-1k7K%yS5FTSNSK6W^#cK>
+z<7Jz>YQ_+7b5jEF^-_}gj0g1?IUTa+t<Dt~Y`Cr&{ieGh1+d}lsU&ka8tcq5WB2)|
+zb<jk)7&Zi*nrrFzo8?4|FBK-q-KG^L1p745cxe*=5di=Ji2)x37y$?X2?YXRk_w;#
+z8w>yn2@r36*jr`ArQU^y2mT>}sKz^TtA7xvol5u;wDeX`Xo-K*H9twbVCM|J)zEZ7
+zHiFN4VW?T6{YyNO!)tlmxqUkmW%j>hOIVhmni_DOo-oW1p`<;PI=xWvfik@LkCg24
+zWy-aJ9*Yj%Y5;DJSSaPi<7~G<!XN;prbAtdZK1$?aUlm!jp{@Gf0F8~9+C(YrAsbG
+zTk;B^M_*T<($#1Y_?DXs7YLpV!2z4!pM@;X_@us8+)RmRXeXjxC8z0T$_EH>(HcHG
+zah^GWg!kZxmAmS`=-jM4y96mXysBNl1y7Vt$-p8l-^SXfTkCfJT&Cek3o+~S(VFPa
+RFN`<xtQ(MD_2-|=FF$=|Hvs?u
+
+literal 0
+HcmV?d00001
+
+-- 
+2.30.2
+
+
+From c1984b21f45ef22598c6be2a70c000921c7bf9b9 Mon Sep 17 00:00:00 2001
+From: kcubeterm <kcubeterm@gmail.com>
+Date: Tue, 11 May 2021 22:06:04 +0530
+Subject: [PATCH 03/71] termux-keyring: corrected version
+
+---
+ packages/termux-keyring/build.sh | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/packages/termux-keyring/build.sh b/packages/termux-keyring/build.sh
+index 4e60a948d..31cdf9b9a 100644
+--- a/packages/termux-keyring/build.sh
++++ b/packages/termux-keyring/build.sh
+@@ -2,7 +2,7 @@ TERMUX_PKG_HOMEPAGE=https://github.com/termux
+ TERMUX_PKG_DESCRIPTION="GPG public keys for the official Termux repositories"
+ TERMUX_PKG_LICENSE="Apache-2.0"
+ TERMUX_PKG_MAINTAINER="@termux"
+-TERMUX_PKG_VERSION=1.5
++TERMUX_PKG_VERSION=1.6
+ TERMUX_PKG_SKIP_SRC_EXTRACT=true
+ TERMUX_PKG_PLATFORM_INDEPENDENT=true
+ 
+-- 
+2.30.2
+
+
+From 614672da7fe1495c31ad155454f2dd125cd060a4 Mon Sep 17 00:00:00 2001
+From: xtkoba <69125751+xtkoba@users.noreply.github.com>
+Date: Sun, 9 May 2021 12:12:30 +0900
+Subject: [PATCH 04/71] Force `-fno-strict-aliasing` for Ruby
+
+Optimization level `-O2` is insufficient for avoiding overoptimization, because it enables `-fstrict-aliasing`.
+
+Upstream: https://bugs.ruby-lang.org/issues/17540
+---
+ packages/ruby3/build.sh | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/packages/ruby3/build.sh b/packages/ruby3/build.sh
+index cee0bce78..e9667618e 100644
+--- a/packages/ruby3/build.sh
++++ b/packages/ruby3/build.sh
+@@ -37,7 +37,7 @@ termux_step_pre_configure() {
+ 	fi
+ 
+ 	# Do not remove: fix for Clang's "overoptimization".
+-	CFLAGS=${CFLAGS/-Oz/-O2}
++	CFLAGS+=" -fno-strict-aliasing"
+ }
+ 
+ termux_step_make_install() {
+-- 
+2.30.2
+
+
+From 47beda5163c35a2e5f1582b2acd2367789fba446 Mon Sep 17 00:00:00 2001
+From: xtkoba <69125751+xtkoba@users.noreply.github.com>
+Date: Tue, 11 May 2021 09:48:35 +0900
+Subject: [PATCH 05/71] Bump `TERMUX_PKG_REVISION`
+
+---
+ packages/ruby3/build.sh | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/packages/ruby3/build.sh b/packages/ruby3/build.sh
+index e9667618e..c0cfa3a23 100644
+--- a/packages/ruby3/build.sh
++++ b/packages/ruby3/build.sh
+@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Dynamic programming language with a focus on simplicity
+ TERMUX_PKG_LICENSE="BSD 2-Clause"
+ TERMUX_PKG_MAINTAINER="@termux"
+ TERMUX_PKG_VERSION=3.0.1
++TERMUX_PKG_REVISION=1
+ TERMUX_PKG_SRCURL=https://cache.ruby-lang.org/pub/ruby/${TERMUX_PKG_VERSION:0:3}/ruby-${TERMUX_PKG_VERSION}.tar.xz
+ TERMUX_PKG_SHA256=d06bccd382d03724b69f674bc46cd6957ba08ed07522694ce44b9e8ffc9c48e2
+ # libbffi is used by the fiddle extension module:
+-- 
+2.30.2
+
+
+From b8336e4f4ab8ab446042f3c2bea54d9cb6d2ff09 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Marlin=20S=C3=B6=C3=B6se?=
+ <30473690+msoose@users.noreply.github.com>
+Date: Tue, 11 May 2021 13:03:42 -0600
+Subject: [PATCH 06/71] proxmark3: remove build requirement for dependency
+ (#6794)
+
+---
+ packages/proxmark3/build.sh | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/packages/proxmark3/build.sh b/packages/proxmark3/build.sh
+index 4b459d1cf..ec3367ecc 100644
+--- a/packages/proxmark3/build.sh
++++ b/packages/proxmark3/build.sh
+@@ -3,9 +3,10 @@ TERMUX_PKG_DESCRIPTION="The Swiss Army Knife of RFID Research - RRG/Iceman repo"
+ TERMUX_PKG_LICENSE="GPL-2.0"
+ TERMUX_PKG_MAINTAINER="Marlin Sööse <marlin.soose@laro.se>"
+ TERMUX_PKG_VERSION="1:4.9237"
++TERMUX_PKG_REVISION=1
+ TERMUX_PKG_SRCURL=https://github.com/RfidResearchGroup/proxmark3/archive/v${TERMUX_PKG_VERSION:2}.tar.gz
+ TERMUX_PKG_SHA256=db93c2d3b9b7f477aca5628ed0906d9dba9c1999080452b24c601f38ab5b5226
+-TERMUX_PKG_BUILD_DEPENDS="readline"
++TERMUX_PKG_DEPENDS="readline"
+ TERMUX_PKG_BUILD_IN_SRC="true"
+ TERMUX_PKG_BLACKLISTED_ARCHES="i686, x86_64"
+ 
+-- 
+2.30.2
+
+
+From d873f2dd738b8fb7ef467889ba19ec7c3107034a Mon Sep 17 00:00:00 2001
+From: Henrik Grimler <henrik@grimler.se>
+Date: Tue, 11 May 2021 21:09:13 +0200
+Subject: [PATCH 07/71] termux-keyring: update grimlers key with more
+ signatures
+
+---
+ packages/termux-keyring/build.sh    |   2 +-
+ packages/termux-keyring/grimler.gpg | Bin 26765 -> 27695 bytes
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/packages/termux-keyring/build.sh b/packages/termux-keyring/build.sh
+index 31cdf9b9a..d5c9c2b67 100644
+--- a/packages/termux-keyring/build.sh
++++ b/packages/termux-keyring/build.sh
+@@ -2,7 +2,7 @@ TERMUX_PKG_HOMEPAGE=https://github.com/termux
+ TERMUX_PKG_DESCRIPTION="GPG public keys for the official Termux repositories"
+ TERMUX_PKG_LICENSE="Apache-2.0"
+ TERMUX_PKG_MAINTAINER="@termux"
+-TERMUX_PKG_VERSION=1.6
++TERMUX_PKG_VERSION=1.7
+ TERMUX_PKG_SKIP_SRC_EXTRACT=true
+ TERMUX_PKG_PLATFORM_INDEPENDENT=true
+ 
+diff --git a/packages/termux-keyring/grimler.gpg b/packages/termux-keyring/grimler.gpg
+index eef3ca7ac2127081cff075a2085c10ec011e3e4d..a0c3109eeb92e53e6a41d6727790c8c79260d3f7 100644
+GIT binary patch
+delta 1028
+zcmeCZ$hiIn<Aw_gle0{vHY+HxGEKhZsj~Ttf)HapqcMvBBNv0Lm?FzH;Wf;^BqARe
+zmpbmuue}kSdUWYMR;Gkm)p`tEoB}Wru>uZ;wM{A<KV2q9%E!g6_~28mHaF+>YTxsh
+z?B-l(-`ttsaj%=Zdb(cf9ofR|Pk4=DPR!A{!m|27CF|my-hAd$efB&!Z5AexYIvTt
+z*P`Ac=}5cRy9C#5DXGDUC0;q6F)!CvADC&vp4xkuu|8hf(aErex!}paZ*m1|pG)0d
+zaz@pw{rBvIAmdJk9Fw%W2^vkgzbC%E6&<(0MChZ(FJ3XV?{1HN^kp$b-l>$|cR0U(
+zm9y*2B|#=V8;<@j%6oBCak0Y^A-B(SHWvBFaP$S4m&{UkPvkT!TetVxTTjlXHm(y}
+z*8aO^7clR;dSlX&?@af#Zi>|{GYnp^rJp;^)^ul<#<8o@C;3m_XKA!KOywT`<}6cr
+zP;eS<PBmd;+}veu%0yI{njnX%Nf!shoccLZ>rQM)oR*SuPy3+by%w|n{j<(i_c7%@
+zSr~L-<u%qFKEiXhP4a!dBJ+)K{Rh$G1?I<G9+fN&xMI6MmUTw>C#hDsQla<T7p|%I
+z?U8zIENPX%+4A)8(YaD4l^MOWpGLU|T~#_BptJZ-ZPBZwponAoMgFF0R@Kf%wM8p?
+z78$%2jqQ$pk*BbC(v{L*&C6qI)7HK`Bi6s^!}{H;rcJqfBe*9vt8D)FnJWYzp2%wa
+zs#vgR`d#h=YnQKhY#YhczJ2C~I~Dem+&ZHcKQs6I<+!PQ|Hr#ucd$!`Y?60vzH*?V
+zZ<YKvQ%1EL3pbut_q~12FfXC3$3tLZ%d&0v3%ed#oNW(!xOtzYhyXZ=DtWUqZNB7b
+z&N#WtTzRv%uMinwsuIM(F!!YYY$chrL*Juz@A`GnR<$GY%iA@J)@d~R-Y;QT@n7p)
+z)&hq<54*PqyaWWREtXU~n0V@Q#O0iCv)auMKjzJ1YfF(X+OI19cGZIVFSVOP^`FXd
+z>aCDIIP0N+&$+(Zl9nlFq;5-oIR4$mcIHNh?3!~ikKIqTILU4j56w9#9u`&{==wta
+zV7kiF5}6e{r*7WmV%3=6o;t6p!TinIj66=SzF-ZGTfg-@yu7qUtyCpKVtm#n8O=JH
+z8n)saOSt6aZ^0K6om*`FfB$`7%Usx4Lpo=wfv#UeZ9{I*%X5djULVYO-JH#RBF5tI
+mzv)Zm%l?Y??m5=0JW0#Byw_x&*2A6c#oR~0>9o)PzXSlcm)L#)
+
+delta 96
+zcmZ2~gR%D_<Aw_go8K#$F>bz~AkQ@Ue~{tk9@TsNliw?;Y+h?F%sBa?g5>5FQ&y(U
+r`z_2M@-a4#!19yVn)7b%^J9akiSS`%n!MjaW%G7_A*Rj$gA61A!VxD3
+
+-- 
+2.30.2
+
+
+From d5313fab2632ea8f32a39c52718885bfa7776f9a Mon Sep 17 00:00:00 2001
+From: Lucy Phipps <landfillbaby69@gmail.com>
+Date: Tue, 11 May 2021 20:36:23 +0100
+Subject: [PATCH 08/71] get SOURCE_DATE_EPOCH from git log time
+
+start of work towards reproducible builds
+---
+ build-package.sh | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/build-package.sh b/build-package.sh
+index b80bed093..0f95597d1 100755
+--- a/build-package.sh
++++ b/build-package.sh
+@@ -3,6 +3,9 @@
+ 
+ set -e -o pipefail -u
+ 
++SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct)
++export SOURCE_DATE_EPOCH
++
+ : "${TMPDIR:=/tmp}"
+ export TMPDIR
+ 
+-- 
+2.30.2
+
+
+From 76cc63e97a829cd47f80af123b41f46505c80e9e Mon Sep 17 00:00:00 2001
+From: Leonid Pliushch <leonid.pliushch@gmail.com>
+Date: Tue, 11 May 2021 22:59:10 +0300
+Subject: [PATCH 09/71] termux-keyring: updated @xeffyr gpg key
+
+Add signature.
+---
+ packages/termux-keyring/build.sh   |   2 +-
+ packages/termux-keyring/xeffyr.gpg | Bin 6573 -> 6883 bytes
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/packages/termux-keyring/build.sh b/packages/termux-keyring/build.sh
+index d5c9c2b67..7f0ccf872 100644
+--- a/packages/termux-keyring/build.sh
++++ b/packages/termux-keyring/build.sh
+@@ -2,7 +2,7 @@ TERMUX_PKG_HOMEPAGE=https://github.com/termux
+ TERMUX_PKG_DESCRIPTION="GPG public keys for the official Termux repositories"
+ TERMUX_PKG_LICENSE="Apache-2.0"
+ TERMUX_PKG_MAINTAINER="@termux"
+-TERMUX_PKG_VERSION=1.7
++TERMUX_PKG_VERSION=1.8
+ TERMUX_PKG_SKIP_SRC_EXTRACT=true
+ TERMUX_PKG_PLATFORM_INDEPENDENT=true
+ 
+diff --git a/packages/termux-keyring/xeffyr.gpg b/packages/termux-keyring/xeffyr.gpg
+index 2938338a345d3a9d7cbf55d1747364dbb85d5616..c2f28eb56e782c6a3236b9fd5294e7cb4193c1e7 100644
+GIT binary patch
+delta 295
+zcmV+?0oeYnGvhU|2NRP#2qJ%An$xHN3JDO|@6~9Lvb#{EJO}?tbr!*d$`t7+9kE*1
+zrhD{d{RrOc)_Rb>RvW4dNTdM<ZiGPm2%7H~bAnvo`Fxi$Ll&=gU$ok7ndI`%1KUJz
+zA1`jTgdsU93=z;dDPVrt?5s>*J+Kc$dSqsbPK8&i@pVvSZ3U2SDE)uisBZR;pNk~u
+zsi~QSh1`XWl5JpRj%tNNYgf^40Ib+#BBJ?~*&hf}ACPZi_9RfUc5FT*l+xt11{7g5
+zG^G%Fg|X55h-qoFz)^&EjmWb#GQ7dT^{M3Yv>D&-GY9UuUrK>3A;bCHa`B4sg_;gD
+tj{XgbijwXC@+J4jFpn0VLhdSx56StHkI_(`REI@4GIj!c)3XN?rUu`XkU0PV
+
+delta 12
+TcmaECy4H9DyYOaPk!5TEA*cj%
+
+-- 
+2.30.2
+
+
+From 2710cae50c3ca62d52022e4185301bd76a4109b8 Mon Sep 17 00:00:00 2001
+From: kcubeterm <kcubeterm@gmail.com>
+Date: Wed, 12 May 2021 06:11:27 +0530
+Subject: [PATCH 10/71] termux-keyring: updated @kcubeterm gpg key
+
+---
+ packages/termux-keyring/build.sh      |   2 +-
+ packages/termux-keyring/kcubeterm.gpg | Bin 1775 -> 2085 bytes
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/packages/termux-keyring/build.sh b/packages/termux-keyring/build.sh
+index 7f0ccf872..fc51e4c8a 100644
+--- a/packages/termux-keyring/build.sh
++++ b/packages/termux-keyring/build.sh
+@@ -2,7 +2,7 @@ TERMUX_PKG_HOMEPAGE=https://github.com/termux
+ TERMUX_PKG_DESCRIPTION="GPG public keys for the official Termux repositories"
+ TERMUX_PKG_LICENSE="Apache-2.0"
+ TERMUX_PKG_MAINTAINER="@termux"
+-TERMUX_PKG_VERSION=1.8
++TERMUX_PKG_VERSION=1.9
+ TERMUX_PKG_SKIP_SRC_EXTRACT=true
+ TERMUX_PKG_PLATFORM_INDEPENDENT=true
+ 
+diff --git a/packages/termux-keyring/kcubeterm.gpg b/packages/termux-keyring/kcubeterm.gpg
+index 2cdd73d7be9898d3ac3083edd03e3ac37bc4a31f..e14488f6d0e8635f19515aac34049e363171cb94 100644
+GIT binary patch
+delta 325
+zcmV-L0lNP04W$sUy##-W0W$;;0SEvc79j+-F=$|(h&jrUP|hvc@6~9Lvb#_P0$`fZ
+zIRFX?5ZUk5XpyqJP?bLj0F`C*Qd$KlY&(Fpf$6N?PYob{qM&Zb>;|dM1a4BVm4BQm
+z+Nm+EWQYBQlKy05SverR)HfLKh__AQ$qpG2jS%4bwI-lN!_<GV@k;e5EC2$Y)a}W?
+zwz%$VuUpr9B2G>t;2J7Qb?~z2EN{Ns65fNzoe`_v1N-?thU=mUl)yUz?ItL=wZJSL
+z>vU=LhQ8E-FbEN_zau{dzpztLuB7bQVRVL*_;{i2o{w~CJ)3qh3L~u)j{)=YWXcqH
+z;C~tG<ODT8e0ew{XNyG-QQB}PbAP|aR;%*#hPA{+aD!$as7X>Q`(qtnh$!Y7Ld#KB
+X`Zx9j(NKDbEKCzPu2loGy#z7>F%+2a
+
+delta 12
+TcmZ1~@Sb<WUY5<DS&f(gB*p~-
+
+-- 
+2.30.2
+
+
+From 4096e889092f32470147918bbc5a72bfbcd923a3 Mon Sep 17 00:00:00 2001
+From: Henrik Grimler <henrik@grimler.se>
+Date: Wed, 12 May 2021 10:07:52 +0200
+Subject: [PATCH 11/71] aerc: update sha256sum
+
+I guess remote was force-pushed.
+---
+ packages/aerc/build.sh | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/packages/aerc/build.sh b/packages/aerc/build.sh
+index dff488fd0..5756b2f37 100644
+--- a/packages/aerc/build.sh
++++ b/packages/aerc/build.sh
+@@ -3,8 +3,9 @@ TERMUX_PKG_DESCRIPTION="An email client that runs in your terminal"
+ TERMUX_PKG_LICENSE="MIT"
+ TERMUX_PKG_MAINTAINER="@termux"
+ TERMUX_PKG_VERSION=0.5.2
++TERMUX_PKG_REVISION=1
+ TERMUX_PKG_SRCURL=https://git.sr.ht/~sircmpwn/aerc/archive/${TERMUX_PKG_VERSION}.tar.gz
+-TERMUX_PKG_SHA256=87b922440e53b99f260d2332996537decb452c838c774e9340b633296f9f68ee
++TERMUX_PKG_SHA256=dec6560c1359d1d56124a85692e877e319036f0312ce9b7a31f9828f99b92c61
+ TERMUX_PKG_BUILD_IN_SRC=true
+ 
+ termux_step_pre_configure() {
+-- 
+2.30.2
+
+
+From 6177a59e2e0e7f218056176ee3e445e444b7721d Mon Sep 17 00:00:00 2001
+From: Henrik Grimler <henrik@grimler.se>
+Date: Wed, 12 May 2021 16:51:51 +0200
+Subject: [PATCH 12/71] cryptopp: do not override
+ termux_step_{get_source,make,make_install}
+
+Use TERMUX_PKG_MAKE_INSTALL_TARGET, TERMUX_PKG_EXTRA_MAKE_ARGS and
+download source from github instead to achieve this.
+---
+ packages/cryptopp/build.sh | 29 +++++++----------------------
+ 1 file changed, 7 insertions(+), 22 deletions(-)
+
+diff --git a/packages/cryptopp/build.sh b/packages/cryptopp/build.sh
+index 7815ffbb4..0cc041013 100644
+--- a/packages/cryptopp/build.sh
++++ b/packages/cryptopp/build.sh
+@@ -3,35 +3,20 @@ TERMUX_PKG_DESCRIPTION="A free C++ class library of cryptographic schemes"
+ TERMUX_PKG_LICENSE="BSL-1.0"
+ TERMUX_PKG_MAINTAINER="Leonid Pliushch <leonid.pliushch@gmail.com>"
+ TERMUX_PKG_VERSION=8.5.0
+-TERMUX_PKG_SRCURL=https://www.cryptopp.com/cryptopp${TERMUX_PKG_VERSION//./}.zip
+-TERMUX_PKG_SHA256=95fc50d59488ebf61a735cce2b2ec2c2561fc682077c7b496273d65a1ed93d9e
++TERMUX_PKG_REVISION=1
++TERMUX_PKG_SRCURL=https://github.com/weidai11/cryptopp/archive/refs/tags/CRYPTOPP_${TERMUX_PKG_VERSION//./_}.tar.gz
++TERMUX_PKG_SHA256=8f64cf09cf4f61d5d74bca53574b8cc9959186cc0f072a2e6597e4999d6ad5db
+ TERMUX_PKG_BREAKS="cryptopp-dev"
+ TERMUX_PKG_REPLACES="cryptopp-dev"
+-TERMUX_PKG_SKIP_SRC_EXTRACT=true
+ TERMUX_PKG_BUILD_IN_SRC=true
++TERMUX_PKG_MAKE_INSTALL_TARGET="install-lib"
+ 
+ TERMUX_PKG_RM_AFTER_INSTALL="
+ bin/
+ share/cryptopp/
+ "
+ 
+-termux_step_get_source() {
+-	mkdir -p $TERMUX_PKG_CACHEDIR
+-	termux_download $TERMUX_PKG_SRCURL $TERMUX_PKG_CACHEDIR/cryptopp.zip \
+-		$TERMUX_PKG_SHA256
+-	mkdir -p $TERMUX_PKG_SRCDIR
+-}
+-
+-termux_step_post_get_source() {
+-	cd $TERMUX_PKG_SRCDIR
+-	unzip $TERMUX_PKG_CACHEDIR/cryptopp.zip
+-}
+-
+-termux_step_make() {
+-	CXXFLAGS+=" -fPIC -DCRYPTOPP_DISABLE_ASM"
+-	make -j $TERMUX_MAKE_PROCESSES dynamic libcryptopp.pc CC=$CC CXX=$CXX
+-}
+-
+-termux_step_make_install() {
+-	make install-lib PREFIX=$TERMUX_PREFIX
++termux_step_pre_configure() {
++	export CXXFLAGS+=" -fPIC -DCRYPTOPP_DISABLE_ASM"
++        export TERMUX_PKG_EXTRA_MAKE_ARGS+=" dynamic libcryptopp.pc CC=$CC CXX=$CXX"
+ }
+-- 
+2.30.2
+
+
+From eba0eb244e34d80977c716360c285db6e0cc5b47 Mon Sep 17 00:00:00 2001
+From: Henrik Grimler <henrik@grimler.se>
+Date: Wed, 12 May 2021 16:58:47 +0200
+Subject: [PATCH 13/71] cryptopp: convert spaces to tab
+
+%ci:no-build
+---
+ packages/cryptopp/build.sh | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/packages/cryptopp/build.sh b/packages/cryptopp/build.sh
+index 0cc041013..b6499ef33 100644
+--- a/packages/cryptopp/build.sh
++++ b/packages/cryptopp/build.sh
+@@ -18,5 +18,5 @@ share/cryptopp/
+ 
+ termux_step_pre_configure() {
+ 	export CXXFLAGS+=" -fPIC -DCRYPTOPP_DISABLE_ASM"
+-        export TERMUX_PKG_EXTRA_MAKE_ARGS+=" dynamic libcryptopp.pc CC=$CC CXX=$CXX"
++	export TERMUX_PKG_EXTRA_MAKE_ARGS+=" dynamic libcryptopp.pc CC=$CC CXX=$CXX"
+ }
+-- 
+2.30.2
+
+
+From 33bd19af9779b3cf8b204858e12aa2ad37d100cb Mon Sep 17 00:00:00 2001
+From: Henrik Grimler <henrik@grimler.se>
+Date: Thu, 13 May 2021 21:36:41 +0200
+Subject: [PATCH 14/71] ovmf: update to 20210421.14.g5531fd48de
+
+---
+ packages/ovmf/build.sh | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+diff --git a/packages/ovmf/build.sh b/packages/ovmf/build.sh
+index b2d4f69bc..2a64b1224 100644
+--- a/packages/ovmf/build.sh
++++ b/packages/ovmf/build.sh
+@@ -2,15 +2,15 @@ TERMUX_PKG_HOMEPAGE=https://www.tianocore.org/
+ TERMUX_PKG_DESCRIPTION="Open Virtual Machine Firmware"
+ TERMUX_PKG_LICENSE="BSD"
+ TERMUX_PKG_MAINTAINER="@termux"
+-TERMUX_PKG_VERSION=20201222.1526.ge2747dbb5a
++TERMUX_PKG_VERSION=20210421.14.g5531fd48de
+ TERMUX_PKG_SRCURL=(https://www.kraxel.org/repos/jenkins/edk2/edk2.git-aarch64-0-${TERMUX_PKG_VERSION}.noarch.rpm
+ 		   https://www.kraxel.org/repos/jenkins/edk2/edk2.git-arm-0-${TERMUX_PKG_VERSION}.noarch.rpm
+ 		   https://www.kraxel.org/repos/jenkins/edk2/edk2.git-ovmf-ia32-0-${TERMUX_PKG_VERSION}.noarch.rpm
+ 		   https://www.kraxel.org/repos/jenkins/edk2/edk2.git-ovmf-x64-0-${TERMUX_PKG_VERSION}.noarch.rpm)
+-TERMUX_PKG_SHA256=(605a26ccf228d0577c4095d2549c94b145978373e26b2d6eb845457901d249e7
+-		   04118ec32022c8469b96b0c4b9cbecf02db8caa925377b035baece303ca1997d
+-		   0df2deac39bf0045f0827400291686d81280c0f2769bef67701a50fe070b44b5
+-		   021825fe51fbf07d1ed3b0fd8cd0d2da491155c23338495e5b1dc8f4641c96bb)
++TERMUX_PKG_SHA256=(17995b69b3eac21ba2cb27c0cbaf79ddb21b74b0588f9fd49c19e0c1ad2cec9c
++		   f8b3e5ed0e81073841a08ac2a7fee9abe5dae7b4c2a8536a600aa86a383fb308
++		   66206ddad3c6cc6ea370494934573627f0d9d6077924fd094c0bdd9bde3bf588
++		   d0bd82a566fc162601fdd92f08b1b7df11a3f1d99bcb34171a80cb68b07140a7)
+ TERMUX_PKG_SKIP_SRC_EXTRACT=true
+ TERMUX_PKG_PLATFORM_INDEPENDENT=true
+ 
+@@ -25,7 +25,7 @@ termux_step_make_install() {
+ 		${TERMUX_PKG_SHA256[1]}
+ 	termux_download \
+ 		${TERMUX_PKG_SRCURL[2]} \
+-		${TERMUX_PKG_CACHEDIR}/edk2-ia32.rpm \
++		${TERMUX_PKG_CACHEDIR}/edk2-i686.rpm \
+ 		${TERMUX_PKG_SHA256[2]}
+ 	termux_download \
+ 		${TERMUX_PKG_SRCURL[3]} \
+@@ -33,7 +33,7 @@ termux_step_make_install() {
+ 		${TERMUX_PKG_SHA256[3]}
+ 
+ 	local i
+-	for i in aarch64 arm ia32 x86_64; do
++	for i in aarch64 arm i686 x86_64; do
+ 		bsdtar xf ${TERMUX_PKG_CACHEDIR}/edk2-${i}.rpm -C $TERMUX_PREFIX/../
+ 	done
+ 
+-- 
+2.30.2
+
+
+From 63c549c509fc60e812e783bbde29b68e156fdd86 Mon Sep 17 00:00:00 2001
+From: Henrik Grimler <henrik@grimler.se>
+Date: Wed, 12 May 2021 21:40:13 +0200
+Subject: [PATCH 15/71] docopt: specify license files in
+ TERMUX_PKG_LICENSE_FILE instead
+
+---
+ packages/docopt/build.sh | 8 ++------
+ 1 file changed, 2 insertions(+), 6 deletions(-)
+
+diff --git a/packages/docopt/build.sh b/packages/docopt/build.sh
+index 6831c909f..a7e2b2669 100644
+--- a/packages/docopt/build.sh
++++ b/packages/docopt/build.sh
+@@ -1,13 +1,9 @@
+ TERMUX_PKG_HOMEPAGE=http://docopt.org
+ TERMUX_PKG_DESCRIPTION="Command line arguments parser for C++11 and later"
+ TERMUX_PKG_LICENSE="BSL-1.0, MIT"
++TERMUX_PKG_LICENSE_FILE="LICENSE-Boost-1.0, LICENSE-MIT"
+ TERMUX_PKG_MAINTAINER="Henrik Grimler @Grimler91"
+ TERMUX_PKG_VERSION=0.6.3
++TERMUX_PKG_REVISION=1
+ TERMUX_PKG_SRCURL=https://github.com/docopt/docopt.cpp/archive/v${TERMUX_PKG_VERSION}.tar.gz
+ TERMUX_PKG_SHA256=28af5a0c482c6d508d22b14d588a3b0bd9ff97135f99c2814a5aa3cbff1d6632
+-
+-termux_step_install_license() {
+-	install -Dm600 -t "$TERMUX_PREFIX/share/doc/docopt" \
+-		"$TERMUX_PKG_SRCDIR"/LICENSE-Boost-1.0 \
+-		"$TERMUX_PKG_SRCDIR"/LICENSE-MIT
+-}
+-- 
+2.30.2
+
+
+From e8924ce66d4c58d00565a2d4fd6db226115664b6 Mon Sep 17 00:00:00 2001
+From: Henrik Grimler <henrik@grimler.se>
+Date: Thu, 13 May 2021 14:28:45 +0200
+Subject: [PATCH 16/71] hunspell-en-us: update en_US.dic to 2021-01-01 version
+
+Maybe we should add hunspell-en-gb as well, the British dictionary
+seem to be updated much more frequently.
+---
+ packages/hunspell-en-us/build.sh | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+diff --git a/packages/hunspell-en-us/build.sh b/packages/hunspell-en-us/build.sh
+index 416e1c651..8875e6bea 100644
+--- a/packages/hunspell-en-us/build.sh
++++ b/packages/hunspell-en-us/build.sh
+@@ -2,8 +2,7 @@ TERMUX_PKG_HOMEPAGE=https://hunspell.github.io
+ TERMUX_PKG_DESCRIPTION="American english dictionary for hunspell"
+ TERMUX_PKG_LICENSE="LGPL-3.0"
+ TERMUX_PKG_MAINTAINER="@termux"
+-TERMUX_PKG_VERSION=20181025
+-TERMUX_PKG_REVISION=1
++TERMUX_PKG_VERSION=20210101
+ TERMUX_PKG_SKIP_SRC_EXTRACT=true
+ TERMUX_PKG_PLATFORM_INDEPENDENT=true
+ 
+@@ -18,6 +17,6 @@ termux_step_make_install() {
+ 			c7a8c4d08c29d237880844b1623099f59092602f189be38ce3912e457ff38bc1
+ 	termux_download https://cgit.freedesktop.org/libreoffice/dictionaries/plain/en/en_US.dic \
+ 			$TERMUX_PREFIX/share/hunspell/en_US.dic \
+-		        e2aec1aff3e2b840c59e2a4f49f7eb9388b6078c681d960153fc72ce183086cc
++		        f0b1a234bd178bdd01875b2a392a9647f888b8fe879f79c52aae62c2759b3647
+ 	touch $TERMUX_PREFIX/share/hunspell/en_US.{aff,dic}
+ }
+-- 
+2.30.2
+
+
+From 68ab2e90d9b051b2d655ffe00275709510b93439 Mon Sep 17 00:00:00 2001
+From: Henrik Grimler <henrik@grimler.se>
+Date: Thu, 13 May 2021 22:06:45 +0200
+Subject: [PATCH 17/71] getconf: update to 0.6
+
+Makefile was updated to respect DESTDIR.
+---
+ packages/getconf/build.sh | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+diff --git a/packages/getconf/build.sh b/packages/getconf/build.sh
+index 22a84c60b..a265d134f 100644
+--- a/packages/getconf/build.sh
++++ b/packages/getconf/build.sh
+@@ -2,8 +2,7 @@ TERMUX_PKG_HOMEPAGE=https://github.com/termux/getconf
+ TERMUX_PKG_DESCRIPTION="Utility to print configuration values"
+ TERMUX_PKG_LICENSE="BSD 2-Clause"
+ TERMUX_PKG_MAINTAINER="@termux"
+-TERMUX_PKG_VERSION=0.5
+-TERMUX_PKG_REVISION=1
++TERMUX_PKG_VERSION=0.6
+ TERMUX_PKG_SRCURL=https://github.com/termux/getconf/archive/v${TERMUX_PKG_VERSION}.tar.gz
+-TERMUX_PKG_SHA256=8192701051d2a2bf8d1ae7b1c0922c3f1d4a039b9ad99496636b0122667d595c
++TERMUX_PKG_SHA256=ca6808fe1a936426d0b4ef05001dfbaedcf35159bec961732a1732e280e27caa
+ TERMUX_PKG_BUILD_IN_SRC=true
+-- 
+2.30.2
+
+
+From 6d0883d177f363607bc8d8dd3689fadbdd45bf6b Mon Sep 17 00:00:00 2001
+From: Henrik Grimler <henrik@grimler.se>
+Date: Fri, 14 May 2021 11:58:09 +0200
+Subject: [PATCH 18/71] termux_download_deb: add workaround for download of
+ arch all pkgs
+
+Aptly mixes the all debs into the folders for the other arches, unless
+the all arch is explicitly added. This workaround tries to find the
+package in the aarch64 Packages file if the all Packages file is not
+found.
+---
+ scripts/build/termux_download_deb.sh | 16 +++++++++++++++-
+ 1 file changed, 15 insertions(+), 1 deletion(-)
+
+diff --git a/scripts/build/termux_download_deb.sh b/scripts/build/termux_download_deb.sh
+index 183a0dc69..a4e29df12 100755
+--- a/scripts/build/termux_download_deb.sh
++++ b/scripts/build/termux_download_deb.sh
+@@ -14,7 +14,21 @@ termux_download_deb() {
+ 	for idx in $(seq ${#TERMUX_REPO_URL[@]}); do
+ 		local TERMUX_REPO_NAME=$(echo ${TERMUX_REPO_URL[$idx-1]} | sed -e 's%https://%%g' -e 's%http://%%g' -e 's%/%-%g')
+ 		local PACKAGE_FILE_PATH="${TERMUX_REPO_NAME}-${TERMUX_REPO_DISTRIBUTION[$idx-1]}-${TERMUX_REPO_COMPONENT[$idx-1]}-Packages"
+-		if [ -f "${TERMUX_COMMON_CACHEDIR}-${PACKAGE_ARCH}/${PACKAGE_FILE_PATH}" ]; then
++		if [ ! -f "${TERMUX_COMMON_CACHEDIR}-${PACKAGE_ARCH}/${PACKAGE_FILE_PATH}" ] && \
++			[ -f "${TERMUX_COMMON_CACHEDIR}-aarch64/${PACKAGE_FILE_PATH}" ]; then
++			# Packages file for $PACKAGE_ARCH did not
++			# exist. Could be an aptly mirror where the
++			# all arch is mixed into the other arches,
++			# check for package in aarch64 Packages
++			# instead.
++			read -d "\n" PKG_PATH PKG_HASH <<<$(./scripts/get_hash_from_file.py "${TERMUX_COMMON_CACHEDIR}-aarch64/$PACKAGE_FILE_PATH" $PACKAGE $VERSION)
++			if [ -n "$PKG_HASH" ]; then
++				if [ ! "$TERMUX_QUIET_BUILD" = true ]; then
++					echo "Found $PACKAGE in ${TERMUX_REPO_URL[$idx-1]}/dists/${TERMUX_REPO_DISTRIBUTION[$idx-1]}"
++				fi
++				break
++			fi
++		elif [ -f "${TERMUX_COMMON_CACHEDIR}-${PACKAGE_ARCH}/${PACKAGE_FILE_PATH}" ]; then
+ 			read -d "\n" PKG_PATH PKG_HASH <<<$(./scripts/get_hash_from_file.py "${TERMUX_COMMON_CACHEDIR}-${PACKAGE_ARCH}/$PACKAGE_FILE_PATH" $PACKAGE $VERSION)
+ 			if [ -n "$PKG_HASH" ]; then
+ 				if [ ! "$TERMUX_QUIET_BUILD" = true ]; then
+-- 
+2.30.2
+
+
+From 9f44c4f49668c019b46f1e5f1ad1fa721a464106 Mon Sep 17 00:00:00 2001
+From: Henrik Grimler <henrik@grimler.se>
+Date: Sat, 15 May 2021 22:21:45 +0200
+Subject: [PATCH 19/71] workflows: do not error on upload step if there are no
+ debs
+
+As is the case when using ci:no-build for example.
+---
+ .github/workflows/packages.yml | 13 +++++++++----
+ 1 file changed, 9 insertions(+), 4 deletions(-)
+
+diff --git a/.github/workflows/packages.yml b/.github/workflows/packages.yml
+index 6758f58b6..289bcb94e 100644
+--- a/.github/workflows/packages.yml
++++ b/.github/workflows/packages.yml
+@@ -164,7 +164,12 @@ jobs:
+         # This makes it easier to parse it, we can run one update job
+         # instead of one for each arch on the server.
+         archive="termux-packages-${{ github.sha }}.zip"
+-        zip $archive debs-*-${{ github.sha }}.tar
+-        sftp -P ${{ secrets.PORT }} ${{ secrets.USER }}@grimler.se <<EOF
+-          put $archive /debs/
+-        EOF
++        deb_archives=$(find -maxdepth -name "debs-*-${{ github.sha }}.tar")
++        if [ -n "$deb_archives" ]; then
++          zip $archive ${deb_archives}
++          sftp -P ${{ secrets.PORT }} ${{ secrets.USER }}@grimler.se <<EOF
++            put $archive /debs/
++          EOF
++        else
++          echo "No archives to upload found"
++        fi
+-- 
+2.30.2
+
+
+From 4ddfafadc2fc2d3577ffdc16b6d364cddfb9f70f Mon Sep 17 00:00:00 2001
+From: Henrik Grimler <henrik@grimler.se>
+Date: Sat, 15 May 2021 22:17:41 +0200
+Subject: [PATCH 20/71] bitcoin: add patch to update boost url
+
+%ci:no-build
+---
+ packages/bitcoin/boost_url.patch | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+ create mode 100644 packages/bitcoin/boost_url.patch
+
+diff --git a/packages/bitcoin/boost_url.patch b/packages/bitcoin/boost_url.patch
+new file mode 100644
+index 000000000..7eff9fa44
+--- /dev/null
++++ b/packages/bitcoin/boost_url.patch
+@@ -0,0 +1,10 @@
++--- ./depends/packages/boost.mk.orig	2021-05-07 07:56:23.903846226 +0000
+++++ ./depends/packages/boost.mk	2021-05-07 07:56:47.650501607 +0000
++@@ -1,6 +1,6 @@
++ package=boost
++ $(package)_version=1_70_0
++-$(package)_download_path=https://dl.bintray.com/boostorg/release/1.70.0/source/
+++$(package)_download_path=https://boostorg.jfrog.io/artifactory/main/release/1.70.0/source/
++ $(package)_file_name=boost_$($(package)_version).tar.bz2
++ $(package)_sha256_hash=430ae8354789de4fd19ee52f3b1f739e1fba576f0aded0897c3c2bc00fb38778
++ $(package)_patches=unused_var_in_process.patch
+-- 
+2.30.2
+
+
+From 692bc9429e44f9228a519122dfeba7b7a09e950f Mon Sep 17 00:00:00 2001
+From: Henrik Grimler <henrik@grimler.se>
+Date: Sat, 15 May 2021 22:32:33 +0200
+Subject: [PATCH 21/71] workflows: fix forgotten parameter in packages.yml
+
+---
+ .github/workflows/packages.yml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/.github/workflows/packages.yml b/.github/workflows/packages.yml
+index 289bcb94e..39884de95 100644
+--- a/.github/workflows/packages.yml
++++ b/.github/workflows/packages.yml
+@@ -164,7 +164,7 @@ jobs:
+         # This makes it easier to parse it, we can run one update job
+         # instead of one for each arch on the server.
+         archive="termux-packages-${{ github.sha }}.zip"
+-        deb_archives=$(find -maxdepth -name "debs-*-${{ github.sha }}.tar")
++        deb_archives=$(find -maxdepth 1 -name "debs-*-${{ github.sha }}.tar")
+         if [ -n "$deb_archives" ]; then
+           zip $archive ${deb_archives}
+           sftp -P ${{ secrets.PORT }} ${{ secrets.USER }}@grimler.se <<EOF
+-- 
+2.30.2
+
+
+From f505558bd3c9f0df4beeb702124531338a7cc593 Mon Sep 17 00:00:00 2001
+From: Henrik Grimler <henrik@grimler.se>
+Date: Sat, 15 May 2021 22:12:59 +0200
+Subject: [PATCH 22/71] xmake: avoid overriding termux_step_make{,_install}
+
+---
+ packages/xmake/build.sh | 7 -------
+ 1 file changed, 7 deletions(-)
+
+diff --git a/packages/xmake/build.sh b/packages/xmake/build.sh
+index 08ff0e79e..77f17df36 100644
+--- a/packages/xmake/build.sh
++++ b/packages/xmake/build.sh
+@@ -6,10 +6,3 @@ TERMUX_PKG_VERSION=2.5.3
+ TERMUX_PKG_SRCURL=https://github.com/xmake-io/xmake/releases/download/v${TERMUX_PKG_VERSION}/xmake-v${TERMUX_PKG_VERSION}.tar.gz
+ TERMUX_PKG_SHA256=337edd61de22b043720556a02bf7b1c4d4881e200ecce6bb2406d0442f2db92e
+ TERMUX_PKG_BUILD_IN_SRC=true
+-
+-termux_step_make() {
+-	make build
+-}
+-termux_step_make_install() {
+-	make install PREFIX="${TERMUX_PREFIX}"
+-}
+-- 
+2.30.2
+
+
+From 320c6522b41443ad6ea2b3e71950c71069b5c67b Mon Sep 17 00:00:00 2001
+From: Henrik Grimler <henrik@grimler.se>
+Date: Sat, 15 May 2021 22:11:53 +0200
+Subject: [PATCH 23/71] tweego: update source url
+
+%ci:no-build
+---
+ packages/tweego/build.sh | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/packages/tweego/build.sh b/packages/tweego/build.sh
+index bc73e1acd..8ab07e7af 100644
+--- a/packages/tweego/build.sh
++++ b/packages/tweego/build.sh
+@@ -11,11 +11,11 @@ termux_step_make() {
+ 	termux_setup_golang
+ 
+ 	export GOPATH=$TERMUX_PKG_BUILDDIR
+-	mkdir -p "$GOPATH"/src/bitbucket.org/tmedwards
+-	ln -sf "$TERMUX_PKG_SRCDIR" "$GOPATH"/src/bitbucket.org/tmedwards/tweego
++	mkdir -p "$GOPATH"/src/github.com/tmedwards
++	ln -sf "$TERMUX_PKG_SRCDIR" "$GOPATH"/src/github.com/tmedwards/tweego
+ 
+-	cd "$GOPATH"/src/bitbucket.org/tmedwards/tweego
+-	go get -d -v bitbucket.org/tmedwards/tweego
++	cd "$GOPATH"/src/github.com/tmedwards/tweego
++	go get -d -v github.com/tmedwards/tweego
+ 	go build
+ }
+ 
+-- 
+2.30.2
+
+
+From acbae4026306d2d595db6eaafab142aae2ba8082 Mon Sep 17 00:00:00 2001
+From: ruki <waruqi@gmail.com>
+Date: Sat, 15 May 2021 17:00:16 +0800
+Subject: [PATCH 24/71] xmake: 2.5.4
+
+---
+ packages/xmake/build.sh | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/packages/xmake/build.sh b/packages/xmake/build.sh
+index 77f17df36..03ea4b2e4 100644
+--- a/packages/xmake/build.sh
++++ b/packages/xmake/build.sh
+@@ -2,7 +2,7 @@ TERMUX_PKG_HOMEPAGE=https://xmake.io/
+ TERMUX_PKG_DESCRIPTION="A cross-platform build utility based on Lua"
+ TERMUX_PKG_LICENSE="GPL-2.0"
+ TERMUX_PKG_MAINTAINER="Ruki Wang @waruqi"
+-TERMUX_PKG_VERSION=2.5.3
++TERMUX_PKG_VERSION=2.5.4
+ TERMUX_PKG_SRCURL=https://github.com/xmake-io/xmake/releases/download/v${TERMUX_PKG_VERSION}/xmake-v${TERMUX_PKG_VERSION}.tar.gz
+-TERMUX_PKG_SHA256=337edd61de22b043720556a02bf7b1c4d4881e200ecce6bb2406d0442f2db92e
++TERMUX_PKG_SHA256=50ce4bbb62cec7891494336b67a35f0735e22013d8407868ea72fc8f01e17b45
+ TERMUX_PKG_BUILD_IN_SRC=true
+-- 
+2.30.2
+
+
+From 65fb0a831232794ce55b9bbe1b8e0ffb5b6f2f62 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Marlin=20S=C3=B6=C3=B6se?=
+ <30473690+msoose@users.noreply.github.com>
+Date: Tue, 11 May 2021 17:12:52 -0600
+Subject: [PATCH 25/71] new package: recode (#6614)
+
+---
+ packages/recode/build.sh | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+ create mode 100644 packages/recode/build.sh
+
+diff --git a/packages/recode/build.sh b/packages/recode/build.sh
+new file mode 100644
+index 000000000..988902c84
+--- /dev/null
++++ b/packages/recode/build.sh
+@@ -0,0 +1,8 @@
++TERMUX_PKG_HOMEPAGE="https://github.com/pinard/Recode"
++TERMUX_PKG_DESCRIPTION="Charset converter tool and library"
++TERMUX_PKG_LICENSE="GPL-3.0"
++TERMUX_PKG_MAINTAINER="Marlin Sööse <marlin.soose@laro.se>"
++TERMUX_PKG_VERSION="3.7.8"
++TERMUX_PKG_SRCURL=https://github.com/rrthomas/recode/releases/download/v3.7.8/recode-${TERMUX_PKG_VERSION}.tar.gz
++TERMUX_PKG_SHA256=4fb75cacc7b80fda7147ea02580eafd2b4493461fb75159e9a49561d3e10cfa7
++TERMUX_PKG_DEPENDS="libiconv"
+-- 
+2.30.2
+
+
+From 0746a2522f0737546dfa3468ec3e34eb63de58f6 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Marlin=20S=C3=B6=C3=B6se?=
+ <30473690+msoose@users.noreply.github.com>
+Date: Thu, 13 May 2021 15:33:06 -0600
+Subject: [PATCH 26/71] recode: fix SRCURL
+
+---
+ packages/recode/build.sh | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/packages/recode/build.sh b/packages/recode/build.sh
+index 988902c84..7daf1e0d3 100644
+--- a/packages/recode/build.sh
++++ b/packages/recode/build.sh
+@@ -3,6 +3,6 @@ TERMUX_PKG_DESCRIPTION="Charset converter tool and library"
+ TERMUX_PKG_LICENSE="GPL-3.0"
+ TERMUX_PKG_MAINTAINER="Marlin Sööse <marlin.soose@laro.se>"
+ TERMUX_PKG_VERSION="3.7.8"
+-TERMUX_PKG_SRCURL=https://github.com/rrthomas/recode/releases/download/v3.7.8/recode-${TERMUX_PKG_VERSION}.tar.gz
++TERMUX_PKG_SRCURL=https://github.com/rrthomas/recode/releases/download/v${TERMUX_PKG_VERSION}/recode-${TERMUX_PKG_VERSION}.tar.gz
+ TERMUX_PKG_SHA256=4fb75cacc7b80fda7147ea02580eafd2b4493461fb75159e9a49561d3e10cfa7
+ TERMUX_PKG_DEPENDS="libiconv"
+-- 
+2.30.2
+
+
+From 8bb73b1795357011b5d052bccbf5f5dd811294fa Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Marlin=20S=C3=B6=C3=B6se?=
+ <30473690+msoose@users.noreply.github.com>
+Date: Mon, 10 May 2021 16:09:02 -0600
+Subject: [PATCH 27/71] proxmark3-git: add 'unstable' package
+
+Add completely separate package for proxmark3 using more up to date builds directly from master branch on GitHub
+---
+ packages/proxmark3-git/build.sh | 20 ++++++++++++++++++++
+ 1 file changed, 20 insertions(+)
+ create mode 100644 packages/proxmark3-git/build.sh
+
+diff --git a/packages/proxmark3-git/build.sh b/packages/proxmark3-git/build.sh
+new file mode 100644
+index 000000000..ffdd9f672
+--- /dev/null
++++ b/packages/proxmark3-git/build.sh
+@@ -0,0 +1,20 @@
++TERMUX_PKG_HOMEPAGE="https://github.com/RfidResearchGroup/proxmark3"
++TERMUX_PKG_DESCRIPTION="The Swiss Army Knife of RFID Research - RRG/Iceman repo"
++TERMUX_PKG_LICENSE="GPL-2.0"
++TERMUX_PKG_MAINTAINER="Marlin Sööse <marlin.soose@laro.se>"
++TERMUX_PKG_VERSION="master"
++TERMUX_PKG_SRCURL=https://github.com/RfidResearchGroup/proxmark3/archive/e3ebe3afc5a1a8f712544ce7b5d3b54c93f44712.tar.gz
++TERMUX_PKG_SHA256=1973d86857fb9d7e71f23b0f737c4fe7cf644e62bb02107968630e12cd04cfe0
++TERMUX_PKG_BUILD_DEPENDS="readline"
++TERMUX_PKG_BUILD_IN_SRC="true"
++TERMUX_PKG_BLACKLISTED_ARCHES="i686, x86_64"
++
++termux_step_make() {
++        LDLIBS="-L${TERMUX_PREFIX}/lib" INCLUDES_CLIENT="-I${TERMUX_PREFIX}/include/" \
++        make client -j $TERMUX_MAKE_PROCESSES CC=$CC CXX=$CXX LD=$CXX cpu_arch=generic SKIPREVENGTEST=1 SKIPQT=1 SKIPBT=1 SKIPPTHREAD=1 SKIPGPU=1 PLATFORM=PM3GENERIC
++}
++
++termux_step_make_install() {
++        install -Dm700 "$TERMUX_PKG_BUILDDIR"/client/proxmark3 \
++                "$TERMUX_PREFIX"/bin/proxmark3
++}
+-- 
+2.30.2
+
+
+From 996df0aafca43ebbf4b46a43a47a41a96b8a5f29 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Marlin=20S=C3=B6=C3=B6se?= <marlin.soose@laro.se>
+Date: Mon, 10 May 2021 16:44:58 -0600
+Subject: [PATCH 28/71] proxmark3-git: use proper version syntax
+
+---
+ packages/proxmark3-git/build.sh | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/packages/proxmark3-git/build.sh b/packages/proxmark3-git/build.sh
+index ffdd9f672..9bafb8160 100644
+--- a/packages/proxmark3-git/build.sh
++++ b/packages/proxmark3-git/build.sh
+@@ -2,9 +2,10 @@ TERMUX_PKG_HOMEPAGE="https://github.com/RfidResearchGroup/proxmark3"
+ TERMUX_PKG_DESCRIPTION="The Swiss Army Knife of RFID Research - RRG/Iceman repo"
+ TERMUX_PKG_LICENSE="GPL-2.0"
+ TERMUX_PKG_MAINTAINER="Marlin Sööse <marlin.soose@laro.se>"
+-TERMUX_PKG_VERSION="master"
+-TERMUX_PKG_SRCURL=https://github.com/RfidResearchGroup/proxmark3/archive/e3ebe3afc5a1a8f712544ce7b5d3b54c93f44712.tar.gz
+-TERMUX_PKG_SHA256=1973d86857fb9d7e71f23b0f737c4fe7cf644e62bb02107968630e12cd04cfe0
++TERMUX_PKG_REVISION=1
++TERMUX_PKG_VERSION="2021.05.10-0d3c2978"
++TERMUX_PKG_SRCURL=https://github.com/RfidResearchGroup/proxmark3/archive/0d3c2978a6516def4d722cacdb9d651b087df2a1.tar.gz
++TERMUX_PKG_SHA256=702e50af914dbc23ad2bb41de19217dc5408f7ae7181868e005dc1052051355d
+ TERMUX_PKG_BUILD_DEPENDS="readline"
+ TERMUX_PKG_BUILD_IN_SRC="true"
+ TERMUX_PKG_BLACKLISTED_ARCHES="i686, x86_64"
+-- 
+2.30.2
+
+
+From 277b1bcfc7f1b957bb5ee5e9aa47dc726c8bde69 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Marlin=20S=C3=B6=C3=B6se?= <marlin.soose@laro.se>
+Date: Tue, 11 May 2021 15:10:27 -0600
+Subject: [PATCH 29/71] proxmark3-git: sync to master, add bzip2 dependency
+
+---
+ packages/proxmark3-git/build.sh | 18 +++++++++++-------
+ 1 file changed, 11 insertions(+), 7 deletions(-)
+
+diff --git a/packages/proxmark3-git/build.sh b/packages/proxmark3-git/build.sh
+index 9bafb8160..22f85bc47 100644
+--- a/packages/proxmark3-git/build.sh
++++ b/packages/proxmark3-git/build.sh
+@@ -2,17 +2,21 @@ TERMUX_PKG_HOMEPAGE="https://github.com/RfidResearchGroup/proxmark3"
+ TERMUX_PKG_DESCRIPTION="The Swiss Army Knife of RFID Research - RRG/Iceman repo"
+ TERMUX_PKG_LICENSE="GPL-2.0"
+ TERMUX_PKG_MAINTAINER="Marlin Sööse <marlin.soose@laro.se>"
+-TERMUX_PKG_REVISION=1
+-TERMUX_PKG_VERSION="2021.05.10-0d3c2978"
+-TERMUX_PKG_SRCURL=https://github.com/RfidResearchGroup/proxmark3/archive/0d3c2978a6516def4d722cacdb9d651b087df2a1.tar.gz
+-TERMUX_PKG_SHA256=702e50af914dbc23ad2bb41de19217dc5408f7ae7181868e005dc1052051355d
+-TERMUX_PKG_BUILD_DEPENDS="readline"
++TERMUX_PKG_REVISION=2
++TERMUX_PKG_VERSION="2021.05.11-a6712295"
++TERMUX_PKG_SRCURL="https://github.com/RfidResearchGroup/proxmark3/archive/a6712295c7ad9b78962be1d21a8eb2fe0688093d.tar.gz"
++TERMUX_PKG_SHA256="02eb06d82dddae1caad1d73e727250a7455d8f30950feb5dd9b6b391a460dc73"
++TERMUX_PKG_BUILD_DEPENDS="readline,libbz2"
+ TERMUX_PKG_BUILD_IN_SRC="true"
+ TERMUX_PKG_BLACKLISTED_ARCHES="i686, x86_64"
+ 
++termux_step_post_configure() {
++        LDLIBS="-L${TERMUX_PREFIX}/lib" INCLUDES_CLIENT="-I${TERMUX_PREFIX}/include" CFLAGS="-I${TERMUX_PREFIX}/include"
++}
++
+ termux_step_make() {
+-        LDLIBS="-L${TERMUX_PREFIX}/lib" INCLUDES_CLIENT="-I${TERMUX_PREFIX}/include/" \
+-        make client -j $TERMUX_MAKE_PROCESSES CC=$CC CXX=$CXX LD=$CXX cpu_arch=generic SKIPREVENGTEST=1 SKIPQT=1 SKIPBT=1 SKIPPTHREAD=1 SKIPGPU=1 PLATFORM=PM3GENERIC
++        TERMUX_PKG_EXTRA_MAKE_ARGS="client -j $TERMUX_MAKE_PROCESSES CC=$CC CXX=$CXX LD=$CXX cpu_arch=generic SKIPREVENGTEST=1 SKIPQT=1 SKIPBT=1 SKIPPTHREAD=1 SKIPGPU=1 PLATFORM=PM3GENERIC"
++        make $TERMUX_PKG_EXTRA_MAKE_ARGS
+ }
+ 
+ termux_step_make_install() {
+-- 
+2.30.2
+
+
+From 13b5ad616129afe45ea3438c42884172e72fb14a Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Marlin=20S=C3=B6=C3=B6se?= <marlin.soose@laro.se>
+Date: Wed, 12 May 2021 12:36:59 -0600
+Subject: [PATCH 30/71] proxmark3-git: adjust package to remove make override
+
+---
+ packages/proxmark3-git/build.sh | 4 ----
+ 1 file changed, 4 deletions(-)
+
+diff --git a/packages/proxmark3-git/build.sh b/packages/proxmark3-git/build.sh
+index 22f85bc47..71fc33af6 100644
+--- a/packages/proxmark3-git/build.sh
++++ b/packages/proxmark3-git/build.sh
+@@ -12,11 +12,7 @@ TERMUX_PKG_BLACKLISTED_ARCHES="i686, x86_64"
+ 
+ termux_step_post_configure() {
+         LDLIBS="-L${TERMUX_PREFIX}/lib" INCLUDES_CLIENT="-I${TERMUX_PREFIX}/include" CFLAGS="-I${TERMUX_PREFIX}/include"
+-}
+-
+-termux_step_make() {
+         TERMUX_PKG_EXTRA_MAKE_ARGS="client -j $TERMUX_MAKE_PROCESSES CC=$CC CXX=$CXX LD=$CXX cpu_arch=generic SKIPREVENGTEST=1 SKIPQT=1 SKIPBT=1 SKIPPTHREAD=1 SKIPGPU=1 PLATFORM=PM3GENERIC"
+-        make $TERMUX_PKG_EXTRA_MAKE_ARGS
+ }
+ 
+ termux_step_make_install() {
+-- 
+2.30.2
+
+
+From 12c5b81e8670abf87a511725afeb7c7cb436af6d Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Marlin=20S=C3=B6=C3=B6se?= <marlin.soose@laro.se>
+Date: Wed, 12 May 2021 12:41:17 -0600
+Subject: [PATCH 31/71] proxmark3-git: bump package revision
+
+---
+ packages/proxmark3-git/build.sh | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/packages/proxmark3-git/build.sh b/packages/proxmark3-git/build.sh
+index 71fc33af6..f22b2c235 100644
+--- a/packages/proxmark3-git/build.sh
++++ b/packages/proxmark3-git/build.sh
+@@ -2,7 +2,7 @@ TERMUX_PKG_HOMEPAGE="https://github.com/RfidResearchGroup/proxmark3"
+ TERMUX_PKG_DESCRIPTION="The Swiss Army Knife of RFID Research - RRG/Iceman repo"
+ TERMUX_PKG_LICENSE="GPL-2.0"
+ TERMUX_PKG_MAINTAINER="Marlin Sööse <marlin.soose@laro.se>"
+-TERMUX_PKG_REVISION=2
++TERMUX_PKG_REVISION=3
+ TERMUX_PKG_VERSION="2021.05.11-a6712295"
+ TERMUX_PKG_SRCURL="https://github.com/RfidResearchGroup/proxmark3/archive/a6712295c7ad9b78962be1d21a8eb2fe0688093d.tar.gz"
+ TERMUX_PKG_SHA256="02eb06d82dddae1caad1d73e727250a7455d8f30950feb5dd9b6b391a460dc73"
+-- 
+2.30.2
+
+
+From e62c896722c4ff6bdc21f570b971ed45ddd023bb Mon Sep 17 00:00:00 2001
+From: Henrik Grimler <henrik@grimler.se>
+Date: Sat, 15 May 2021 22:54:45 +0200
+Subject: [PATCH 32/71] workflows: re-structure upload job
+
+To try to fix job error.
+---
+ .github/workflows/packages.yml | 13 +++++++------
+ 1 file changed, 7 insertions(+), 6 deletions(-)
+
+diff --git a/.github/workflows/packages.yml b/.github/workflows/packages.yml
+index 39884de95..2217d3763 100644
+--- a/.github/workflows/packages.yml
++++ b/.github/workflows/packages.yml
+@@ -165,11 +165,12 @@ jobs:
+         # instead of one for each arch on the server.
+         archive="termux-packages-${{ github.sha }}.zip"
+         deb_archives=$(find -maxdepth 1 -name "debs-*-${{ github.sha }}.tar")
+-        if [ -n "$deb_archives" ]; then
+-          zip $archive ${deb_archives}
+-          sftp -P ${{ secrets.PORT }} ${{ secrets.USER }}@grimler.se <<EOF
+-            put $archive /debs/
+-          EOF
+-        else
++        
++        if [ -z "$deb_archives" ]; then
+           echo "No archives to upload found"
++          exit 0
+         fi
++        zip $archive ${deb_archives}
++        sftp -P ${{ secrets.PORT }} ${{ secrets.USER }}@grimler.se <<EOF
++          put $archive /debs/
++        EOF
+-- 
+2.30.2
+
+
+From 350b1b25673d62bb2d8664ca455acecdcf1fa34c Mon Sep 17 00:00:00 2001
+From: Henrik Grimler <henrik@grimler.se>
+Date: Sat, 15 May 2021 22:56:54 +0200
+Subject: [PATCH 33/71] Bump packages to re-try build
+
+---
+ packages/proxmark3-git/build.sh | 2 +-
+ packages/recode/build.sh        | 1 +
+ packages/xmake/build.sh         | 1 +
+ 3 files changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/packages/proxmark3-git/build.sh b/packages/proxmark3-git/build.sh
+index f22b2c235..84b7f7c2f 100644
+--- a/packages/proxmark3-git/build.sh
++++ b/packages/proxmark3-git/build.sh
+@@ -2,8 +2,8 @@ TERMUX_PKG_HOMEPAGE="https://github.com/RfidResearchGroup/proxmark3"
+ TERMUX_PKG_DESCRIPTION="The Swiss Army Knife of RFID Research - RRG/Iceman repo"
+ TERMUX_PKG_LICENSE="GPL-2.0"
+ TERMUX_PKG_MAINTAINER="Marlin Sööse <marlin.soose@laro.se>"
+-TERMUX_PKG_REVISION=3
+ TERMUX_PKG_VERSION="2021.05.11-a6712295"
++TERMUX_PKG_REVISION=4
+ TERMUX_PKG_SRCURL="https://github.com/RfidResearchGroup/proxmark3/archive/a6712295c7ad9b78962be1d21a8eb2fe0688093d.tar.gz"
+ TERMUX_PKG_SHA256="02eb06d82dddae1caad1d73e727250a7455d8f30950feb5dd9b6b391a460dc73"
+ TERMUX_PKG_BUILD_DEPENDS="readline,libbz2"
+diff --git a/packages/recode/build.sh b/packages/recode/build.sh
+index 7daf1e0d3..db4ac1738 100644
+--- a/packages/recode/build.sh
++++ b/packages/recode/build.sh
+@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Charset converter tool and library"
+ TERMUX_PKG_LICENSE="GPL-3.0"
+ TERMUX_PKG_MAINTAINER="Marlin Sööse <marlin.soose@laro.se>"
+ TERMUX_PKG_VERSION="3.7.8"
++TERMUX_PKG_REVISION=1
+ TERMUX_PKG_SRCURL=https://github.com/rrthomas/recode/releases/download/v${TERMUX_PKG_VERSION}/recode-${TERMUX_PKG_VERSION}.tar.gz
+ TERMUX_PKG_SHA256=4fb75cacc7b80fda7147ea02580eafd2b4493461fb75159e9a49561d3e10cfa7
+ TERMUX_PKG_DEPENDS="libiconv"
+diff --git a/packages/xmake/build.sh b/packages/xmake/build.sh
+index 03ea4b2e4..324806725 100644
+--- a/packages/xmake/build.sh
++++ b/packages/xmake/build.sh
+@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="A cross-platform build utility based on Lua"
+ TERMUX_PKG_LICENSE="GPL-2.0"
+ TERMUX_PKG_MAINTAINER="Ruki Wang @waruqi"
+ TERMUX_PKG_VERSION=2.5.4
++TERMUX_PKG_REVISION=1
+ TERMUX_PKG_SRCURL=https://github.com/xmake-io/xmake/releases/download/v${TERMUX_PKG_VERSION}/xmake-v${TERMUX_PKG_VERSION}.tar.gz
+ TERMUX_PKG_SHA256=50ce4bbb62cec7891494336b67a35f0735e22013d8407868ea72fc8f01e17b45
+ TERMUX_PKG_BUILD_IN_SRC=true
+-- 
+2.30.2
+
+
+From a618264bb3a18c7c21c9bd4c732314f2c097942c Mon Sep 17 00:00:00 2001
+From: Henrik Grimler <henrik@grimler.se>
+Date: Tue, 11 May 2021 21:18:01 +0200
+Subject: [PATCH 34/71] termux_step_handle_hostbuild: be more verbose when
+ patching
+
+---
+ scripts/build/termux_step_handle_hostbuild.sh | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/scripts/build/termux_step_handle_hostbuild.sh b/scripts/build/termux_step_handle_hostbuild.sh
+index ec2101526..cc5bebc32 100644
+--- a/scripts/build/termux_step_handle_hostbuild.sh
++++ b/scripts/build/termux_step_handle_hostbuild.sh
+@@ -5,6 +5,7 @@ termux_step_handle_hostbuild() {
+ 	cd "$TERMUX_PKG_SRCDIR"
+ 	if [ "$TERMUX_PKG_QUICK_REBUILD" = "false" ]; then
+ 		for patch in $TERMUX_PKG_BUILDER_DIR/*.patch.beforehostbuild; do
++			echo "Applying patch: $(basename $patch)"
+ 			test -f "$patch" && sed "s%\@TERMUX_PREFIX\@%${TERMUX_PREFIX}%g" "$patch" | patch --silent -p1
+ 		done
+ 	fi
+-- 
+2.30.2
+
+
+From b726aed713590351f255a9a8db460991c42c697b Mon Sep 17 00:00:00 2001
+From: Henrik Grimler <henrik@grimler.se>
+Date: Sun, 16 May 2021 11:16:18 +0200
+Subject: [PATCH 35/71] gbt: fix build
+
+---
+ packages/gbt/build.sh | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/packages/gbt/build.sh b/packages/gbt/build.sh
+index 1d79feff0..50e7ee553 100644
+--- a/packages/gbt/build.sh
++++ b/packages/gbt/build.sh
+@@ -3,7 +3,7 @@ TERMUX_PKG_DESCRIPTION="Highly configurable prompt builder for Bash and ZSH writ
+ TERMUX_PKG_LICENSE="MIT"
+ TERMUX_PKG_MAINTAINER="@termux"
+ TERMUX_PKG_VERSION=2.0.0
+-TERMUX_PKG_REVISION=2
++TERMUX_PKG_REVISION=3
+ TERMUX_PKG_SRCURL=https://github.com/jtyr/gbt/archive/v${TERMUX_PKG_VERSION}.tar.gz
+ TERMUX_PKG_SHA256=b324695dc432e8e22bc257f7a6ec576f482ec418fb9c9a8301f47bfdf7766998
+ _COMMIT=29dc3dac6c06518073a8e879d2b6ec65291ddab2
+@@ -17,6 +17,8 @@ termux_step_make_install() {
+ 	mkdir -p $GOPATH/{bin,pkg,src/github.com/jtyr}
+ 	ln -fs $TERMUX_PKG_SRCDIR $GOPATH/src/github.com/jtyr/gbt
+ 
++	go mod init gbt
++	go mod tidy
+ 	go build -ldflags="-s -w -X main.version=$TERMUX_PKG_VERSION -X main.build=${_COMMIT::6}" -o $TERMUX_PREFIX/bin/gbt github.com/jtyr/gbt/cmd/gbt
+ 
+ 	mkdir -p $TERMUX_PREFIX/{doc/gbt,share/gbt}
+-- 
+2.30.2
+
+
+From e43c00741eb25b29bd06d2c9f7a7d14f7aae2c4b Mon Sep 17 00:00:00 2001
+From: Henrik Grimler <henrik@grimler.se>
+Date: Sun, 16 May 2021 11:16:37 +0200
+Subject: [PATCH 36/71] gotty: fix build
+
+---
+ packages/gotty/build.sh | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/packages/gotty/build.sh b/packages/gotty/build.sh
+index 48eff166e..28da34bce 100644
+--- a/packages/gotty/build.sh
++++ b/packages/gotty/build.sh
+@@ -3,7 +3,7 @@ TERMUX_PKG_DESCRIPTION="Share your terminal as a web application"
+ TERMUX_PKG_LICENSE="MIT"
+ TERMUX_PKG_MAINTAINER="@termux"
+ TERMUX_PKG_VERSION=1.0.1
+-TERMUX_PKG_REVISION=5
++TERMUX_PKG_REVISION=6
+ TERMUX_PKG_SRCURL=https://github.com/yudai/gotty/archive/v$TERMUX_PKG_VERSION.tar.gz
+ TERMUX_PKG_SHA256=32695d70a79f55efdf4fba6f06f830515a2055abc58fc15e2124dff5be75695b
+ 
+@@ -15,6 +15,8 @@ termux_step_make() {
+ 	ln -sf "$TERMUX_PKG_SRCDIR" "$GOPATH"/src/github.com/yudai/gotty
+ 
+ 	cd "$GOPATH"/src/github.com/yudai/gotty
++	go mod init
++	go mod tidy
+ 	go build
+ }
+ 
+-- 
+2.30.2
+
+
+From f9cf5ddb9370357496aabaecf9dab27004fb9f45 Mon Sep 17 00:00:00 2001
+From: Henrik Grimler <henrik@grimler.se>
+Date: Sun, 16 May 2021 11:16:44 +0200
+Subject: [PATCH 37/71] rush: fix build
+
+---
+ packages/rush/build.sh | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/packages/rush/build.sh b/packages/rush/build.sh
+index f7ff9f581..1c62e800d 100644
+--- a/packages/rush/build.sh
++++ b/packages/rush/build.sh
+@@ -3,7 +3,7 @@ TERMUX_PKG_DESCRIPTION="A cross-platform command-line tool for executing jobs in
+ TERMUX_PKG_LICENSE="MIT"
+ TERMUX_PKG_MAINTAINER="Krishna kanhaiya @kcubeterm"
+ TERMUX_PKG_VERSION=0.4.2
+-TERMUX_PKG_REVISION=1
++TERMUX_PKG_REVISION=2
+ TERMUX_PKG_SRCURL=https://github.com/shenwei356/rush/archive/v${TERMUX_PKG_VERSION}.tar.gz
+ TERMUX_PKG_SHA256=801b17e279406c1649b401a2214148d344f673d0a1c9eed1b417655c1fefd114
+ 
+@@ -16,6 +16,7 @@ termux_step_make_install() {
+ 	mkdir -p "${GOPATH}/src/github.com/shenwei356"
+ 	cp -a "${TERMUX_PKG_SRCDIR}" "${GOPATH}/src/github.com/shenwei356/rush"
+ 	cd "${GOPATH}/src/github.com/shenwei356/rush"
++	go mod init rush
+ 	go get -d -v
+ 	go install
+ 
+-- 
+2.30.2
+
+
+From eb7bdf95acf1ce683aa4a2005423f174fd6e71eb Mon Sep 17 00:00:00 2001
+From: Henrik Grimler <henrik@grimler.se>
+Date: Sun, 16 May 2021 11:16:50 +0200
+Subject: [PATCH 38/71] shell2http: fix build
+
+---
+ packages/shell2http/build.sh | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/packages/shell2http/build.sh b/packages/shell2http/build.sh
+index b4cfd0d98..ca5b3b878 100644
+--- a/packages/shell2http/build.sh
++++ b/packages/shell2http/build.sh
+@@ -3,7 +3,7 @@ TERMUX_PKG_DESCRIPTION="Executing shell commands via HTTP server"
+ TERMUX_PKG_LICENSE="MIT"
+ TERMUX_PKG_MAINTAINER="Krishna kanhaiya @kcubeterm"
+ TERMUX_PKG_VERSION=1.13
+-TERMUX_PKG_REVISION=1
++TERMUX_PKG_REVISION=2
+ TERMUX_PKG_SRCURL=https://github.com/msoap/shell2http/archive/${TERMUX_PKG_VERSION}.tar.gz
+ TERMUX_PKG_SHA256=6094762a3e54efddcbc361d80ef281624d2647f17f6b0c787cab713626d861e3
+ 
+@@ -16,6 +16,7 @@ termux_step_make() {
+ 	mkdir -p "${GOPATH}/src/github.com/msoap/"
+ 	cp -a "${TERMUX_PKG_SRCDIR}" "${GOPATH}/src/github.com/msoap/shell2http"
+ 	cd "${GOPATH}/src/github.com/msoap/shell2http"
++	go mod init
+ 	go get -d -v
+ 	go build
+ }
+-- 
+2.30.2
+
+
+From d081eb279e9b55290e8f81900113341b57f64aac Mon Sep 17 00:00:00 2001
+From: Henrik Grimler <henrik@grimler.se>
+Date: Tue, 11 May 2021 21:55:05 +0200
+Subject: [PATCH 39/71] runit: use git.sr.ht/~grimler/runit for source
+
+Runit there has been converted to use autoconf and automake, and some
+additional patches from other distros has been added.
+
+Not a lot of functional changes for now.  Package size has been
+decreased by ~80 % by moving common code to a shared library.
+---
+ packages/runit/Makefile.patch | 14 --------------
+ packages/runit/build.sh       | 17 +++++++----------
+ packages/runit/compiler.patch | 10 ----------
+ packages/runit/linker.patch   |  7 -------
+ 4 files changed, 7 insertions(+), 41 deletions(-)
+ delete mode 100644 packages/runit/Makefile.patch
+ delete mode 100644 packages/runit/compiler.patch
+ delete mode 100644 packages/runit/linker.patch
+
+diff --git a/packages/runit/Makefile.patch b/packages/runit/Makefile.patch
+deleted file mode 100644
+index ce0ea8b31..000000000
+--- a/packages/runit/Makefile.patch
++++ /dev/null
+@@ -1,14 +0,0 @@
+---- ../src.orig/runit-2.1.2/src/Makefile	2020-06-10 13:15:17.927086588 +0200
+-+++ ./runit-2.1.2/src/Makefile	2020-06-10 13:39:52.277171576 +0200
+-@@ -232,9 +232,8 @@
+- hassgprm.h: choose compile hassgprm.h1 hassgprm.h2 load trysgprm.c
+- 	./choose cl trysgprm hassgprm.h1 hassgprm.h2 > hassgprm.h
+- 
+--hasshsgr.h: chkshsgr choose compile hasshsgr.h1 hasshsgr.h2 load \
+--tryshsgr.c warn-shsgr
+--	./chkshsgr || ( cat warn-shsgr; exit 1 )
+-+hasshsgr.h: choose compile hasshsgr.h1 hasshsgr.h2 load \
+-+tryshsgr.c
+- 	./choose clr tryshsgr hasshsgr.h1 hasshsgr.h2 > hasshsgr.h
+- 
+- haswaitp.h: choose compile haswaitp.h1 haswaitp.h2 load trywaitp.c
+diff --git a/packages/runit/build.sh b/packages/runit/build.sh
+index 3ba565c82..d209cd694 100644
+--- a/packages/runit/build.sh
++++ b/packages/runit/build.sh
+@@ -1,17 +1,14 @@
+ TERMUX_PKG_HOMEPAGE=http://smarden.org/runit
+ TERMUX_PKG_DESCRIPTION="Tools to provide service supervision and to manage services"
+ TERMUX_PKG_LICENSE="BSD 3-Clause"
+-TERMUX_PKG_LICENSE_FILE="runit-2.1.2/package/COPYING"
+ TERMUX_PKG_MAINTAINER="Henrik Grimler @Grimler91"
+ TERMUX_PKG_VERSION=2.1.2
+-TERMUX_PKG_REVISION=1
+-TERMUX_PKG_SRCURL=http://smarden.org/runit/runit-${TERMUX_PKG_VERSION}.tar.gz
+-TERMUX_PKG_SHA256=6fd0160cb0cf1207de4e66754b6d39750cff14bb0aa66ab49490992c0c47ba18
+-TERMUX_PKG_EXTRA_MAKE_ARGS="-C runit-${TERMUX_PKG_VERSION}/src"
+-TERMUX_PKG_BUILD_IN_SRC=true
++TERMUX_PKG_REVISION=2
++_COMMIT=d24ac1333e34a73c5349030aef1c64c5cc1318cc
++TERMUX_PKG_SRCURL=https://git.sr.ht/~grimler/runit/archive/$_COMMIT.tar.gz
++TERMUX_PKG_SHA256=f6d14f4107ba106bbfef15fd9f71ea3b70c1154169fc7efadd868cceb376b35f
++TERMUX_PKG_RM_AFTER_INSTALL="bin/runit-init share/man/man8/runit-init.8"
+ 
+-termux_step_make_install() {
+-	install -Dm755 runit-${TERMUX_PKG_VERSION}/src/{chpst,runit,runsv,runsvchdir,runsvdir,sv,svlogd,utmpset} $TERMUX_PREFIX/bin/
+-	mkdir -p $TERMUX_PREFIX/share/man/man8
+-	install -Dm644 runit-${TERMUX_PKG_VERSION}/man/{chpst,runit,runsv,runsvchdir,runsvdir,sv,svlogd,utmpset}.8 $TERMUX_PREFIX/share/man/man8/
++termux_step_pre_configure() {
++	autoreconf -vfi
+ }
+diff --git a/packages/runit/compiler.patch b/packages/runit/compiler.patch
+deleted file mode 100644
+index 3d41d39db..000000000
+--- a/packages/runit/compiler.patch
++++ /dev/null
+@@ -1,10 +0,0 @@
+---- ../src.orig/runit-2.1.2/src/conf-cc	2020-06-10 13:15:17.927086588 +0200
+-+++ ./runit-2.1.2/src/conf-cc	2020-06-10 13:27:28.210306192 +0200
+-@@ -1,5 +1,5 @@
+--gcc -O2 -Wall
+-+${CC} ${CPPFLAGS} ${CFLAGS}
+- 
+--gcc -O2 -Wimplicit -Wunused -Wcomment -Wchar-subscripts -Wuninitialized -Wshadow -Wcast-qual -Wcast-align -Wwrite-strings
+-+${CC} -Wimplicit -Wunused -Wcomment -Wchar-subscripts -Wuninitialized -Wshadow -Wcast-qual -Wcast-align -Wwrite-strings ${CPPFLAGS} ${CFLAGS}
+- 
+- This will be used to compile .c files.
+diff --git a/packages/runit/linker.patch b/packages/runit/linker.patch
+deleted file mode 100644
+index 3bf142f1c..000000000
+--- a/packages/runit/linker.patch
++++ /dev/null
+@@ -1,7 +0,0 @@
+---- ../src.orig/runit-2.1.2/src/conf-ld	2020-06-10 13:15:17.927086588 +0200
+-+++ ./runit-2.1.2/src/conf-ld	2020-06-10 13:33:42.302118866 +0200
+-@@ -1,3 +1,3 @@
+--gcc -s
+-+${CC} ${LDFLAGS} -s
+- 
+- This will be used to link .o files into an executable.
+-- 
+2.30.2
+
+
+From b3b5a3f35f6ba1c462ccc6e8a310e0d9f437028e Mon Sep 17 00:00:00 2001
+From: Henrik Grimler <henrik@grimler.se>
+Date: Sun, 16 May 2021 18:55:31 +0200
+Subject: [PATCH 40/71] mv checks from termux_step_create_datatar to
+ termux_step_massage
+
+By moving the checks we can make the function more general, and
+thereby re-use it for creating subpackages and potentially hostbuild
+tools packages.
+
+tests: building libandroid-support and build-essential.
+---
+ build-package.sh                            |  2 +-
+ scripts/build/termux_step_create_datatar.sh | 13 -------------
+ scripts/build/termux_step_massage.sh        | 13 +++++++++++++
+ 3 files changed, 14 insertions(+), 14 deletions(-)
+
+diff --git a/build-package.sh b/build-package.sh
+index 0f95597d1..6773ea023 100755
+--- a/build-package.sh
++++ b/build-package.sh
+@@ -383,10 +383,10 @@ while (($# > 0)); do
+ 		termux_step_install_license
+ 		cd "$TERMUX_PKG_MASSAGEDIR"
+ 		termux_step_extract_into_massagedir
+-		cd "$TERMUX_PKG_MASSAGEDIR"
+ 		termux_step_massage
+ 		cd "$TERMUX_PKG_MASSAGEDIR/$TERMUX_PREFIX"
+ 		termux_step_post_massage
++		cd "$TERMUX_PKG_MASSAGEDIR"
+ 		termux_step_create_datatar
+ 		termux_step_create_debfile
+ 		termux_step_finish_build
+diff --git a/scripts/build/termux_step_create_datatar.sh b/scripts/build/termux_step_create_datatar.sh
+index 43206f72d..2f0386087 100644
+--- a/scripts/build/termux_step_create_datatar.sh
++++ b/scripts/build/termux_step_create_datatar.sh
+@@ -1,20 +1,7 @@
+ termux_step_create_datatar() {
+-	# Create data tarball containing files to package:
+-	cd "$TERMUX_PKG_MASSAGEDIR"
+-
+-	local HARDLINKS
+-	HARDLINKS="$(find . -type f -links +1)"
+-	if [ -n "$HARDLINKS" ]; then
+-		termux_error_exit "Package contains hard links: $HARDLINKS"
+-	fi
+-
+ 	if [ "$TERMUX_PKG_METAPACKAGE" = "true" ]; then
+ 		# Metapackage doesn't have data inside.
+ 		rm -rf data
+-	else
+-		if [ "$(find . -type f)" = "" ]; then
+-			termux_error_exit "No files in package"
+-		fi
+ 	fi
+ 
+ 	tar -cJf "$TERMUX_PKG_PACKAGEDIR/data.tar.xz" -H gnu .
+diff --git a/scripts/build/termux_step_massage.sh b/scripts/build/termux_step_massage.sh
+index a5dbf7656..787310311 100644
+--- a/scripts/build/termux_step_massage.sh
++++ b/scripts/build/termux_step_massage.sh
+@@ -66,6 +66,19 @@ termux_step_massage() {
+ 		done < <(find share/man -type l ! -iname \*.gz -print0)
+ 	fi
+ 
++	# Check so files were actually installed. Exclude
++	# share/doc/$TERMUX_PKG_NAME/ as a license file is always
++	# installed there.
++	if [ "$(find . -type f -not -path "./share/doc/$TERMUX_PKG_NAME/*")" = "" ]; then
++		termux_error_exit "No files in package. Maybe you need to run autoreconf -fi before configuring?"
++	fi
++
++	local HARDLINKS
++	HARDLINKS="$(find . -type f -links +1)"
++	if [ -n "$HARDLINKS" ]; then
++		termux_error_exit "Package contains hard links: $HARDLINKS"
++	fi
++
+ 	termux_create_subpackages
+ 
+ 	# .. remove empty directories (NOTE: keep this last):
+-- 
+2.30.2
+
+
+From 08bcc88e4bae291017e453f0243d10d2e64e48b7 Mon Sep 17 00:00:00 2001
+From: Henrik Grimler <henrik@grimler.se>
+Date: Sun, 16 May 2021 22:07:01 +0200
+Subject: [PATCH 41/71] ncurses: update rxvt-unicode and kitty sources
+
+---
+ packages/ncurses/build.sh | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/packages/ncurses/build.sh b/packages/ncurses/build.sh
+index a912d195e..61f0cadfc 100644
+--- a/packages/ncurses/build.sh
++++ b/packages/ncurses/build.sh
+@@ -3,18 +3,18 @@ TERMUX_PKG_DESCRIPTION="Library for text-based user interfaces in a terminal-ind
+ TERMUX_PKG_LICENSE="MIT"
+ TERMUX_PKG_MAINTAINER="@termux"
+ TERMUX_PKG_VERSION=(6.2.20200725
+-		    9.22
++		    9.26
+ 		    15
+-		    0.19.3)
+-TERMUX_PKG_REVISION=2
++		    0.20.3)
++TERMUX_PKG_REVISION=3
+ TERMUX_PKG_SRCURL=(https://github.com/termux/distfiles/releases/download/2021.01.04/ncurses-${TERMUX_PKG_VERSION:0:3}-${TERMUX_PKG_VERSION:4}.tgz
+ 		   https://fossies.org/linux/misc/rxvt-unicode-${TERMUX_PKG_VERSION[1]}.tar.bz2
+ 		   https://github.com/thestinger/termite/archive/v${TERMUX_PKG_VERSION[2]}.tar.gz
+ 		   https://github.com/kovidgoyal/kitty/archive/v${TERMUX_PKG_VERSION[3]}.tar.gz)
+ TERMUX_PKG_SHA256=(05da39f964643b595bfdb874e52eabfd407c02d8fbed35602040735f4af9b09d
+-		   e94628e9bcfa0adb1115d83649f898d6edb4baced44f5d5b769c2eeb8b95addd
++		   643116b9a25d29ad29f4890131796d42e6d2d21312282a613ef66c80c5b8c98b
+ 		   3ae9ebef28aad081c6c11351f086776e2fd9547563b2f900732b41c376bec05a
+-		   28fc5de9b8934174801aa7d95c5a6f4c878a7e93eea15cdf06d9c982e1cd2fec)
++		   7048cc0e6c17fe5ef3fbac18125dbd5f05d6c628838f004b8e2ad3546fb77d85)
+ # ncurses-utils: tset/reset/clear are moved to package 'ncurses'.
+ TERMUX_PKG_BREAKS="ncurses-dev, ncurses-utils (<< 6.1.20190511-4)"
+ TERMUX_PKG_REPLACES="ncurses-dev, ncurses-utils (<< 6.1.20190511-4)"
+-- 
+2.30.2
+
+
+From d791c66d11e3e338a2aa2920e557f20ee70c599f Mon Sep 17 00:00:00 2001
+From: Noah <33094578+coolreader18@users.noreply.github.com>
+Date: Sat, 15 May 2021 22:29:07 -0500
+Subject: [PATCH 43/71] rust: update to 1.52.1
+
+---
+ packages/rust/build.sh | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
+
+diff --git a/packages/rust/build.sh b/packages/rust/build.sh
+index 7f678c664..b1c88486e 100644
+--- a/packages/rust/build.sh
++++ b/packages/rust/build.sh
+@@ -2,10 +2,9 @@ TERMUX_PKG_HOMEPAGE=https://www.rust-lang.org/
+ TERMUX_PKG_DESCRIPTION="Systems programming language focused on safety, speed and concurrency"
+ TERMUX_PKG_LICENSE="MIT"
+ TERMUX_PKG_MAINTAINER="Kevin Cotugno @kcotugno"
+-TERMUX_PKG_VERSION=1.51.0
+-TERMUX_PKG_REVISION=3
++TERMUX_PKG_VERSION=1.52.1
+ TERMUX_PKG_SRCURL=https://static.rust-lang.org/dist/rustc-$TERMUX_PKG_VERSION-src.tar.xz
+-TERMUX_PKG_SHA256=92c68a91fca33cbafb83442cde722d010cc387dc1ee8a2680e2fb33a575821a1
++TERMUX_PKG_SHA256=521bbaebce262264e44acb164d327cba27acf6f08bd7de672d8d1e16e7ed959e
+ TERMUX_PKG_DEPENDS="libc++, clang, openssl, lld, zlib, libllvm"
+ TERMUX_PKG_RM_AFTER_INSTALL="bin/llvm-dwp"
+ 
+@@ -20,7 +19,7 @@ termux_step_configure() {
+ 	# like 30 to 40 + minutes ... so lets get it right
+ 
+ 	# upstream only tests build ver one version behind $TERMUX_PKG_VERSION
+-	local BOOTSTRAP_VERSION=1.50.0
++	local BOOTSTRAP_VERSION=1.51.0
+ 	rustup install $BOOTSTRAP_VERSION
+ 	rustup default $BOOTSTRAP_VERSION-x86_64-unknown-linux-gnu
+ 	export PATH=$HOME/.rustup/toolchains/$BOOTSTRAP_VERSION-x86_64-unknown-linux-gnu/bin:$PATH
+-- 
+2.30.2
+
+
+From 48d259bf782e4403f7c70431b87f2f082b320f52 Mon Sep 17 00:00:00 2001
+From: Noah <33094578+coolreader18@users.noreply.github.com>
+Date: Sun, 16 May 2021 10:58:05 -0500
+Subject: [PATCH 44/71] Remove llvm-12 patch
+
+---
+ packages/rust/llvm-12.patch | 911 ------------------------------------
+ 1 file changed, 911 deletions(-)
+ delete mode 100644 packages/rust/llvm-12.patch
+
+diff --git a/packages/rust/llvm-12.patch b/packages/rust/llvm-12.patch
+deleted file mode 100644
+index 77bdcce48..000000000
+--- a/packages/rust/llvm-12.patch
++++ /dev/null
+@@ -1,911 +0,0 @@
+-From 55f345f32505c2095966a5dc46c4ae3290dbf7a1
+-From: Nikita Popov <nikita.ppv@gmail.com>
+-Date: Tue, 3 Nov 2020 22:47:16 +0100
+-Subject: [PATCH] Support LLVM 12 in rustc
+-
+----
+- compiler/rustc_codegen_llvm/src/abi.rs        |  17 ++-
+- compiler/rustc_codegen_llvm/src/context.rs    |   7 ++
+- compiler/rustc_codegen_llvm/src/llvm/ffi.rs   |   4 +
+- compiler/rustc_codegen_ssa/src/common.rs      |   1 +
+- .../rustc_llvm/llvm-wrapper/PassWrapper.cpp   | 119 ++++++++++++++----
+- .../rustc_llvm/llvm-wrapper/RustWrapper.cpp   |  53 +++++++-
+- .../src/spec/powerpc64_unknown_linux_gnu.rs   |   2 +-
+- .../src/spec/powerpc64_unknown_linux_musl.rs  |   2 +-
+- .../src/spec/powerpc64_wrs_vxworks.rs         |   2 +-
+- .../src/spec/powerpc64le_unknown_linux_gnu.rs |   2 +-
+- .../spec/powerpc64le_unknown_linux_musl.rs    |   2 +-
+- src/test/assembly/asm/riscv-types.rs          |  29 ++---
+- src/test/codegen/function-arguments.rs        |   3 +-
+- src/test/codegen/packed.rs                    |   4 +-
+- .../codegen/repr-transparent-aggregates-1.rs  |  18 +--
+- .../codegen/repr-transparent-aggregates-2.rs  |  18 +--
+- .../codegen/repr-transparent-aggregates-3.rs  |  18 +--
+- .../run-make-fulldeps/split-dwarf/Makefile    |   2 +-
+- 18 files changed, 226 insertions(+), 77 deletions(-)
+-
+-diff --git a/compiler/rustc_codegen_llvm/src/abi.rs b/compiler/rustc_codegen_llvm/src/abi.rs
+-index d714ff1fe9b4a..d9393ffe534ac 100644
+---- a/compiler/rustc_codegen_llvm/src/abi.rs
+-+++ b/compiler/rustc_codegen_llvm/src/abi.rs
+-@@ -430,7 +430,13 @@ impl<'tcx> FnAbiLlvmExt<'tcx> for FnAbi<'tcx, Ty<'tcx>> {
+-             PassMode::Indirect { ref attrs, extra_attrs: _, on_stack } => {
+-                 assert!(!on_stack);
+-                 let i = apply(attrs);
+--                llvm::Attribute::StructRet.apply_llfn(llvm::AttributePlace::Argument(i), llfn);
+-+                unsafe {
+-+                    llvm::LLVMRustAddStructRetAttr(
+-+                        llfn,
+-+                        llvm::AttributePlace::Argument(i).as_uint(),
+-+                        self.ret.layout.llvm_type(cx),
+-+                    );
+-+                }
+-             }
+-             _ => {}
+-         }
+-@@ -486,8 +492,13 @@ impl<'tcx> FnAbiLlvmExt<'tcx> for FnAbi<'tcx, Ty<'tcx>> {
+-             PassMode::Indirect { ref attrs, extra_attrs: _, on_stack } => {
+-                 assert!(!on_stack);
+-                 let i = apply(attrs);
+--                llvm::Attribute::StructRet
+--                    .apply_callsite(llvm::AttributePlace::Argument(i), callsite);
+-+                unsafe {
+-+                    llvm::LLVMRustAddStructRetCallSiteAttr(
+-+                        callsite,
+-+                        llvm::AttributePlace::Argument(i).as_uint(),
+-+                        self.ret.layout.llvm_type(bx),
+-+                    );
+-+                }
+-             }
+-             _ => {}
+-         }
+-diff --git a/compiler/rustc_codegen_llvm/src/context.rs b/compiler/rustc_codegen_llvm/src/context.rs
+-index 3ddc742420202..9f6a2ae3ca1b7 100644
+---- a/compiler/rustc_codegen_llvm/src/context.rs
+-+++ b/compiler/rustc_codegen_llvm/src/context.rs
+-@@ -104,6 +104,10 @@ fn strip_x86_address_spaces(data_layout: String) -> String {
+-     data_layout.replace("-p270:32:32-p271:32:32-p272:64:64-", "-")
+- }
+- 
+-+fn strip_powerpc64_vectors(data_layout: String) -> String {
+-+    data_layout.replace("-v256:256:256-v512:512:512", "")
+-+}
+-+
+- pub unsafe fn create_module(
+-     tcx: TyCtxt<'_>,
+-     llcx: &'ll llvm::Context,
+-@@ -119,6 +123,9 @@ pub unsafe fn create_module(
+-     {
+-         target_data_layout = strip_x86_address_spaces(target_data_layout);
+-     }
+-+    if llvm_util::get_version() < (12, 0, 0) && sess.target.arch == "powerpc64" {
+-+        target_data_layout = strip_powerpc64_vectors(target_data_layout);
+-+    }
+- 
+-     // Ensure the data-layout values hardcoded remain the defaults.
+-     if sess.target.is_builtin {
+-diff --git a/compiler/rustc_codegen_llvm/src/llvm/ffi.rs b/compiler/rustc_codegen_llvm/src/llvm/ffi.rs
+-index 8c1740d8f25f0..9eac7ad17b046 100644
+---- a/compiler/rustc_codegen_llvm/src/llvm/ffi.rs
+-+++ b/compiler/rustc_codegen_llvm/src/llvm/ffi.rs
+-@@ -239,6 +239,7 @@ pub enum TypeKind {
+-     Token = 16,
+-     ScalableVector = 17,
+-     BFloat = 18,
+-+    X86_AMX = 19,
+- }
+- 
+- impl TypeKind {
+-@@ -263,6 +264,7 @@ impl TypeKind {
+-             TypeKind::Token => rustc_codegen_ssa::common::TypeKind::Token,
+-             TypeKind::ScalableVector => rustc_codegen_ssa::common::TypeKind::ScalableVector,
+-             TypeKind::BFloat => rustc_codegen_ssa::common::TypeKind::BFloat,
+-+            TypeKind::X86_AMX => rustc_codegen_ssa::common::TypeKind::X86_AMX,
+-         }
+-     }
+- }
+-@@ -1073,6 +1075,7 @@ extern "C" {
+-     pub fn LLVMRustAddDereferenceableAttr(Fn: &Value, index: c_uint, bytes: u64);
+-     pub fn LLVMRustAddDereferenceableOrNullAttr(Fn: &Value, index: c_uint, bytes: u64);
+-     pub fn LLVMRustAddByValAttr(Fn: &Value, index: c_uint, ty: &Type);
+-+    pub fn LLVMRustAddStructRetAttr(Fn: &Value, index: c_uint, ty: &Type);
+-     pub fn LLVMRustAddFunctionAttribute(Fn: &Value, index: c_uint, attr: Attribute);
+-     pub fn LLVMRustAddFunctionAttrStringValue(
+-         Fn: &Value,
+-@@ -1108,6 +1111,7 @@ extern "C" {
+-     pub fn LLVMRustAddDereferenceableCallSiteAttr(Instr: &Value, index: c_uint, bytes: u64);
+-     pub fn LLVMRustAddDereferenceableOrNullCallSiteAttr(Instr: &Value, index: c_uint, bytes: u64);
+-     pub fn LLVMRustAddByValCallSiteAttr(Instr: &Value, index: c_uint, ty: &Type);
+-+    pub fn LLVMRustAddStructRetCallSiteAttr(Instr: &Value, index: c_uint, ty: &Type);
+- 
+-     // Operations on load/store instructions (only)
+-     pub fn LLVMSetVolatile(MemoryAccessInst: &Value, volatile: Bool);
+-diff --git a/compiler/rustc_codegen_ssa/src/common.rs b/compiler/rustc_codegen_ssa/src/common.rs
+-index 780b1d2cd9433..afd83bfcb5692 100644
+---- a/compiler/rustc_codegen_ssa/src/common.rs
+-+++ b/compiler/rustc_codegen_ssa/src/common.rs
+-@@ -95,6 +95,7 @@ pub enum TypeKind {
+-     Token,
+-     ScalableVector,
+-     BFloat,
+-+    X86_AMX,
+- }
+- 
+- // FIXME(mw): Anything that is produced via DepGraph::with_task() must implement
+-diff --git a/compiler/rustc_llvm/llvm-wrapper/PassWrapper.cpp b/compiler/rustc_llvm/llvm-wrapper/PassWrapper.cpp
+-index 5263d5dcf3e8f..79babd27a304f 100644
+---- a/compiler/rustc_llvm/llvm-wrapper/PassWrapper.cpp
+-+++ b/compiler/rustc_llvm/llvm-wrapper/PassWrapper.cpp
+-@@ -5,6 +5,7 @@
+- 
+- #include "LLVMWrapper.h"
+- 
+-+#include "llvm/Analysis/AliasAnalysis.h"
+- #include "llvm/Analysis/TargetLibraryInfo.h"
+- #include "llvm/Analysis/TargetTransformInfo.h"
+- #include "llvm/CodeGen/TargetSubtargetInfo.h"
+-@@ -683,6 +684,25 @@ void LLVMSelfProfileInitializeCallbacks(
+-     PassInstrumentationCallbacks& PIC, void* LlvmSelfProfiler,
+-     LLVMRustSelfProfileBeforePassCallback BeforePassCallback,
+-     LLVMRustSelfProfileAfterPassCallback AfterPassCallback) {
+-+#if LLVM_VERSION_GE(12, 0)
+-+  PIC.registerBeforeNonSkippedPassCallback([LlvmSelfProfiler, BeforePassCallback](
+-+                                           StringRef Pass, llvm::Any Ir) {
+-+    std::string PassName = Pass.str();
+-+    std::string IrName = LLVMRustwrappedIrGetName(Ir);
+-+    BeforePassCallback(LlvmSelfProfiler, PassName.c_str(), IrName.c_str());
+-+  });
+-+
+-+  PIC.registerAfterPassCallback(
+-+      [LlvmSelfProfiler, AfterPassCallback](StringRef Pass, llvm::Any IR,
+-+                                            const PreservedAnalyses &Preserved) {
+-+        AfterPassCallback(LlvmSelfProfiler);
+-+      });
+-+
+-+  PIC.registerAfterPassInvalidatedCallback(
+-+      [LlvmSelfProfiler, AfterPassCallback](StringRef Pass, const PreservedAnalyses &Preserved) {
+-+        AfterPassCallback(LlvmSelfProfiler);
+-+      });
+-+#else
+-   PIC.registerBeforePassCallback([LlvmSelfProfiler, BeforePassCallback](
+-                                      StringRef Pass, llvm::Any Ir) {
+-     std::string PassName = Pass.str();
+-@@ -700,6 +720,7 @@ void LLVMSelfProfileInitializeCallbacks(
+-       [LlvmSelfProfiler, AfterPassCallback](StringRef Pass) {
+-         AfterPassCallback(LlvmSelfProfiler);
+-       });
+-+#endif
+- 
+-   PIC.registerBeforeAnalysisCallback([LlvmSelfProfiler, BeforePassCallback](
+-                                          StringRef Pass, llvm::Any Ir) {
+-@@ -760,8 +781,15 @@ LLVMRustOptimizeWithNewPassManager(
+-   PTO.LoopVectorization = LoopVectorize;
+-   PTO.SLPVectorization = SLPVectorize;
+- 
+-+  // FIXME: We may want to expose this as an option.
+-+  bool DebugPassManager = false;
+-+
+-   PassInstrumentationCallbacks PIC;
+-+#if LLVM_VERSION_GE(12, 0)
+-+  StandardInstrumentations SI(DebugPassManager);
+-+#else
+-   StandardInstrumentations SI;
+-+#endif
+-   SI.registerCallbacks(PIC);
+- 
+-   if (LlvmSelfProfiler){
+-@@ -777,10 +805,12 @@ LLVMRustOptimizeWithNewPassManager(
+-     PGOOpt = PGOOptions(PGOUsePath, "", "", PGOOptions::IRUse);
+-   }
+- 
+-+#if LLVM_VERSION_GE(12, 0)
+-+  PassBuilder PB(DebugPassManager, TM, PTO, PGOOpt, &PIC);
+-+#else
+-   PassBuilder PB(TM, PTO, PGOOpt, &PIC);
+-+#endif
+- 
+--  // FIXME: We may want to expose this as an option.
+--  bool DebugPassManager = false;
+-   LoopAnalysisManager LAM(DebugPassManager);
+-   FunctionAnalysisManager FAM(DebugPassManager);
+-   CGSCCAnalysisManager CGAM(DebugPassManager);
+-@@ -802,7 +832,8 @@ LLVMRustOptimizeWithNewPassManager(
+- 
+-   // We manually collect pipeline callbacks so we can apply them at O0, where the
+-   // PassBuilder does not create a pipeline.
+--  std::vector<std::function<void(ModulePassManager &)>> PipelineStartEPCallbacks;
+-+  std::vector<std::function<void(ModulePassManager &, PassBuilder::OptimizationLevel)>>
+-+      PipelineStartEPCallbacks;
+- #if LLVM_VERSION_GE(11, 0)
+-   std::vector<std::function<void(ModulePassManager &, PassBuilder::OptimizationLevel)>>
+-       OptimizerLastEPCallbacks;
+-@@ -812,9 +843,11 @@ LLVMRustOptimizeWithNewPassManager(
+- #endif
+- 
+-   if (VerifyIR) {
+--    PipelineStartEPCallbacks.push_back([VerifyIR](ModulePassManager &MPM) {
+-+    PipelineStartEPCallbacks.push_back(
+-+      [VerifyIR](ModulePassManager &MPM, PassBuilder::OptimizationLevel Level) {
+-         MPM.addPass(VerifierPass());
+--    });
+-+      }
+-+    );
+-   }
+- 
+-   if (SanitizerOptions) {
+-@@ -832,9 +865,11 @@ LLVMRustOptimizeWithNewPassManager(
+-       );
+- #else
+- #if LLVM_VERSION_GE(10, 0)
+--      PipelineStartEPCallbacks.push_back([Options](ModulePassManager &MPM) {
+--        MPM.addPass(MemorySanitizerPass(Options));
+--      });
+-+      PipelineStartEPCallbacks.push_back(
+-+        [Options](ModulePassManager &MPM, PassBuilder::OptimizationLevel Level) {
+-+          MPM.addPass(MemorySanitizerPass(Options));
+-+        }
+-+      );
+- #endif
+-       OptimizerLastEPCallbacks.push_back(
+-         [Options](FunctionPassManager &FPM, PassBuilder::OptimizationLevel Level) {
+-@@ -854,9 +889,11 @@ LLVMRustOptimizeWithNewPassManager(
+-       );
+- #else
+- #if LLVM_VERSION_GE(10, 0)
+--      PipelineStartEPCallbacks.push_back([](ModulePassManager &MPM) {
+--        MPM.addPass(ThreadSanitizerPass());
+--      });
+-+      PipelineStartEPCallbacks.push_back(
+-+        [](ModulePassManager &MPM, PassBuilder::OptimizationLevel Level) {
+-+          MPM.addPass(ThreadSanitizerPass());
+-+        }
+-+      );
+- #endif
+-       OptimizerLastEPCallbacks.push_back(
+-         [](FunctionPassManager &FPM, PassBuilder::OptimizationLevel Level) {
+-@@ -879,9 +916,11 @@ LLVMRustOptimizeWithNewPassManager(
+-         }
+-       );
+- #else
+--      PipelineStartEPCallbacks.push_back([&](ModulePassManager &MPM) {
+--        MPM.addPass(RequireAnalysisPass<ASanGlobalsMetadataAnalysis, Module>());
+--      });
+-+      PipelineStartEPCallbacks.push_back(
+-+        [&](ModulePassManager &MPM, PassBuilder::OptimizationLevel Level) {
+-+          MPM.addPass(RequireAnalysisPass<ASanGlobalsMetadataAnalysis, Module>());
+-+        }
+-+      );
+-       OptimizerLastEPCallbacks.push_back(
+-         [SanitizerOptions](FunctionPassManager &FPM, PassBuilder::OptimizationLevel Level) {
+-           FPM.addPass(AddressSanitizerPass(
+-@@ -890,7 +929,7 @@ LLVMRustOptimizeWithNewPassManager(
+-         }
+-       );
+-       PipelineStartEPCallbacks.push_back(
+--        [SanitizerOptions](ModulePassManager &MPM) {
+-+        [SanitizerOptions](ModulePassManager &MPM, PassBuilder::OptimizationLevel Level) {
+-           MPM.addPass(ModuleAddressSanitizerPass(
+-               /*CompileKernel=*/false, SanitizerOptions->SanitizeAddressRecover));
+-         }
+-@@ -917,35 +956,53 @@ LLVMRustOptimizeWithNewPassManager(
+-   }
+- 
+-   ModulePassManager MPM(DebugPassManager);
+-+  bool NeedThinLTOBufferPasses = UseThinLTOBuffers;
+-   if (!NoPrepopulatePasses) {
+-     if (OptLevel == PassBuilder::OptimizationLevel::O0) {
+-+#if LLVM_VERSION_GE(12, 0)
+-       for (const auto &C : PipelineStartEPCallbacks)
+--        C(MPM);
+-+        PB.registerPipelineStartEPCallback(C);
+-+      for (const auto &C : OptimizerLastEPCallbacks)
+-+        PB.registerOptimizerLastEPCallback(C);
+- 
+--#if LLVM_VERSION_GE(11, 0)
+-+      // Pass false as we manually schedule ThinLTOBufferPasses below.
+-+      MPM = PB.buildO0DefaultPipeline(OptLevel, /* PreLinkLTO */ false);
+-+#else
+-+      for (const auto &C : PipelineStartEPCallbacks)
+-+        C(MPM, OptLevel);
+-+
+-+# if LLVM_VERSION_GE(11, 0)
+-       for (const auto &C : OptimizerLastEPCallbacks)
+-         C(MPM, OptLevel);
+--#else
+-+# else
+-       if (!OptimizerLastEPCallbacks.empty()) {
+-         FunctionPassManager FPM(DebugPassManager);
+-         for (const auto &C : OptimizerLastEPCallbacks)
+-           C(FPM, OptLevel);
+-         MPM.addPass(createModuleToFunctionPassAdaptor(std::move(FPM)));
+-       }
+--#endif
+-+# endif
+- 
+-       MPM.addPass(AlwaysInlinerPass(EmitLifetimeMarkers));
+- 
+--#if LLVM_VERSION_GE(10, 0)
+-+# if LLVM_VERSION_GE(10, 0)
+-       if (PGOOpt) {
+-         PB.addPGOInstrPassesForO0(
+-             MPM, DebugPassManager, PGOOpt->Action == PGOOptions::IRInstr,
+-             /*IsCS=*/false, PGOOpt->ProfileFile, PGOOpt->ProfileRemappingFile);
+-       }
+-+# endif
+- #endif
+-     } else {
+-+#if LLVM_VERSION_GE(12, 0)
+-       for (const auto &C : PipelineStartEPCallbacks)
+-         PB.registerPipelineStartEPCallback(C);
+-+#else
+-+      for (const auto &C : PipelineStartEPCallbacks)
+-+        PB.registerPipelineStartEPCallback([C, OptLevel](ModulePassManager &MPM) {
+-+          C(MPM, OptLevel);
+-+        });
+-+#endif
+-       if (OptStage != LLVMRustOptStage::PreLinkThinLTO) {
+-         for (const auto &C : OptimizerLastEPCallbacks)
+-           PB.registerOptimizerLastEPCallback(C);
+-@@ -956,7 +1013,12 @@ LLVMRustOptimizeWithNewPassManager(
+-         MPM = PB.buildPerModuleDefaultPipeline(OptLevel, DebugPassManager);
+-         break;
+-       case LLVMRustOptStage::PreLinkThinLTO:
+-+#if LLVM_VERSION_GE(12, 0)
+-+        MPM = PB.buildThinLTOPreLinkDefaultPipeline(OptLevel);
+-+        NeedThinLTOBufferPasses = false;
+-+#else
+-         MPM = PB.buildThinLTOPreLinkDefaultPipeline(OptLevel, DebugPassManager);
+-+#endif
+- #if LLVM_VERSION_GE(11, 0)
+-         for (const auto &C : OptimizerLastEPCallbacks)
+-           C(MPM, OptLevel);
+-@@ -970,21 +1032,34 @@ LLVMRustOptimizeWithNewPassManager(
+- #endif
+-         break;
+-       case LLVMRustOptStage::PreLinkFatLTO:
+-+#if LLVM_VERSION_GE(12, 0)
+-+        MPM = PB.buildLTOPreLinkDefaultPipeline(OptLevel);
+-+        NeedThinLTOBufferPasses = false;
+-+#else
+-         MPM = PB.buildLTOPreLinkDefaultPipeline(OptLevel, DebugPassManager);
+-+#endif
+-         break;
+-       case LLVMRustOptStage::ThinLTO:
+-         // FIXME: Does it make sense to pass the ModuleSummaryIndex?
+-         // It only seems to be needed for C++ specific optimizations.
+-+#if LLVM_VERSION_GE(12, 0)
+-+        MPM = PB.buildThinLTODefaultPipeline(OptLevel, nullptr);
+-+#else
+-         MPM = PB.buildThinLTODefaultPipeline(OptLevel, DebugPassManager, nullptr);
+-+#endif
+-         break;
+-       case LLVMRustOptStage::FatLTO:
+-+#if LLVM_VERSION_GE(12, 0)
+-+        MPM = PB.buildLTODefaultPipeline(OptLevel, nullptr);
+-+#else
+-         MPM = PB.buildLTODefaultPipeline(OptLevel, DebugPassManager, nullptr);
+-+#endif
+-         break;
+-       }
+-     }
+-   }
+- 
+--  if (UseThinLTOBuffers) {
+-+  if (NeedThinLTOBufferPasses) {
+-     MPM.addPass(CanonicalizeAliasesPass());
+-     MPM.addPass(NameAnonGlobalPass());
+-   }
+-diff --git a/compiler/rustc_llvm/llvm-wrapper/RustWrapper.cpp b/compiler/rustc_llvm/llvm-wrapper/RustWrapper.cpp
+-index 45835990cecbb..09dfba292e431 100644
+---- a/compiler/rustc_llvm/llvm-wrapper/RustWrapper.cpp
+-+++ b/compiler/rustc_llvm/llvm-wrapper/RustWrapper.cpp
+-@@ -263,6 +263,17 @@ extern "C" void LLVMRustAddByValCallSiteAttr(LLVMValueRef Instr, unsigned Index,
+-   Call->addAttribute(Index, Attr);
+- }
+- 
+-+extern "C" void LLVMRustAddStructRetCallSiteAttr(LLVMValueRef Instr, unsigned Index,
+-+                                                 LLVMTypeRef Ty) {
+-+  CallBase *Call = unwrap<CallBase>(Instr);
+-+#if LLVM_VERSION_GE(12, 0)
+-+  Attribute Attr = Attribute::getWithStructRetType(Call->getContext(), unwrap(Ty));
+-+#else
+-+  Attribute Attr = Attribute::get(Call->getContext(), Attribute::StructRet);
+-+#endif
+-+  Call->addAttribute(Index, Attr);
+-+}
+-+
+- extern "C" void LLVMRustAddFunctionAttribute(LLVMValueRef Fn, unsigned Index,
+-                                              LLVMRustAttribute RustAttr) {
+-   Function *A = unwrap<Function>(Fn);
+-@@ -304,6 +315,17 @@ extern "C" void LLVMRustAddByValAttr(LLVMValueRef Fn, unsigned Index,
+-   F->addAttribute(Index, Attr);
+- }
+- 
+-+extern "C" void LLVMRustAddStructRetAttr(LLVMValueRef Fn, unsigned Index,
+-+                                         LLVMTypeRef Ty) {
+-+  Function *F = unwrap<Function>(Fn);
+-+#if LLVM_VERSION_GE(12, 0)
+-+  Attribute Attr = Attribute::getWithStructRetType(F->getContext(), unwrap(Ty));
+-+#else
+-+  Attribute Attr = Attribute::get(F->getContext(), Attribute::StructRet);
+-+#endif
+-+  F->addAttribute(Index, Attr);
+-+}
+-+
+- extern "C" void LLVMRustAddFunctionAttrStringValue(LLVMValueRef Fn,
+-                                                    unsigned Index,
+-                                                    const char *Name,
+-@@ -1007,12 +1029,19 @@ LLVMRustDICompositeTypeReplaceArrays(LLVMRustDIBuilderRef Builder,
+- 
+- extern "C" LLVMMetadataRef
+- LLVMRustDIBuilderCreateDebugLocation(unsigned Line, unsigned Column,
+--                                     LLVMMetadataRef Scope,
+-+                                     LLVMMetadataRef ScopeRef,
+-                                      LLVMMetadataRef InlinedAt) {
+--  DebugLoc debug_loc = DebugLoc::get(Line, Column, unwrapDIPtr<MDNode>(Scope),
+-+#if LLVM_VERSION_GE(12, 0)
+-+  MDNode *Scope = unwrapDIPtr<MDNode>(ScopeRef);
+-+  DILocation *Loc = DILocation::get(
+-+      Scope->getContext(), Line, Column, Scope,
+-+      unwrapDIPtr<MDNode>(InlinedAt));
+-+  return wrap(Loc);
+-+#else
+-+  DebugLoc debug_loc = DebugLoc::get(Line, Column, unwrapDIPtr<MDNode>(ScopeRef),
+-                                      unwrapDIPtr<MDNode>(InlinedAt));
+--
+-   return wrap(debug_loc.getAsMDNode());
+-+#endif
+- }
+- 
+- extern "C" int64_t LLVMRustDIBuilderCreateOpDeref() {
+-@@ -1262,6 +1291,10 @@ extern "C" LLVMTypeKind LLVMRustGetTypeKind(LLVMTypeRef Ty) {
+-     return LLVMScalableVectorTypeKind;
+-   case Type::BFloatTyID:
+-     return LLVMBFloatTypeKind;
+-+#endif
+-+#if LLVM_VERSION_GE(12, 0)
+-+  case Type::X86_AMXTyID:
+-+    return LLVMX86_AMXTypeKind;
+- #endif
+-   }
+-   report_fatal_error("Unhandled TypeID.");
+-@@ -1708,11 +1741,23 @@ LLVMRustBuildVectorReduceMax(LLVMBuilderRef B, LLVMValueRef Src, bool IsSigned)
+- }
+- extern "C" LLVMValueRef
+- LLVMRustBuildVectorReduceFMin(LLVMBuilderRef B, LLVMValueRef Src, bool NoNaN) {
+--   return wrap(unwrap(B)->CreateFPMinReduce(unwrap(Src), NoNaN));
+-+#if LLVM_VERSION_GE(12, 0)
+-+  Instruction *I = unwrap(B)->CreateFPMinReduce(unwrap(Src));
+-+  I->setHasNoNaNs(NoNaN);
+-+  return wrap(I);
+-+#else
+-+  return wrap(unwrap(B)->CreateFPMinReduce(unwrap(Src), NoNaN));
+-+#endif
+- }
+- extern "C" LLVMValueRef
+- LLVMRustBuildVectorReduceFMax(LLVMBuilderRef B, LLVMValueRef Src, bool NoNaN) {
+-+#if LLVM_VERSION_GE(12, 0)
+-+  Instruction *I = unwrap(B)->CreateFPMaxReduce(unwrap(Src));
+-+  I->setHasNoNaNs(NoNaN);
+-+  return wrap(I);
+-+#else
+-   return wrap(unwrap(B)->CreateFPMaxReduce(unwrap(Src), NoNaN));
+-+#endif
+- }
+- 
+- extern "C" LLVMValueRef
+-diff --git a/compiler/rustc_target/src/spec/powerpc64_unknown_linux_gnu.rs b/compiler/rustc_target/src/spec/powerpc64_unknown_linux_gnu.rs
+-index 751022c124baa..9db880b0e53ca 100644
+---- a/compiler/rustc_target/src/spec/powerpc64_unknown_linux_gnu.rs
+-+++ b/compiler/rustc_target/src/spec/powerpc64_unknown_linux_gnu.rs
+-@@ -14,7 +14,7 @@ pub fn target() -> Target {
+-     Target {
+-         llvm_target: "powerpc64-unknown-linux-gnu".to_string(),
+-         pointer_width: 64,
+--        data_layout: "E-m:e-i64:64-n32:64".to_string(),
+-+        data_layout: "E-m:e-i64:64-n32:64-v256:256:256-v512:512:512".to_string(),
+-         arch: "powerpc64".to_string(),
+-         options: TargetOptions { endian: Endian::Big, mcount: "_mcount".to_string(), ..base },
+-     }
+-diff --git a/compiler/rustc_target/src/spec/powerpc64_unknown_linux_musl.rs b/compiler/rustc_target/src/spec/powerpc64_unknown_linux_musl.rs
+-index 546dfbab6c701..8767f86b00bb4 100644
+---- a/compiler/rustc_target/src/spec/powerpc64_unknown_linux_musl.rs
+-+++ b/compiler/rustc_target/src/spec/powerpc64_unknown_linux_musl.rs
+-@@ -10,7 +10,7 @@ pub fn target() -> Target {
+-     Target {
+-         llvm_target: "powerpc64-unknown-linux-musl".to_string(),
+-         pointer_width: 64,
+--        data_layout: "E-m:e-i64:64-n32:64".to_string(),
+-+        data_layout: "E-m:e-i64:64-n32:64-v256:256:256-v512:512:512".to_string(),
+-         arch: "powerpc64".to_string(),
+-         options: TargetOptions { endian: Endian::Big, mcount: "_mcount".to_string(), ..base },
+-     }
+-diff --git a/compiler/rustc_target/src/spec/powerpc64_wrs_vxworks.rs b/compiler/rustc_target/src/spec/powerpc64_wrs_vxworks.rs
+-index bb55872109c33..2f28a8562472d 100644
+---- a/compiler/rustc_target/src/spec/powerpc64_wrs_vxworks.rs
+-+++ b/compiler/rustc_target/src/spec/powerpc64_wrs_vxworks.rs
+-@@ -10,7 +10,7 @@ pub fn target() -> Target {
+-     Target {
+-         llvm_target: "powerpc64-unknown-linux-gnu".to_string(),
+-         pointer_width: 64,
+--        data_layout: "E-m:e-i64:64-n32:64".to_string(),
+-+        data_layout: "E-m:e-i64:64-n32:64-v256:256:256-v512:512:512".to_string(),
+-         arch: "powerpc64".to_string(),
+-         options: TargetOptions { endian: Endian::Big, ..base },
+-     }
+-diff --git a/compiler/rustc_target/src/spec/powerpc64le_unknown_linux_gnu.rs b/compiler/rustc_target/src/spec/powerpc64le_unknown_linux_gnu.rs
+-index 07e0bf81bc72f..4cbd99765088f 100644
+---- a/compiler/rustc_target/src/spec/powerpc64le_unknown_linux_gnu.rs
+-+++ b/compiler/rustc_target/src/spec/powerpc64le_unknown_linux_gnu.rs
+-@@ -9,7 +9,7 @@ pub fn target() -> Target {
+-     Target {
+-         llvm_target: "powerpc64le-unknown-linux-gnu".to_string(),
+-         pointer_width: 64,
+--        data_layout: "e-m:e-i64:64-n32:64".to_string(),
+-+        data_layout: "e-m:e-i64:64-n32:64-v256:256:256-v512:512:512".to_string(),
+-         arch: "powerpc64".to_string(),
+-         options: TargetOptions { mcount: "_mcount".to_string(), ..base },
+-     }
+-diff --git a/compiler/rustc_target/src/spec/powerpc64le_unknown_linux_musl.rs b/compiler/rustc_target/src/spec/powerpc64le_unknown_linux_musl.rs
+-index 41c78a5f27633..efdc9ad7517d1 100644
+---- a/compiler/rustc_target/src/spec/powerpc64le_unknown_linux_musl.rs
+-+++ b/compiler/rustc_target/src/spec/powerpc64le_unknown_linux_musl.rs
+-@@ -9,7 +9,7 @@ pub fn target() -> Target {
+-     Target {
+-         llvm_target: "powerpc64le-unknown-linux-musl".to_string(),
+-         pointer_width: 64,
+--        data_layout: "e-m:e-i64:64-n32:64".to_string(),
+-+        data_layout: "e-m:e-i64:64-n32:64-v256:256:256-v512:512:512".to_string(),
+-         arch: "powerpc64".to_string(),
+-         options: TargetOptions { mcount: "_mcount".to_string(), ..base },
+-     }
+-diff --git a/src/test/assembly/asm/riscv-types.rs b/src/test/assembly/asm/riscv-types.rs
+-index 67dda1024fc24..47518cdcf1671 100644
+---- a/src/test/assembly/asm/riscv-types.rs
+-+++ b/src/test/assembly/asm/riscv-types.rs
+-@@ -5,6 +5,7 @@
+- //[riscv32] compile-flags: --target riscv32imac-unknown-none-elf
+- // compile-flags: -C target-feature=+d
+- // needs-llvm-components: riscv
+-+// min-system-llvm-version: 12.0
+- 
+- #![feature(no_core, lang_items, rustc_attrs)]
+- #![crate_type = "rlib"]
+-@@ -99,45 +100,45 @@ macro_rules! check_reg {
+- 
+- // CHECK-LABEL: reg_i8:
+- // CHECK: #APP
+--// CHECK: add {{[a-z0-9]+}}, zero, {{[a-z0-9]+}}
+-+// CHECK: mv {{[a-z0-9]+}}, {{[a-z0-9]+}}
+- // CHECK: #NO_APP
+- check!(reg_i8 i8 reg "mv");
+- 
+- // CHECK-LABEL: reg_i16:
+- // CHECK: #APP
+--// CHECK: add {{[a-z0-9]+}}, zero, {{[a-z0-9]+}}
+-+// CHECK: mv {{[a-z0-9]+}}, {{[a-z0-9]+}}
+- // CHECK: #NO_APP
+- check!(reg_i16 i16 reg "mv");
+- 
+- // CHECK-LABEL: reg_i32:
+- // CHECK: #APP
+--// CHECK: add {{[a-z0-9]+}}, zero, {{[a-z0-9]+}}
+-+// CHECK: mv {{[a-z0-9]+}}, {{[a-z0-9]+}}
+- // CHECK: #NO_APP
+- check!(reg_i32 i32 reg "mv");
+- 
+- // CHECK-LABEL: reg_f32:
+- // CHECK: #APP
+--// CHECK: add {{[a-z0-9]+}}, zero, {{[a-z0-9]+}}
+-+// CHECK: mv {{[a-z0-9]+}}, {{[a-z0-9]+}}
+- // CHECK: #NO_APP
+- check!(reg_f32 f32 reg "mv");
+- 
+- // riscv64-LABEL: reg_i64:
+- // riscv64: #APP
+--// riscv64: add {{[a-z0-9]+}}, zero, {{[a-z0-9]+}}
+-+// riscv64: mv {{[a-z0-9]+}}, {{[a-z0-9]+}}
+- // riscv64: #NO_APP
+- #[cfg(riscv64)]
+- check!(reg_i64 i64 reg "mv");
+- 
+- // riscv64-LABEL: reg_f64:
+- // riscv64: #APP
+--// riscv64: add {{[a-z0-9]+}}, zero, {{[a-z0-9]+}}
+-+// riscv64: mv {{[a-z0-9]+}}, {{[a-z0-9]+}}
+- // riscv64: #NO_APP
+- #[cfg(riscv64)]
+- check!(reg_f64 f64 reg "mv");
+- 
+- // CHECK-LABEL: reg_ptr:
+- // CHECK: #APP
+--// CHECK: add {{[a-z0-9]+}}, zero, {{[a-z0-9]+}}
+-+// CHECK: mv {{[a-z0-9]+}}, {{[a-z0-9]+}}
+- // CHECK: #NO_APP
+- check!(reg_ptr ptr reg "mv");
+- 
+-@@ -155,45 +156,45 @@ check!(freg_f64 f64 freg "fmv.d");
+- 
+- // CHECK-LABEL: a0_i8:
+- // CHECK: #APP
+--// CHECK: add a0, zero, a0
+-+// CHECK: mv a0, a0
+- // CHECK: #NO_APP
+- check_reg!(a0_i8 i8 "a0" "mv");
+- 
+- // CHECK-LABEL: a0_i16:
+- // CHECK: #APP
+--// CHECK: add a0, zero, a0
+-+// CHECK: mv a0, a0
+- // CHECK: #NO_APP
+- check_reg!(a0_i16 i16 "a0" "mv");
+- 
+- // CHECK-LABEL: a0_i32:
+- // CHECK: #APP
+--// CHECK: add a0, zero, a0
+-+// CHECK: mv a0, a0
+- // CHECK: #NO_APP
+- check_reg!(a0_i32 i32 "a0" "mv");
+- 
+- // CHECK-LABEL: a0_f32:
+- // CHECK: #APP
+--// CHECK: add a0, zero, a0
+-+// CHECK: mv a0, a0
+- // CHECK: #NO_APP
+- check_reg!(a0_f32 f32 "a0" "mv");
+- 
+- // riscv64-LABEL: a0_i64:
+- // riscv64: #APP
+--// riscv64: add a0, zero, a0
+-+// riscv64: mv a0, a0
+- // riscv64: #NO_APP
+- #[cfg(riscv64)]
+- check_reg!(a0_i64 i64 "a0" "mv");
+- 
+- // riscv64-LABEL: a0_f64:
+- // riscv64: #APP
+--// riscv64: add a0, zero, a0
+-+// riscv64: mv a0, a0
+- // riscv64: #NO_APP
+- #[cfg(riscv64)]
+- check_reg!(a0_f64 f64 "a0" "mv");
+- 
+- // CHECK-LABEL: a0_ptr:
+- // CHECK: #APP
+--// CHECK: add a0, zero, a0
+-+// CHECK: mv a0, a0
+- // CHECK: #NO_APP
+- check_reg!(a0_ptr ptr "a0" "mv");
+- 
+-diff --git a/src/test/codegen/function-arguments.rs b/src/test/codegen/function-arguments.rs
+-index 3511c7c5185ee..a1da4faf5d85a 100644
+---- a/src/test/codegen/function-arguments.rs
+-+++ b/src/test/codegen/function-arguments.rs
+-@@ -1,5 +1,6 @@
+- // compile-flags: -C no-prepopulate-passes
+- // ignore-tidy-linelength
+-+// min-system-llvm-version: 12.0
+- 
+- #![crate_type = "lib"]
+- #![feature(rustc_attrs)]
+-@@ -73,7 +74,7 @@ pub fn _box(x: Box<i32>) -> Box<i32> {
+-   x
+- }
+- 
+--// CHECK: @struct_return(%S* noalias nocapture sret dereferenceable(32){{( %0)?}})
+-+// CHECK: @struct_return(%S* noalias nocapture sret(%S) dereferenceable(32){{( %0)?}})
+- #[no_mangle]
+- pub fn struct_return() -> S {
+-   S {
+-diff --git a/src/test/codegen/packed.rs b/src/test/codegen/packed.rs
+-index f3f5202206ced..c31e8457dcded 100644
+---- a/src/test/codegen/packed.rs
+-+++ b/src/test/codegen/packed.rs
+-@@ -52,7 +52,7 @@ pub struct BigPacked2 {
+- #[no_mangle]
+- pub fn call_pkd1(f: fn() -> Array) -> BigPacked1 {
+- // CHECK: [[ALLOCA:%[_a-z0-9]+]] = alloca %Array
+--// CHECK: call void %{{.*}}(%Array* noalias nocapture sret dereferenceable(32) [[ALLOCA]])
+-+// CHECK: call void %{{.*}}(%Array* noalias nocapture sret{{.*}} dereferenceable(32) [[ALLOCA]])
+- // CHECK: call void @llvm.memcpy.{{.*}}(i8* align 1 %{{.*}}, i8* align 4 %{{.*}}, i{{[0-9]+}} 32, i1 false)
+-     // check that calls whose destination is a field of a packed struct
+-     // go through an alloca rather than calling the function with an
+-@@ -64,7 +64,7 @@ pub fn call_pkd1(f: fn() -> Array) -> BigPacked1 {
+- #[no_mangle]
+- pub fn call_pkd2(f: fn() -> Array) -> BigPacked2 {
+- // CHECK: [[ALLOCA:%[_a-z0-9]+]] = alloca %Array
+--// CHECK: call void %{{.*}}(%Array* noalias nocapture sret dereferenceable(32) [[ALLOCA]])
+-+// CHECK: call void %{{.*}}(%Array* noalias nocapture sret{{.*}} dereferenceable(32) [[ALLOCA]])
+- // CHECK: call void @llvm.memcpy.{{.*}}(i8* align 2 %{{.*}}, i8* align 4 %{{.*}}, i{{[0-9]+}} 32, i1 false)
+-     // check that calls whose destination is a field of a packed struct
+-     // go through an alloca rather than calling the function with an
+-diff --git a/src/test/codegen/repr-transparent-aggregates-1.rs b/src/test/codegen/repr-transparent-aggregates-1.rs
+-index 2b8d3c8bc1d22..847b94fac78ce 100644
+---- a/src/test/codegen/repr-transparent-aggregates-1.rs
+-+++ b/src/test/codegen/repr-transparent-aggregates-1.rs
+-@@ -1,7 +1,7 @@
+- // compile-flags: -C no-prepopulate-passes
+- // ignore-tidy-linelength
+- 
+--// min-system-llvm-version: 9.0
+-+// min-system-llvm-version: 12.0
+- // ignore-arm
+- // ignore-aarch64
+- // ignore-mips
+-@@ -34,19 +34,19 @@ pub enum TeBigS {
+-     Variant(BigS),
+- }
+- 
+--// CHECK: define void @test_BigS(%BigS* [[BIGS_RET_ATTRS:.*]], %BigS* [[BIGS_ARG_ATTRS1:.*]] byval(%BigS) [[BIGS_ARG_ATTRS2:.*]])
+-+// CHECK: define void @test_BigS(%BigS* [[BIGS_RET_ATTRS1:.*]] sret(%BigS) [[BIGS_RET_ATTRS2:.*]], %BigS* [[BIGS_ARG_ATTRS1:.*]] byval(%BigS) [[BIGS_ARG_ATTRS2:.*]])
+- #[no_mangle]
+- pub extern "C" fn test_BigS(_: BigS) -> BigS { loop {} }
+- 
+--// CHECK: define void @test_TsBigS(%TsBigS* [[BIGS_RET_ATTRS]], %TsBigS* [[BIGS_ARG_ATTRS1]] byval(%TsBigS) [[BIGS_ARG_ATTRS2:.*]])
+-+// CHECK: define void @test_TsBigS(%TsBigS* [[BIGS_RET_ATTRS1]] sret(%TsBigS) [[BIGS_RET_ATTRS2]], %TsBigS* [[BIGS_ARG_ATTRS1]] byval(%TsBigS) [[BIGS_ARG_ATTRS2:.*]])
+- #[no_mangle]
+- pub extern "C" fn test_TsBigS(_: TsBigS) -> TsBigS { loop {} }
+- 
+--// CHECK: define void @test_TuBigS(%TuBigS* [[BIGS_RET_ATTRS]], %TuBigS* [[BIGS_ARG_ATTRS1]] byval(%TuBigS) [[BIGS_ARG_ATTRS2:.*]])
+-+// CHECK: define void @test_TuBigS(%TuBigS* [[BIGS_RET_ATTRS1]] sret(%TuBigS) [[BIGS_RET_ATTRS2]], %TuBigS* [[BIGS_ARG_ATTRS1]] byval(%TuBigS) [[BIGS_ARG_ATTRS2:.*]])
+- #[no_mangle]
+- pub extern "C" fn test_TuBigS(_: TuBigS) -> TuBigS { loop {} }
+- 
+--// CHECK: define void @test_TeBigS(%"TeBigS::Variant"* [[BIGS_RET_ATTRS]], %"TeBigS::Variant"* [[BIGS_ARG_ATTRS1]] byval(%"TeBigS::Variant") [[BIGS_ARG_ATTRS2]])
+-+// CHECK: define void @test_TeBigS(%"TeBigS::Variant"* [[BIGS_RET_ATTRS1]] sret(%"TeBigS::Variant") [[BIGS_RET_ATTRS2]], %"TeBigS::Variant"* [[BIGS_ARG_ATTRS1]] byval(%"TeBigS::Variant") [[BIGS_ARG_ATTRS2]])
+- #[no_mangle]
+- pub extern "C" fn test_TeBigS(_: TeBigS) -> TeBigS { loop {} }
+- 
+-@@ -70,18 +70,18 @@ pub enum TeBigU {
+-     Variant(BigU),
+- }
+- 
+--// CHECK: define void @test_BigU(%BigU* [[BIGU_RET_ATTRS:.*]], %BigU* [[BIGU_ARG_ATTRS1:.*]] byval(%BigU) [[BIGU_ARG_ATTRS2:.*]])
+-+// CHECK: define void @test_BigU(%BigU* [[BIGU_RET_ATTRS1:.*]] sret(%BigU) [[BIGU_RET_ATTRS2:.*]], %BigU* [[BIGU_ARG_ATTRS1:.*]] byval(%BigU) [[BIGU_ARG_ATTRS2:.*]])
+- #[no_mangle]
+- pub extern "C" fn test_BigU(_: BigU) -> BigU { loop {} }
+- 
+--// CHECK: define void @test_TsBigU(%TsBigU* [[BIGU_RET_ATTRS:.*]], %TsBigU* [[BIGU_ARG_ATTRS1]] byval(%TsBigU) [[BIGU_ARG_ATTRS2]])
+-+// CHECK: define void @test_TsBigU(%TsBigU* [[BIGU_RET_ATTRS1:.*]] sret(%TsBigU) [[BIGU_RET_ATTRS2:.*]], %TsBigU* [[BIGU_ARG_ATTRS1]] byval(%TsBigU) [[BIGU_ARG_ATTRS2]])
+- #[no_mangle]
+- pub extern "C" fn test_TsBigU(_: TsBigU) -> TsBigU { loop {} }
+- 
+--// CHECK: define void @test_TuBigU(%TuBigU* [[BIGU_RET_ATTRS]], %TuBigU* [[BIGU_ARG_ATTRS1]] byval(%TuBigU) [[BIGU_ARG_ATTRS2]])
+-+// CHECK: define void @test_TuBigU(%TuBigU* [[BIGU_RET_ATTRS1]] sret(%TuBigU) [[BIGU_RET_ATTRS2:.*]], %TuBigU* [[BIGU_ARG_ATTRS1]] byval(%TuBigU) [[BIGU_ARG_ATTRS2]])
+- #[no_mangle]
+- pub extern "C" fn test_TuBigU(_: TuBigU) -> TuBigU { loop {} }
+- 
+--// CHECK: define void @test_TeBigU(%"TeBigU::Variant"* [[BIGU_RET_ATTRS]], %"TeBigU::Variant"* [[BIGU_ARG_ATTRS1]] byval(%"TeBigU::Variant") [[BIGU_ARG_ATTRS2]])
+-+// CHECK: define void @test_TeBigU(%"TeBigU::Variant"* [[BIGU_RET_ATTRS1]] sret(%"TeBigU::Variant") [[BIGU_RET_ATTRS2:.*]], %"TeBigU::Variant"* [[BIGU_ARG_ATTRS1]] byval(%"TeBigU::Variant") [[BIGU_ARG_ATTRS2]])
+- #[no_mangle]
+- pub extern "C" fn test_TeBigU(_: TeBigU) -> TeBigU { loop {} }
+-diff --git a/src/test/codegen/repr-transparent-aggregates-2.rs b/src/test/codegen/repr-transparent-aggregates-2.rs
+-index 07e5af11f3577..1fb12d92bd135 100644
+---- a/src/test/codegen/repr-transparent-aggregates-2.rs
+-+++ b/src/test/codegen/repr-transparent-aggregates-2.rs
+-@@ -1,5 +1,7 @@
+- // compile-flags: -C no-prepopulate-passes
+-+// ignore-tidy-linelength
+- 
+-+// min-system-llvm-version: 12.0
+- // ignore-aarch64
+- // ignore-emscripten
+- // ignore-mips64
+-@@ -36,19 +38,19 @@ pub enum TeBigS {
+-     Variant(BigS),
+- }
+- 
+--// CHECK: define void @test_BigS(%BigS* [[BIGS_RET_ATTRS:.*]], [16 x i32]
+-+// CHECK: define void @test_BigS(%BigS* [[BIGS_RET_ATTRS1:.*]] sret(%BigS) [[BIGS_RET_ATTRS2:.*]], [16 x i32]
+- #[no_mangle]
+- pub extern fn test_BigS(_: BigS) -> BigS { loop {} }
+- 
+--// CHECK: define void @test_TsBigS(%TsBigS* [[BIGS_RET_ATTRS]], [16 x i32]
+-+// CHECK: define void @test_TsBigS(%TsBigS* [[BIGS_RET_ATTRS1]] sret(%TsBigS) [[BIGS_RET_ATTRS2]], [16 x i32]
+- #[no_mangle]
+- pub extern fn test_TsBigS(_: TsBigS) -> TsBigS { loop {} }
+- 
+--// CHECK: define void @test_TuBigS(%TuBigS* [[BIGS_RET_ATTRS]], [16 x i32]
+-+// CHECK: define void @test_TuBigS(%TuBigS* [[BIGS_RET_ATTRS1]] sret(%TuBigS) [[BIGS_RET_ATTRS2]], [16 x i32]
+- #[no_mangle]
+- pub extern fn test_TuBigS(_: TuBigS) -> TuBigS { loop {} }
+- 
+--// CHECK: define void @test_TeBigS(%"TeBigS::Variant"* [[BIGS_RET_ATTRS]], [16 x i32]
+-+// CHECK: define void @test_TeBigS(%"TeBigS::Variant"* [[BIGS_RET_ATTRS1]] sret(%"TeBigS::Variant") [[BIGS_RET_ATTRS2]], [16 x i32]
+- #[no_mangle]
+- pub extern fn test_TeBigS(_: TeBigS) -> TeBigS { loop {} }
+- 
+-@@ -72,18 +74,18 @@ pub enum TeBigU {
+-     Variant(BigU),
+- }
+- 
+--// CHECK: define void @test_BigU(%BigU* [[BIGU_RET_ATTRS:.*]], [16 x i32]
+-+// CHECK: define void @test_BigU(%BigU* [[BIGU_RET_ATTRS1:.*]] sret(%BigU) [[BIGU_RET_ATTRS2:.*]], [16 x i32]
+- #[no_mangle]
+- pub extern fn test_BigU(_: BigU) -> BigU { loop {} }
+- 
+--// CHECK: define void @test_TsBigU(%TsBigU* [[BIGU_RET_ATTRS:.*]], [16 x i32]
+-+// CHECK: define void @test_TsBigU(%TsBigU* [[BIGU_RET_ATTRS1]] sret(%TsBigU) [[BIGU_RET_ATTRS2]], [16 x i32]
+- #[no_mangle]
+- pub extern fn test_TsBigU(_: TsBigU) -> TsBigU { loop {} }
+- 
+--// CHECK: define void @test_TuBigU(%TuBigU* [[BIGU_RET_ATTRS]], [16 x i32]
+-+// CHECK: define void @test_TuBigU(%TuBigU* [[BIGU_RET_ATTRS1]] sret(%TuBigU) [[BIGU_RET_ATTRS2]], [16 x i32]
+- #[no_mangle]
+- pub extern fn test_TuBigU(_: TuBigU) -> TuBigU { loop {} }
+- 
+--// CHECK: define void @test_TeBigU(%"TeBigU::Variant"* [[BIGU_RET_ATTRS]], [16 x i32]
+-+// CHECK: define void @test_TeBigU(%"TeBigU::Variant"* [[BIGU_RET_ATTRS1]] sret(%"TeBigU::Variant") [[BIGU_RET_ATTRS2]], [16 x i32]
+- #[no_mangle]
+- pub extern fn test_TeBigU(_: TeBigU) -> TeBigU { loop {} }
+-diff --git a/src/test/codegen/repr-transparent-aggregates-3.rs b/src/test/codegen/repr-transparent-aggregates-3.rs
+-index e538be687801e..3381764bfc818 100644
+---- a/src/test/codegen/repr-transparent-aggregates-3.rs
+-+++ b/src/test/codegen/repr-transparent-aggregates-3.rs
+-@@ -1,5 +1,7 @@
+- // compile-flags: -C no-prepopulate-passes
+-+// ignore-tidy-linelength
+- 
+-+// min-system-llvm-version: 12.0
+- // only-mips64
+- // See repr-transparent.rs
+- 
+-@@ -25,19 +27,19 @@ pub enum TeBigS {
+-     Variant(BigS),
+- }
+- 
+--// CHECK: define void @test_BigS(%BigS* [[BIGS_RET_ATTRS:.*]], [8 x i64]
+-+// CHECK: define void @test_BigS(%BigS* [[BIGS_RET_ATTRS1:.*]] sret(%BigS) [[BIGS_RET_ATTRS2:.*]], [8 x i64]
+- #[no_mangle]
+- pub extern fn test_BigS(_: BigS) -> BigS { loop {} }
+- 
+--// CHECK: define void @test_TsBigS(%TsBigS* [[BIGS_RET_ATTRS]], [8 x i64]
+-+// CHECK: define void @test_TsBigS(%TsBigS* [[BIGS_RET_ATTRS1]] sret(%TsBigS) [[BIGS_RET_ATTRS2]], [8 x i64]
+- #[no_mangle]
+- pub extern fn test_TsBigS(_: TsBigS) -> TsBigS { loop {} }
+- 
+--// CHECK: define void @test_TuBigS(%TuBigS* [[BIGS_RET_ATTRS]], [8 x i64]
+-+// CHECK: define void @test_TuBigS(%TuBigS* [[BIGS_RET_ATTRS1]] sret(%TuBigS) [[BIGS_RET_ATTRS2]], [8 x i64]
+- #[no_mangle]
+- pub extern fn test_TuBigS(_: TuBigS) -> TuBigS { loop {} }
+- 
+--// CHECK: define void @test_TeBigS(%"TeBigS::Variant"* [[BIGS_RET_ATTRS]], [8 x i64]
+-+// CHECK: define void @test_TeBigS(%"TeBigS::Variant"* [[BIGS_RET_ATTRS1]] sret(%"TeBigS::Variant") [[BIGS_RET_ATTRS2]], [8 x i64]
+- #[no_mangle]
+- pub extern fn test_TeBigS(_: TeBigS) -> TeBigS { loop {} }
+- 
+-@@ -61,18 +63,18 @@ pub enum TeBigU {
+-     Variant(BigU),
+- }
+- 
+--// CHECK: define void @test_BigU(%BigU* [[BIGU_RET_ATTRS:.*]], [8 x i64]
+-+// CHECK: define void @test_BigU(%BigU* [[BIGU_RET_ATTRS1:.*]] sret(%BigU) [[BIGU_RET_ATTRS2:.*]], [8 x i64]
+- #[no_mangle]
+- pub extern fn test_BigU(_: BigU) -> BigU { loop {} }
+- 
+--// CHECK: define void @test_TsBigU(%TsBigU* [[BIGU_RET_ATTRS:.*]], [8 x i64]
+-+// CHECK: define void @test_TsBigU(%TsBigU* [[BIGU_RET_ATTRS1]] sret(%TsBigU) [[BIGU_RET_ATTRS2]], [8 x i64]
+- #[no_mangle]
+- pub extern fn test_TsBigU(_: TsBigU) -> TsBigU { loop {} }
+- 
+--// CHECK: define void @test_TuBigU(%TuBigU* [[BIGU_RET_ATTRS]], [8 x i64]
+-+// CHECK: define void @test_TuBigU(%TuBigU* [[BIGU_RET_ATTRS1]] sret(%TuBigU) [[BIGU_RET_ATTRS2]], [8 x i64]
+- #[no_mangle]
+- pub extern fn test_TuBigU(_: TuBigU) -> TuBigU { loop {} }
+- 
+--// CHECK: define void @test_TeBigU(%"TeBigU::Variant"* [[BIGU_RET_ATTRS]], [8 x i64]
+-+// CHECK: define void @test_TeBigU(%"TeBigU::Variant"* [[BIGU_RET_ATTRS1]] sret(%"TeBigU::Variant") [[BIGU_RET_ATTRS2]], [8 x i64]
+- #[no_mangle]
+- pub extern fn test_TeBigU(_: TeBigU) -> TeBigU { loop {} }
+-diff --git a/src/test/run-make-fulldeps/split-dwarf/Makefile b/src/test/run-make-fulldeps/split-dwarf/Makefile
+-index e89cc1b2ede9b..f56b4168b2d66 100644
+---- a/src/test/run-make-fulldeps/split-dwarf/Makefile
+-+++ b/src/test/run-make-fulldeps/split-dwarf/Makefile
+-@@ -4,6 +4,6 @@
+- # only-linux
+- 
+- all:
+--	$(RUSTC) -Z unstable-options -C split-debuginfo=packed foo.rs -g
+-+	$(RUSTC) -Z unstable-options -C split-debuginfo=packed -C debuginfo=2 foo.rs -g
+- 	rm $(TMPDIR)/foo.dwp
+- 	rm $(TMPDIR)/$(call BIN,foo)
+-- 
+2.30.2
+
+
+From f61b9fb6d5261aacbcac858dd2b5cdfaab1cfcb2 Mon Sep 17 00:00:00 2001
+From: suhan-paradkar <12suhangp34@gmail.com>
+Date: Tue, 4 May 2021 14:05:22 +0000
+Subject: [PATCH 45/71] Add package: Mailutls
+
+---
+ packages/mailutils/build.sh   | 12 ++++++++++++
+ packages/mailutils/lu.c.patch | 15 +++++++++++++++
+ packages/mailutils/pwen.patch | 35 +++++++++++++++++++++++++++++++++++
+ 3 files changed, 62 insertions(+)
+ create mode 100644 packages/mailutils/build.sh
+ create mode 100644 packages/mailutils/lu.c.patch
+ create mode 100644 packages/mailutils/pwen.patch
+
+diff --git a/packages/mailutils/build.sh b/packages/mailutils/build.sh
+new file mode 100644
+index 000000000..a3b35fee6
+--- /dev/null
++++ b/packages/mailutils/build.sh
+@@ -0,0 +1,12 @@
++TERMUX_PKG_HOMEPAGE=https://mailutils.org/
++TERMUX_PKG_DESCRIPTION="Mailutils is a swiss army knife of electronic mail handling. "
++TERMUX_PKG_LICENSE="GPL-3.0"
++TERMUX_PKG_MAINTAINER="@suhan-paradkar"
++TERMUX_PKG_VERSION=3.12
++TERMUX_PKG_SRCURL=https://ftp.gnu.org/gnu/mailutils/mailutils-$TERMUX_PKG_VERSION.tar.xz
++TERMUX_PKG_SHA256=6d43fa217c4ac63f057de87890c562d170bb92bc402368b5fbc579e4c2b3a158
++TERMUX_PKG_BUILD_DEPENDS="libandroid-glob, libcrypt"
++
++termux_step_pre_configure() {
++	export LIBS="-landroid-glob"
++}
+diff --git a/packages/mailutils/lu.c.patch b/packages/mailutils/lu.c.patch
+new file mode 100644
+index 000000000..60f0ac7cd
+--- /dev/null
++++ b/packages/mailutils/lu.c.patch
+@@ -0,0 +1,15 @@
++diff '--color=auto' -uNr mailutils-3.12/mh/tests/lu.c mailutils-3.12.mod/mh/tests/lu.c
++--- mailutils-3.12/mh/tests/lu.c	2021-01-05 18:37:40.000000000 +0530
+++++ mailutils-3.12.mod/mh/tests/lu.c	2021-05-10 19:40:53.565163140 +0530
++@@ -24,8 +24,11 @@
++ 	
++ 	if (argc == 2)
++ 		minuid = atoi (argv[1]);
+++#ifndef __ANDROID__
++ 	while ((pw = getpwent ()))
++ 		if (pw->pw_uid > minuid)
++ 			printf ("%s\n", pw->pw_name);
++ 	return 0;
+++#endif
+++	return 0;
++ }
+diff --git a/packages/mailutils/pwen.patch b/packages/mailutils/pwen.patch
+new file mode 100644
+index 000000000..f95775003
+--- /dev/null
++++ b/packages/mailutils/pwen.patch
+@@ -0,0 +1,35 @@
++diff -uNr mh_alias_gram2.y mh_alias_gram.y
++--- ./mh/mh_alias_gram.y    2021-05-05 08:36:12.159978816 +0530
+++++ ./mh/mh_alias_gram.y     2021-05-05 08:52:30.847978875 +0530
++@@ -470,6 +470,7 @@
++   if (grp)
++     {
++       struct passwd *pw;
+++     #ifndef __ANDROID__
++       setpwent();
++       while ((pw = getpwent ()))
++        {
++@@ -477,6 +478,7 @@
++            mu_list_append (lst, mu_strdup (pw->pw_name));
++        }
++       endpwent();
+++     #endif
++     }
++   return lst;
++ }
++@@ -486,7 +488,7 @@
++ {
++   mu_list_t lst = list_create_or_die ();
++   struct passwd *pw;
++-
+++#ifndef __ANDROID__
++   setpwent();
++   while ((pw = getpwent ()))
++     {
++@@ -494,6 +496,7 @@
++        mu_list_append (lst, mu_strdup (pw->pw_name));
++     }
++   endpwent();
+++#endif
++   return lst;
++ }
+-- 
+2.30.2
+
+
+From c17ea7ff1b3641584b9a271fa6ae9e97bc5f137a Mon Sep 17 00:00:00 2001
+From: Leonid Pliushch <leonid.pliushch@gmail.com>
+Date: Tue, 18 May 2021 22:46:49 +0300
+Subject: [PATCH 50/71] Revert "github actions: do not use option '-I' for
+ build-package.sh"
+
+This reverts commit 96b4e572d692510e957b3092f3d06e77905f7128.
+---
+ .github/workflows/packages.yml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/.github/workflows/packages.yml b/.github/workflows/packages.yml
+index 2217d3763..c7e4cbea0 100644
+--- a/.github/workflows/packages.yml
++++ b/.github/workflows/packages.yml
+@@ -115,7 +115,7 @@ jobs:
+ 
+         if [ -f ./built_packages.txt ]; then
+           ./scripts/lint-packages.sh $(cat ./built_packages.txt | awk '{print "packages/"$1"/build.sh"}')
+-          ./scripts/run-docker.sh ./build-package.sh -a ${{ matrix.target_arch }} $(cat ./built_packages.txt)
++          ./scripts/run-docker.sh ./build-package.sh -a ${{ matrix.target_arch }} -I $(cat ./built_packages.txt)
+         fi
+ 
+         test -d ./termux-packages/debs && mv ./termux-packages/debs/* ./debs/
+-- 
+2.30.2
+
+
+From 22ccd3797c0a437e6201ea38ae8932a68ba237e2 Mon Sep 17 00:00:00 2001
+From: Simeon Huang <hzwhuang@gmail.com>
+Date: Tue, 18 May 2021 19:30:26 +0100
+Subject: [PATCH 51/71] Add package script for mimetic
+
+---
+ packages/mimetic/build.sh                     |  7 ++++
+ packages/mimetic/debian_patches_g++-11.patch  | 30 +++++++++++++++++
+ .../mimetic/debian_patches_signed-char.patch  | 32 +++++++++++++++++++
+ packages/mimetic/disable_test_build.patch     | 11 +++++++
+ 4 files changed, 80 insertions(+)
+ create mode 100644 packages/mimetic/build.sh
+ create mode 100644 packages/mimetic/debian_patches_g++-11.patch
+ create mode 100644 packages/mimetic/debian_patches_signed-char.patch
+ create mode 100644 packages/mimetic/disable_test_build.patch
+
+diff --git a/packages/mimetic/build.sh b/packages/mimetic/build.sh
+new file mode 100644
+index 000000000..2fb2114b4
+--- /dev/null
++++ b/packages/mimetic/build.sh
+@@ -0,0 +1,7 @@
++TERMUX_PKG_HOMEPAGE=http://www.codesink.org/mimetic_mime_library.html
++TERMUX_PKG_DESCRIPTION="A C++ Email library (MIME)"
++TERMUX_PKG_LICENSE="MIT"
++TERMUX_PKG_MAINTAINER="Simeon Huang <symeon@librehat.com>"
++TERMUX_PKG_VERSION=0.9.8
++TERMUX_PKG_SRCURL=http://www.codesink.org/download/mimetic-${TERMUX_PKG_VERSION}.tar.gz
++TERMUX_PKG_SHA256=3a07d68d125f5e132949b078c7275d5eb0078dd649079bd510dd12b969096700
+diff --git a/packages/mimetic/debian_patches_g++-11.patch b/packages/mimetic/debian_patches_g++-11.patch
+new file mode 100644
+index 000000000..d4835cf64
+--- /dev/null
++++ b/packages/mimetic/debian_patches_g++-11.patch
+@@ -0,0 +1,30 @@
++Description: Fix build failure with GCC-11
++  The failure:
++  .
++  mmfile.cxx: In member function ‘bool mimetic::MMFile::map()’:
++  mmfile.cxx:60:14: error: ordered comparison of pointer with integer zero (‘char*’ and ‘int’)
++     60 |     if(m_beg > 0)
++        |        ~~~~~~^~~
++  .
++  https://gcc.gnu.org/gcc-11/porting_to.html says:
++  .
++  GCC 11 now issues a diagnostic for ordered comparisons of pointers against
++  constant integers. Commonly this is an ordered comparison against NULL or
++  0. These should be equality comparisons, not ordered comparisons.
++Origin: upstream
++Bug-Debian: https://bugs.debian.org/984235
++Applied: bf84940f9021950c80846e6b1a5f8b0b55991b00
++Reviewed-by: gregor herrmann <gregoa@debian.org>
++Last-Update: 2021-04-13
++
++--- a/mimetic/os/mmfile.cxx
+++++ b/mimetic/os/mmfile.cxx
++@@ -57,7 +57,7 @@
++ bool MMFile::map()
++ {
++     m_beg = (char*) mmap(0, m_st.st_size, PROT_READ, MAP_SHARED,m_fd,0);
++-    if(m_beg > 0)
+++    if(m_beg != MAP_FAILED)
++     {
++         m_end = m_beg + m_st.st_size;
++         #if HAVE_MADVISE
+diff --git a/packages/mimetic/debian_patches_signed-char.patch b/packages/mimetic/debian_patches_signed-char.patch
+new file mode 100644
+index 000000000..6911544c2
+--- /dev/null
++++ b/packages/mimetic/debian_patches_signed-char.patch
+@@ -0,0 +1,32 @@
++Description: fix FTBFS on architectures where char is unsigned
++ Fix error
++   base64.cxx:30:1: error: narrowing conversion of '-1' from 'int' to 'char' inside { } [-Wnarrowing]
++ by making Base64::sDecTable a signed char.
++Bug-Debian: https://bugs.debian.org/859963
++Forwarded: via email
++Author: gregor herrmann <gregoa@debian.org>
++Last-Update: 2021-04-13
++Applied: d83e0363e316836d1b8d587f4b89e8e09229abe4 and 2f1bb2b93ecec3167a0aa3410ea4423d5b26320a
++
++--- a/mimetic/codec/base64.cxx
+++++ b/mimetic/codec/base64.cxx
++@@ -13,7 +13,7 @@
++     "abcdefghijklmnopqrstuvwxyz"
++     "0123456789+/=";
++ 
++-const char Base64::sDecTable[] = {
+++const signed char Base64::sDecTable[] = {
++         -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
++         -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
++         -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
++--- a/mimetic/codec/base64.h
+++++ b/mimetic/codec/base64.h
++@@ -20,7 +20,7 @@
++     enum { default_maxlen = 76 };
++     enum { eq_sign = 100 };
++     static const char sEncTable[];
++-    static const char sDecTable[];
+++    static const signed char sDecTable[];
++     static const int sDecTableSz;
++ public:
++     class Encoder; class Decoder;
+diff --git a/packages/mimetic/disable_test_build.patch b/packages/mimetic/disable_test_build.patch
+new file mode 100644
+index 000000000..335b41c6b
+--- /dev/null
++++ b/packages/mimetic/disable_test_build.patch
+@@ -0,0 +1,11 @@
++--- src/Makefile.in	2021-05-18 18:26:27.774977928 +0000
+++++ src.mod/Makefile.in	2021-05-18 18:28:31.341028561 +0000
++@@ -225,7 +225,7 @@
++ top_srcdir = @top_srcdir@
++ MAINTAINERCLEANFILES = Makefile Makefile.in config.cache
++ EXTRA_DIST = LICENSE m4
++-SUBDIRS = mimetic doc examples test win32
+++SUBDIRS = mimetic doc
++ INCLUDES = -I$(top_srcdir)
++ ACLOCAL_AMFLAGS = -I m4
++ all: all-recursive
+-- 
+2.30.2
+
+
+From c9664c11ba5b837c9502804574058900ccb203a5 Mon Sep 17 00:00:00 2001
+From: Leonid Pliushch <leonid.pliushch@gmail.com>
+Date: Wed, 19 May 2021 13:09:48 +0300
+Subject: [PATCH 52/71] build-package.sh: never use git outside of package
+ build process.
+
+termux-packages is not guaranteed to be always used as git repository.
+Relying on git here may lead to issues.
+
+P.S. Avoid unfinished work on master branch!
+---
+ build-package.sh | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/build-package.sh b/build-package.sh
+index 6773ea023..c1dc2829b 100755
+--- a/build-package.sh
++++ b/build-package.sh
+@@ -3,7 +3,7 @@
+ 
+ set -e -o pipefail -u
+ 
+-SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct)
++SOURCE_DATE_EPOCH=$(date "+%s")
+ export SOURCE_DATE_EPOCH
+ 
+ : "${TMPDIR:=/tmp}"
+-- 
+2.30.2
+
+
+From 3337b9ffee40c1ff39236db50c30a10960c2873b Mon Sep 17 00:00:00 2001
+From: Leonid Pliushch <leonid.pliushch@gmail.com>
+Date: Wed, 19 May 2021 13:19:23 +0300
+Subject: [PATCH 53/71] build-package.sh: compatibility with "reproducible
+ builds"
+
+Though git method of getting persistent timestamp won't work in submodules
+and snapshots and will fallback to current date.
+---
+ build-package.sh | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/build-package.sh b/build-package.sh
+index c1dc2829b..a4b2b9dc1 100755
+--- a/build-package.sh
++++ b/build-package.sh
+@@ -3,7 +3,7 @@
+ 
+ set -e -o pipefail -u
+ 
+-SOURCE_DATE_EPOCH=$(date "+%s")
++SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct 2>/dev/null || date "+%s")
+ export SOURCE_DATE_EPOCH
+ 
+ : "${TMPDIR:=/tmp}"
+-- 
+2.30.2
+
+
+From 0287e528ff564f58267c827a1ae8b5f8557cf27d Mon Sep 17 00:00:00 2001
+From: Leonid Pliushch <leonid.pliushch@gmail.com>
+Date: Wed, 19 May 2021 16:51:37 +0300
+Subject: [PATCH 59/71] github actions: do not use option '-I' for
+ build-package.sh again
+
+Maybe really switch Cirrus CI if Github Actions can't provide normal networking?
+
+This reverts commit c17ea7ff1b3641584b9a271fa6ae9e97bc5f137a.
+---
+ .github/workflows/packages.yml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/.github/workflows/packages.yml b/.github/workflows/packages.yml
+index c7e4cbea0..2217d3763 100644
+--- a/.github/workflows/packages.yml
++++ b/.github/workflows/packages.yml
+@@ -115,7 +115,7 @@ jobs:
+ 
+         if [ -f ./built_packages.txt ]; then
+           ./scripts/lint-packages.sh $(cat ./built_packages.txt | awk '{print "packages/"$1"/build.sh"}')
+-          ./scripts/run-docker.sh ./build-package.sh -a ${{ matrix.target_arch }} -I $(cat ./built_packages.txt)
++          ./scripts/run-docker.sh ./build-package.sh -a ${{ matrix.target_arch }} $(cat ./built_packages.txt)
+         fi
+ 
+         test -d ./termux-packages/debs && mv ./termux-packages/debs/* ./debs/
+-- 
+2.30.2
+
+
+From bf2c32cae1f5bf31479ef5a891997b7eff7542d5 Mon Sep 17 00:00:00 2001
+From: Leonid Pliushch <leonid.pliushch@gmail.com>
+Date: Wed, 19 May 2021 17:06:40 +0300
+Subject: [PATCH 60/71] add scripts for Cirrus CI
+
+No automatic uploads to grimler.se currently.
+---
+ .cirrus.yml                              |  61 +++++++++++
+ scripts/build/ci/cirrus-ci_dispatcher.sh | 123 +++++++++++++++++++++++
+ 2 files changed, 184 insertions(+)
+ create mode 100644 .cirrus.yml
+ create mode 100755 scripts/build/ci/cirrus-ci_dispatcher.sh
+
+diff --git a/.cirrus.yml b/.cirrus.yml
+new file mode 100644
+index 000000000..9aed182a9
+--- /dev/null
++++ b/.cirrus.yml
+@@ -0,0 +1,61 @@
++container:
++  image: termux/package-builder:latest
++  # Hopefully large packages won't cause timeouts...
++  cpu: 8
++  memory: 16
++
++##
++##  Perform basic check for errors in build.sh package scripts.
++##  If error found, exit with error code to stop build.
++##
++task:
++  name: Lint packages
++
++  timeout_in: 5m
++
++  script: |
++    bash ./scripts/lint-packages.sh
++
++##
++##  Determine changes in the last push, find modified packages and
++##  build them for aarch64/arm/i686/x86_64 architectures.
++##
++##  Built packages are accessible from Cirrus CI web interface.
++##
++task:
++  name: Build packages
++
++  # 2 hours is a maximal timeout available for free use.
++  timeout_in: 120m
++
++  depends_on:
++    - Lint packages
++
++  environment:
++    TERMUX_MAKE_PROCESSES: 8
++    matrix:
++      - TERMUX_ARCH: aarch64
++      - TERMUX_ARCH: arm
++      - TERMUX_ARCH: i686
++      - TERMUX_ARCH: x86_64
++
++  # Do not use built-in git client provided by Cirrus as it may
++  # cause problems when determining changed files.
++  clone_script: |
++    if [[ -z "$CIRRUS_PR" ]]; then
++        git clone --recursive --branch="$CIRRUS_BRANCH" "https://x-access-token:${CIRRUS_REPO_CLONE_TOKEN}@github.com/${CIRRUS_REPO_FULL_NAME}.git" "$CIRRUS_WORKING_DIR"
++        git reset --hard "$CIRRUS_CHANGE_IN_REPO"
++    else
++        git clone --recursive "https://x-access-token:${CIRRUS_REPO_CLONE_TOKEN}@github.com/${CIRRUS_REPO_FULL_NAME}.git" "$CIRRUS_WORKING_DIR"
++        git fetch origin "pull/$CIRRUS_PR/head:pull/$CIRRUS_PR"
++        git reset --hard "$CIRRUS_CHANGE_IN_REPO"
++    fi
++
++  build_script: |
++    bash ./scripts/cirrus-ci_dispatcher.sh
++    if ls ./termux-packages/debs/*.deb >/dev/null 2>&1; then
++      mv ./termux-packages/debs/*.deb ./debs/
++    fi
++
++  output_artifacts:
++    path: "./debs/*.deb"
+diff --git a/scripts/build/ci/cirrus-ci_dispatcher.sh b/scripts/build/ci/cirrus-ci_dispatcher.sh
+new file mode 100755
+index 000000000..572aec3fe
+--- /dev/null
++++ b/scripts/build/ci/cirrus-ci_dispatcher.sh
+@@ -0,0 +1,123 @@
++#!/usr/bin/env bash
++##
++##  Script for determining modified packages and building them.
++##
++##  Copyright 2019-2021 Leonid Plyushch <leonid.plyushch@gmail.com>
++##
++##  Licensed under the Apache License, Version 2.0 (the "License");
++##  you may not use this file except in compliance with the License.
++##  You may obtain a copy of the License at
++##
++##    http://www.apache.org/licenses/LICENSE-2.0
++##
++##  Unless required by applicable law or agreed to in writing, software
++##  distributed under the License is distributed on an "AS IS" BASIS,
++##  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++##  See the License for the specific language governing permissions and
++##  limitations under the License.
++##
++
++set -e
++
++## Some packages should be excluded from auto builds.
++EXCLUDED_PACKAGES=""
++
++###############################################################################
++##
++##  Determining changes.
++##
++###############################################################################
++
++set +e
++
++REPO_DIR=$(realpath "$(dirname "$(realpath "$0")")/../../../")
++cd "$REPO_DIR" || {
++	echo "[!] Failed to cd into '$REPO_DIR'."
++	exit 1
++}
++
++# Some environment variables are important for correct functionality
++# of this script.
++if [ -z "$CIRRUS_CHANGE_IN_REPO" ]; then
++	echo "[!] CIRRUS_CHANGE_IN_REPO is not set."
++	exit 1
++fi
++
++if [ -n "$CIRRUS_PR" ] && [ -z "$CIRRUS_BASE_SHA" ]; then
++	echo "[!] CIRRUS_BASE_SHA is not set."
++	exit 1
++fi
++
++# Process tag '%ci:no-build' that may be added as line to commit message.
++# Will force CI to exit with status 'passed' without performing build.
++if grep -qiP '^\s*%ci:no-build\s*$' <(git log --format="%B" -n 1 "$CIRRUS_CHANGE_IN_REPO"); then
++	echo "[!] Exiting with status 'passed' (tag '%ci:no-build' applied)."
++	exit 0
++fi
++
++# Process tag '%ci:reset-backlog' that may be added as line to commit message.
++# Will force CI to build changes only for the current commit.
++if grep -qiP '^\s*%ci:reset-backlog\s*$' <(git log --format="%B" -n 1 "$CIRRUS_CHANGE_IN_REPO"); then
++	echo "[!] Building only last pushed commit (tag '%ci:reset-backlog' applied)."
++	unset CIRRUS_LAST_GREEN_CHANGE
++	unset CIRRUS_BASE_SHA
++fi
++
++if [ -z "$CIRRUS_PR" ]; then
++	# Changes determined from the last commit where CI finished with status
++	# 'passed' (green) and the top commit.
++	if [ -z "$CIRRUS_LAST_GREEN_CHANGE" ]; then
++		GIT_CHANGES="$CIRRUS_CHANGE_IN_REPO"
++	else
++		GIT_CHANGES="${CIRRUS_LAST_GREEN_CHANGE}..${CIRRUS_CHANGE_IN_REPO}"
++	fi
++	echo "[*] Changes: $GIT_CHANGES"
++else
++	# Changes in pull request are determined from commits between the
++	# top commit of base branch and latest commit of PR's branch.
++	GIT_CHANGES="${CIRRUS_BASE_SHA}..${CIRRUS_CHANGE_IN_REPO}"
++	echo "[*] Pull request: https://github.com/termux/x11-packages/pull/${CIRRUS_PR}"
++fi
++
++# Determine changes from commit range.
++CHANGED_FILES=$(git diff-tree --no-commit-id --name-only -r "$GIT_CHANGES" 2>/dev/null)
++
++# Modified packages.
++PACKAGE_NAMES=$(sed -nE 's@^packages/([^/]*)/build.sh@\1@p' <<< "$CHANGED_FILES")
++
++unset CHANGED_FILES
++
++## Filter deleted packages.
++for pkg in $PACKAGE_NAMES; do
++	if [ ! -d "${REPO_DIR}/packages/${pkg}" ]; then
++		PACKAGE_NAMES=$(sed -E "s/(^|\s\s*)${pkg}(\$|\s\s*)/ /g" <<< "$PACKAGE_NAMES")
++	fi
++done
++
++## Filter excluded packages.
++for pkg in $EXCLUDED_PACKAGES; do
++	PACKAGE_NAMES=$(sed -E "s/(^|\s\s*)${pkg}(\$|\s\s*)/ /g" <<< "$PACKAGE_NAMES")
++done
++unset pkg
++
++## Remove trailing spaces.
++PACKAGE_NAMES=$(sed 's/[[:blank:]]*$//' <<< "$PACKAGE_NAMES")
++
++set -e
++
++if [ -n "$PACKAGE_NAMES" ]; then
++	echo "[*] Building packages:" $PACKAGE_NAMES
++	echo "[*] Copying packages to build environment:"
++	for pkg in "${REPO_DIR}"/packages/*; do
++		if [ ! -e "${REPO_DIR}/termux-packages/packages/$(basename "$pkg")" ]; then
++			echo "    - $(basename "$pkg")"
++			cp -a "$pkg" "${REPO_DIR}"/termux-packages/packages/
++		else
++			echo "    - $(basename "$pkg"): package already exist, skipping"
++		fi
++	done
++	cd ./termux-packages && ./build-package.sh -a "$TERMUX_ARCH" -I $PACKAGE_NAMES
++else
++	echo "[*] No modified packages found."
++	exit 0
++fi
+-- 
+2.30.2
+
+
+From 7aa85ab4e6a4063cf177dd35236d24bf49a0fd4c Mon Sep 17 00:00:00 2001
+From: Leonid Pliushch <leonid.pliushch@gmail.com>
+Date: Wed, 19 May 2021 17:16:29 +0300
+Subject: [PATCH 61/71] fix configuration for cirrus ci
+
+---
+ .cirrus.yml | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+diff --git a/.cirrus.yml b/.cirrus.yml
+index 9aed182a9..6bc0965e7 100644
+--- a/.cirrus.yml
++++ b/.cirrus.yml
+@@ -52,10 +52,7 @@ task:
+     fi
+ 
+   build_script: |
+-    bash ./scripts/cirrus-ci_dispatcher.sh
+-    if ls ./termux-packages/debs/*.deb >/dev/null 2>&1; then
+-      mv ./termux-packages/debs/*.deb ./debs/
+-    fi
++    bash ./scripts/build/ci/cirrus-ci_dispatcher.sh
+ 
+   output_artifacts:
+     path: "./debs/*.deb"
+-- 
+2.30.2
+
+
+From 607103f80752b937f7ce2e3e2bec76d8692e1516 Mon Sep 17 00:00:00 2001
+From: Leonid Pliushch <leonid.pliushch@gmail.com>
+Date: Wed, 19 May 2021 17:46:17 +0300
+Subject: [PATCH 62/71] fix ./scripts/build/ci/cirrus-ci_dispatcher.sh
+
+Script was copied from x11-packages, so there were parts unsuitable for
+termux-packages.
+---
+ scripts/build/ci/cirrus-ci_dispatcher.sh | 11 +----------
+ 1 file changed, 1 insertion(+), 10 deletions(-)
+
+diff --git a/scripts/build/ci/cirrus-ci_dispatcher.sh b/scripts/build/ci/cirrus-ci_dispatcher.sh
+index 572aec3fe..6d7f7225b 100755
+--- a/scripts/build/ci/cirrus-ci_dispatcher.sh
++++ b/scripts/build/ci/cirrus-ci_dispatcher.sh
+@@ -107,16 +107,7 @@ set -e
+ 
+ if [ -n "$PACKAGE_NAMES" ]; then
+ 	echo "[*] Building packages:" $PACKAGE_NAMES
+-	echo "[*] Copying packages to build environment:"
+-	for pkg in "${REPO_DIR}"/packages/*; do
+-		if [ ! -e "${REPO_DIR}/termux-packages/packages/$(basename "$pkg")" ]; then
+-			echo "    - $(basename "$pkg")"
+-			cp -a "$pkg" "${REPO_DIR}"/termux-packages/packages/
+-		else
+-			echo "    - $(basename "$pkg"): package already exist, skipping"
+-		fi
+-	done
+-	cd ./termux-packages && ./build-package.sh -a "$TERMUX_ARCH" -I $PACKAGE_NAMES
++	./build-package.sh -a "$TERMUX_ARCH" -I $PACKAGE_NAMES
+ else
+ 	echo "[*] No modified packages found."
+ 	exit 0
+-- 
+2.30.2
+
+
+From 09bfea7a17bf49e1e81aa20d955a15e7fabb02a1 Mon Sep 17 00:00:00 2001
+From: Leonid Pliushch <leonid.pliushch@gmail.com>
+Date: Wed, 19 May 2021 18:08:13 +0300
+Subject: [PATCH 63/71] remove cirrus ci configuration
+
+Cirrus CI has huge startup delays when using high CPU configuration, which
+happen due to limited availability of the community cluster resources.
+Unfortunately we can't use lower CPU configuration for termux-packages
+because llvm/rust/swift may hit timeout.
+
+Probably we will have more benefits with using Github Actions even without
+-I option supplied to build-package.sh
+---
+ .cirrus.yml                              |  58 ------------
+ scripts/build/ci/cirrus-ci_dispatcher.sh | 114 -----------------------
+ 2 files changed, 172 deletions(-)
+ delete mode 100644 .cirrus.yml
+ delete mode 100755 scripts/build/ci/cirrus-ci_dispatcher.sh
+
+diff --git a/.cirrus.yml b/.cirrus.yml
+deleted file mode 100644
+index 6bc0965e7..000000000
+--- a/.cirrus.yml
++++ /dev/null
+@@ -1,58 +0,0 @@
+-container:
+-  image: termux/package-builder:latest
+-  # Hopefully large packages won't cause timeouts...
+-  cpu: 8
+-  memory: 16
+-
+-##
+-##  Perform basic check for errors in build.sh package scripts.
+-##  If error found, exit with error code to stop build.
+-##
+-task:
+-  name: Lint packages
+-
+-  timeout_in: 5m
+-
+-  script: |
+-    bash ./scripts/lint-packages.sh
+-
+-##
+-##  Determine changes in the last push, find modified packages and
+-##  build them for aarch64/arm/i686/x86_64 architectures.
+-##
+-##  Built packages are accessible from Cirrus CI web interface.
+-##
+-task:
+-  name: Build packages
+-
+-  # 2 hours is a maximal timeout available for free use.
+-  timeout_in: 120m
+-
+-  depends_on:
+-    - Lint packages
+-
+-  environment:
+-    TERMUX_MAKE_PROCESSES: 8
+-    matrix:
+-      - TERMUX_ARCH: aarch64
+-      - TERMUX_ARCH: arm
+-      - TERMUX_ARCH: i686
+-      - TERMUX_ARCH: x86_64
+-
+-  # Do not use built-in git client provided by Cirrus as it may
+-  # cause problems when determining changed files.
+-  clone_script: |
+-    if [[ -z "$CIRRUS_PR" ]]; then
+-        git clone --recursive --branch="$CIRRUS_BRANCH" "https://x-access-token:${CIRRUS_REPO_CLONE_TOKEN}@github.com/${CIRRUS_REPO_FULL_NAME}.git" "$CIRRUS_WORKING_DIR"
+-        git reset --hard "$CIRRUS_CHANGE_IN_REPO"
+-    else
+-        git clone --recursive "https://x-access-token:${CIRRUS_REPO_CLONE_TOKEN}@github.com/${CIRRUS_REPO_FULL_NAME}.git" "$CIRRUS_WORKING_DIR"
+-        git fetch origin "pull/$CIRRUS_PR/head:pull/$CIRRUS_PR"
+-        git reset --hard "$CIRRUS_CHANGE_IN_REPO"
+-    fi
+-
+-  build_script: |
+-    bash ./scripts/build/ci/cirrus-ci_dispatcher.sh
+-
+-  output_artifacts:
+-    path: "./debs/*.deb"
+diff --git a/scripts/build/ci/cirrus-ci_dispatcher.sh b/scripts/build/ci/cirrus-ci_dispatcher.sh
+deleted file mode 100755
+index 6d7f7225b..000000000
+--- a/scripts/build/ci/cirrus-ci_dispatcher.sh
++++ /dev/null
+@@ -1,114 +0,0 @@
+-#!/usr/bin/env bash
+-##
+-##  Script for determining modified packages and building them.
+-##
+-##  Copyright 2019-2021 Leonid Plyushch <leonid.plyushch@gmail.com>
+-##
+-##  Licensed under the Apache License, Version 2.0 (the "License");
+-##  you may not use this file except in compliance with the License.
+-##  You may obtain a copy of the License at
+-##
+-##    http://www.apache.org/licenses/LICENSE-2.0
+-##
+-##  Unless required by applicable law or agreed to in writing, software
+-##  distributed under the License is distributed on an "AS IS" BASIS,
+-##  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+-##  See the License for the specific language governing permissions and
+-##  limitations under the License.
+-##
+-
+-set -e
+-
+-## Some packages should be excluded from auto builds.
+-EXCLUDED_PACKAGES=""
+-
+-###############################################################################
+-##
+-##  Determining changes.
+-##
+-###############################################################################
+-
+-set +e
+-
+-REPO_DIR=$(realpath "$(dirname "$(realpath "$0")")/../../../")
+-cd "$REPO_DIR" || {
+-	echo "[!] Failed to cd into '$REPO_DIR'."
+-	exit 1
+-}
+-
+-# Some environment variables are important for correct functionality
+-# of this script.
+-if [ -z "$CIRRUS_CHANGE_IN_REPO" ]; then
+-	echo "[!] CIRRUS_CHANGE_IN_REPO is not set."
+-	exit 1
+-fi
+-
+-if [ -n "$CIRRUS_PR" ] && [ -z "$CIRRUS_BASE_SHA" ]; then
+-	echo "[!] CIRRUS_BASE_SHA is not set."
+-	exit 1
+-fi
+-
+-# Process tag '%ci:no-build' that may be added as line to commit message.
+-# Will force CI to exit with status 'passed' without performing build.
+-if grep -qiP '^\s*%ci:no-build\s*$' <(git log --format="%B" -n 1 "$CIRRUS_CHANGE_IN_REPO"); then
+-	echo "[!] Exiting with status 'passed' (tag '%ci:no-build' applied)."
+-	exit 0
+-fi
+-
+-# Process tag '%ci:reset-backlog' that may be added as line to commit message.
+-# Will force CI to build changes only for the current commit.
+-if grep -qiP '^\s*%ci:reset-backlog\s*$' <(git log --format="%B" -n 1 "$CIRRUS_CHANGE_IN_REPO"); then
+-	echo "[!] Building only last pushed commit (tag '%ci:reset-backlog' applied)."
+-	unset CIRRUS_LAST_GREEN_CHANGE
+-	unset CIRRUS_BASE_SHA
+-fi
+-
+-if [ -z "$CIRRUS_PR" ]; then
+-	# Changes determined from the last commit where CI finished with status
+-	# 'passed' (green) and the top commit.
+-	if [ -z "$CIRRUS_LAST_GREEN_CHANGE" ]; then
+-		GIT_CHANGES="$CIRRUS_CHANGE_IN_REPO"
+-	else
+-		GIT_CHANGES="${CIRRUS_LAST_GREEN_CHANGE}..${CIRRUS_CHANGE_IN_REPO}"
+-	fi
+-	echo "[*] Changes: $GIT_CHANGES"
+-else
+-	# Changes in pull request are determined from commits between the
+-	# top commit of base branch and latest commit of PR's branch.
+-	GIT_CHANGES="${CIRRUS_BASE_SHA}..${CIRRUS_CHANGE_IN_REPO}"
+-	echo "[*] Pull request: https://github.com/termux/x11-packages/pull/${CIRRUS_PR}"
+-fi
+-
+-# Determine changes from commit range.
+-CHANGED_FILES=$(git diff-tree --no-commit-id --name-only -r "$GIT_CHANGES" 2>/dev/null)
+-
+-# Modified packages.
+-PACKAGE_NAMES=$(sed -nE 's@^packages/([^/]*)/build.sh@\1@p' <<< "$CHANGED_FILES")
+-
+-unset CHANGED_FILES
+-
+-## Filter deleted packages.
+-for pkg in $PACKAGE_NAMES; do
+-	if [ ! -d "${REPO_DIR}/packages/${pkg}" ]; then
+-		PACKAGE_NAMES=$(sed -E "s/(^|\s\s*)${pkg}(\$|\s\s*)/ /g" <<< "$PACKAGE_NAMES")
+-	fi
+-done
+-
+-## Filter excluded packages.
+-for pkg in $EXCLUDED_PACKAGES; do
+-	PACKAGE_NAMES=$(sed -E "s/(^|\s\s*)${pkg}(\$|\s\s*)/ /g" <<< "$PACKAGE_NAMES")
+-done
+-unset pkg
+-
+-## Remove trailing spaces.
+-PACKAGE_NAMES=$(sed 's/[[:blank:]]*$//' <<< "$PACKAGE_NAMES")
+-
+-set -e
+-
+-if [ -n "$PACKAGE_NAMES" ]; then
+-	echo "[*] Building packages:" $PACKAGE_NAMES
+-	./build-package.sh -a "$TERMUX_ARCH" -I $PACKAGE_NAMES
+-else
+-	echo "[*] No modified packages found."
+-	exit 0
+-fi
+-- 
+2.30.2
+
+
+From 64fbd182a55e9d3d20ab59e6f237173fe8e1f17d Mon Sep 17 00:00:00 2001
+From: Simeon Huang <hzwhuang@gmail.com>
+Date: Tue, 18 May 2021 20:29:04 +0100
+Subject: [PATCH 64/71] add flatbuffers package
+
+---
+ packages/flatbuffers/build.sh | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+ create mode 100644 packages/flatbuffers/build.sh
+
+diff --git a/packages/flatbuffers/build.sh b/packages/flatbuffers/build.sh
+new file mode 100644
+index 000000000..c96af4167
+--- /dev/null
++++ b/packages/flatbuffers/build.sh
+@@ -0,0 +1,12 @@
++TERMUX_PKG_HOMEPAGE=https://github.com/google/flatbuffers
++TERMUX_PKG_DESCRIPTION="Memory Efficient Serialization Library"
++TERMUX_PKG_LICENSE="Apache-2.0"
++TERMUX_PKG_MAINTAINER="Simeon Huang <symeon@librehat.com>"
++TERMUX_PKG_VERSION=2.0.0
++TERMUX_PKG_SRCURL=https://github.com/google/flatbuffers/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz
++TERMUX_PKG_SHA256=9ddb9031798f4f8754d00fca2f1a68ecf9d0f83dfac7239af1311e4fd9a565c4
++TERMUX_PKG_BUILD_DEPENDS="cmake"
++TERMUX_PKG_EXTRA_CONFIGURE_ARGS="
++-DFLATBUFFERS_BUILD_SHAREDLIB=ON
++-DFLATBUFFERS_BUILD_TESTS=OFF
++"
+-- 
+2.30.2
+
+
+From 1c942f624c347bd5c4ceb4dafee128b67ea63c3a Mon Sep 17 00:00:00 2001
+From: marcusz <65075766+WMCB-Tech@users.noreply.github.com>
+Date: Fri, 21 May 2021 02:27:21 +0800
+Subject: [PATCH 65/71] squashfs-tools-ng: update to 1.1.1 (#6833)
+
+---
+ packages/squashfs-tools-ng/build.sh | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/packages/squashfs-tools-ng/build.sh b/packages/squashfs-tools-ng/build.sh
+index f69550486..38ed2e0ee 100644
+--- a/packages/squashfs-tools-ng/build.sh
++++ b/packages/squashfs-tools-ng/build.sh
+@@ -2,11 +2,11 @@ TERMUX_PKG_HOMEPAGE=https://github.com/AgentD/squashfs-tools-ng
+ TERMUX_PKG_DESCRIPTION="New set of tools for working with SquashFS images"
+ TERMUX_PKG_LICENSE="GPL-3.0"
+ TERMUX_PKG_MAINTAINER="WMCB-Tech @marcusz"
+-TERMUX_PKG_VERSION="1.1.0"
++TERMUX_PKG_VERSION="1.1.1"
+ TERMUX_PKG_SRCURL="https://github.com/AgentD/squashfs-tools-ng/archive/v${TERMUX_PKG_VERSION}.tar.gz"
+-TERMUX_PKG_SHA256="01f02a4dbc32a0016c57c7a214b9bed8659768fcb2213886b0dfc55d114cb653"
++TERMUX_PKG_SHA256="e4d3dfc9f354267c65bf2dd7e483ad23a148d49b3946e2ab3918e1fbd69015c1"
+ TERMUX_PKG_DEPENDS="zlib, liblz4, liblzo, zstd"
+ 
+ termux_step_pre_configure(){
+-	./autogen.sh
++	autoreconf -fi
+ }
+-- 
+2.30.2
+
+
+From 800a5cdedae700bc334d6f698dbe93b9623847c3 Mon Sep 17 00:00:00 2001
+From: Andrzej Raczkowski <araczkowski@gmail.com>
+Date: Fri, 21 May 2021 12:17:46 +0200
+Subject: [PATCH 66/71] recompile ttyd for libwebsockets 4.2.0
+
+bump TERMUX_PKG_REVISION for ttyd 1.6.3 to 1
+---
+ packages/ttyd/build.sh | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/packages/ttyd/build.sh b/packages/ttyd/build.sh
+index 53b63c708..f8a5621a8 100644
+--- a/packages/ttyd/build.sh
++++ b/packages/ttyd/build.sh
+@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Command-line tool for sharing terminal over the web"
+ TERMUX_PKG_LICENSE="MIT"
+ TERMUX_PKG_MAINTAINER="@termux"
+ TERMUX_PKG_VERSION=1.6.3
++TERMUX_PKG_REVISION=1
+ TERMUX_PKG_SRCURL=https://github.com/tsl0922/ttyd/archive/$TERMUX_PKG_VERSION.tar.gz
+ TERMUX_PKG_SHA256=1116419527edfe73717b71407fb6e06f46098fc8a8e6b0bb778c4c75dc9f64b9
+ TERMUX_PKG_DEPENDS="json-c, libuv, libwebsockets, zlib"
+-- 
+2.30.2
+
+
+From f236b4e51877a1ceea4cf05e456b9a3e4020f808 Mon Sep 17 00:00:00 2001
+From: Henrik Grimler <henrik@grimler.se>
+Date: Fri, 21 May 2021 19:30:06 +0200
+Subject: [PATCH 67/71] apr: update source url
+
+---
+ packages/apr/build.sh | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/packages/apr/build.sh b/packages/apr/build.sh
+index 7a29b0658..b32e34fca 100644
+--- a/packages/apr/build.sh
++++ b/packages/apr/build.sh
+@@ -3,8 +3,8 @@ TERMUX_PKG_DESCRIPTION="Apache Portable Runtime Library"
+ TERMUX_PKG_LICENSE="Apache-2.0"
+ TERMUX_PKG_MAINTAINER="@termux"
+ TERMUX_PKG_VERSION=1.7.0
+-TERMUX_PKG_REVISION=3
+-TERMUX_PKG_SRCURL=http://apache.mirrors.spacedump.net/apr/apr-${TERMUX_PKG_VERSION}.tar.bz2
++TERMUX_PKG_REVISION=4
++TERMUX_PKG_SRCURL=https://ftp.acc.umu.se/mirror/apache.org/apr/apr-${TERMUX_PKG_VERSION}.tar.gz
+ TERMUX_PKG_SHA256=e2e148f0b2e99b8e5c6caa09f6d4fb4dd3e83f744aa72a952f94f5a14436f7ea
+ TERMUX_PKG_DEPENDS="libuuid"
+ TERMUX_PKG_BREAKS="apr-dev"
+-- 
+2.30.2
+
+
+From aab687005ad7335c14b842212c70e77a1789f4e0 Mon Sep 17 00:00:00 2001
+From: Henrik Grimler <henrik@grimler.se>
+Date: Fri, 21 May 2021 19:31:04 +0200
+Subject: [PATCH 68/71] apr: update sha256sum as well
+
+---
+ packages/apr/build.sh | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/packages/apr/build.sh b/packages/apr/build.sh
+index b32e34fca..825c8717e 100644
+--- a/packages/apr/build.sh
++++ b/packages/apr/build.sh
+@@ -5,7 +5,7 @@ TERMUX_PKG_MAINTAINER="@termux"
+ TERMUX_PKG_VERSION=1.7.0
+ TERMUX_PKG_REVISION=4
+ TERMUX_PKG_SRCURL=https://ftp.acc.umu.se/mirror/apache.org/apr/apr-${TERMUX_PKG_VERSION}.tar.gz
+-TERMUX_PKG_SHA256=e2e148f0b2e99b8e5c6caa09f6d4fb4dd3e83f744aa72a952f94f5a14436f7ea
++TERMUX_PKG_SHA256=48e9dbf45ae3fdc7b491259ffb6ccf7d63049ffacbc1c0977cced095e4c2d5a2
+ TERMUX_PKG_DEPENDS="libuuid"
+ TERMUX_PKG_BREAKS="apr-dev"
+ TERMUX_PKG_REPLACES="apr-dev"
+-- 
+2.30.2
+
+
+From db2340ae62b9c349ffed7dae8ba342b9729e411d Mon Sep 17 00:00:00 2001
+From: Henrik Grimler <henrik@grimler.se>
+Date: Sat, 22 May 2021 07:57:14 +0200
+Subject: [PATCH 69/71] apr-util: switch source url
+
+---
+ packages/apr-util/build.sh | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/packages/apr-util/build.sh b/packages/apr-util/build.sh
+index 8b43b483a..163c2ea3a 100644
+--- a/packages/apr-util/build.sh
++++ b/packages/apr-util/build.sh
+@@ -3,9 +3,9 @@ TERMUX_PKG_DESCRIPTION="Apache Portable Runtime Utility Library"
+ TERMUX_PKG_LICENSE="Apache-2.0"
+ TERMUX_PKG_MAINTAINER="@termux"
+ TERMUX_PKG_VERSION=1.6.1
+-TERMUX_PKG_REVISION=3
+-TERMUX_PKG_SRCURL=http://apache.mirrors.spacedump.net/apr/apr-util-${TERMUX_PKG_VERSION}.tar.bz2
+-TERMUX_PKG_SHA256=d3e12f7b6ad12687572a3a39475545a072608f4ba03a6ce8a3778f607dd0035b
++TERMUX_PKG_REVISION=4
++TERMUX_PKG_SRCURL=https://ftp.acc.umu.se/mirror/apache.org/apr/apr-util-${TERMUX_PKG_VERSION}.tar.gz
++TERMUX_PKG_SHA256=b65e40713da57d004123b6319828be7f1273fbc6490e145874ee1177e112c459
+ TERMUX_PKG_DEPENDS="apr, libcrypt, libexpat, libiconv, libuuid"
+ TERMUX_PKG_BREAKS="apr-util-dev"
+ TERMUX_PKG_REPLACES="apr-util-dev"
+-- 
+2.30.2
+
+
+From 1c1ebe320fec8f74bb0985e121393db24a5ffc24 Mon Sep 17 00:00:00 2001
+From: Simeon Huang <hzwhuang@gmail.com>
+Date: Sat, 22 May 2021 13:17:52 +0100
+Subject: [PATCH 70/71] Enable PulseAudio's GLIB component and put it in
+ subpackages (#6852)
+
+---
+ packages/pulseaudio/build.sh                             | 7 ++++---
+ packages/pulseaudio/pulseaudio-glib-static.subpackage.sh | 6 ++++++
+ packages/pulseaudio/pulseaudio-glib.subpackage.sh        | 8 ++++++++
+ 3 files changed, 18 insertions(+), 3 deletions(-)
+ create mode 100644 packages/pulseaudio/pulseaudio-glib-static.subpackage.sh
+ create mode 100644 packages/pulseaudio/pulseaudio-glib.subpackage.sh
+
+diff --git a/packages/pulseaudio/build.sh b/packages/pulseaudio/build.sh
+index f812cc5c3..92881a3a0 100644
+--- a/packages/pulseaudio/build.sh
++++ b/packages/pulseaudio/build.sh
+@@ -4,18 +4,19 @@ TERMUX_PKG_LICENSE="GPL-2.0"
+ TERMUX_PKG_MAINTAINER="@termux"
+ TERMUX_PKG_SRCURL=https://github.com/pulseaudio/pulseaudio.git
+ TERMUX_PKG_VERSION=14.2
+-TERMUX_PKG_REVISION=3
++TERMUX_PKG_REVISION=4
+ TERMUX_PKG_DEPENDS="libltdl, libsndfile, libandroid-glob, libsoxr, speexdsp, libwebrtc-audio-processing"
+ TERMUX_PKG_BREAKS="libpulseaudio-dev, libpulseaudio"
+ TERMUX_PKG_REPLACES="libpulseaudio-dev, libpulseaudio"
+-TERMUX_PKG_BUILD_DEPENDS="libtool"
++# glib is only a runtime dependency of pulseaudio-glib subpackage
++TERMUX_PKG_BUILD_DEPENDS="libtool, glib"
+ TERMUX_PKG_EXTRA_CONFIGURE_ARGS="--disable-neon-opt
+ --disable-alsa
+ --disable-esound
+---disable-glib2
+ --disable-x11
+ --disable-gtk3
+ --disable-openssl
++--enable-glib2
+ --without-caps
+ --with-database=simple
+ --disable-memfd
+diff --git a/packages/pulseaudio/pulseaudio-glib-static.subpackage.sh b/packages/pulseaudio/pulseaudio-glib-static.subpackage.sh
+new file mode 100644
+index 000000000..bd58fd3d0
+--- /dev/null
++++ b/packages/pulseaudio/pulseaudio-glib-static.subpackage.sh
+@@ -0,0 +1,6 @@
++TERMUX_SUBPKG_DESCRIPTION="Static library for PulseAudio GLIB mainloop component"
++TERMUX_SUBPKG_DEPENDS="pulseaudio-static, pulseaudio-glib"
++TERMUX_SUBPKG_INCLUDE="
++lib/libpulse-mainloop-glib.a
++lib/libpulse-mainloop-glib.la
++"
+diff --git a/packages/pulseaudio/pulseaudio-glib.subpackage.sh b/packages/pulseaudio/pulseaudio-glib.subpackage.sh
+new file mode 100644
+index 000000000..5c02a172c
+--- /dev/null
++++ b/packages/pulseaudio/pulseaudio-glib.subpackage.sh
+@@ -0,0 +1,8 @@
++TERMUX_SUBPKG_DESCRIPTION="PulseAudio GLIB mainloop component"
++TERMUX_SUBPKG_DEPENDS="glib"
++TERMUX_SUBPKG_INCLUDE="
++share/vala/vapi/libpulse-mainloop-glib.*
++include/pulse/glib-mainloop.h
++lib/libpulse-mainloop-glib.so
++lib/pkgconfig/libpulse-mainloop-glib.pc
++"
+-- 
+2.30.2
+
+
+From 557cadb0c3e935bf12c82d417e50fcfe16669141 Mon Sep 17 00:00:00 2001
+From: Lucy Phipps <landfillbaby69@gmail.com>
+Date: Sun, 23 May 2021 06:52:51 +0100
+Subject: [PATCH 71/71] gh: update to 1.10.3
+
+---
+ packages/gh/build.sh | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+diff --git a/packages/gh/build.sh b/packages/gh/build.sh
+index 0a384bfb5..4f9da41bd 100755
+--- a/packages/gh/build.sh
++++ b/packages/gh/build.sh
+@@ -2,10 +2,9 @@ TERMUX_PKG_HOMEPAGE=https://cli.github.com/
+ TERMUX_PKG_DESCRIPTION="GitHub’s official command line tool"
+ TERMUX_PKG_LICENSE="MIT"
+ TERMUX_PKG_MAINTAINER="Krishna kanhaiya @kcubeterm"
+-TERMUX_PKG_VERSION=1.9.2
+-TERMUX_PKG_REVISION=1
++TERMUX_PKG_VERSION=1.10.3
+ TERMUX_PKG_SRCURL=https://github.com/cli/cli/archive/v${TERMUX_PKG_VERSION}.tar.gz
+-TERMUX_PKG_SHA256=a1d5a326c9311f8d208a0e5b5ba47023c3982494063e34ea10da916f9b8ba5c3
++TERMUX_PKG_SHA256=5cb8d367fb028e1ea52f760b03a1239e9b04666dbddc7fd6b1ba3ca9e426a723
+ 
+ termux_step_make() {
+ 	termux_setup_golang
+-- 
+2.30.2
+

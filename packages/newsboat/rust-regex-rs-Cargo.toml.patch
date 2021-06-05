@@ -1,0 +1,8 @@
+diff -u -r ../newsboat-2.21/rust/regex-rs/Cargo.toml ./rust/regex-rs/Cargo.toml
+--- ../newsboat-2.21/rust/regex-rs/Cargo.toml	2020-09-20 19:14:02.000000000 +0000
++++ ./rust/regex-rs/Cargo.toml	2020-10-21 22:09:31.909107906 +0000
+@@ -12,4 +12,3 @@
+ 
+ bitflags = "1.2"
+ libc = ">=0.2.69"
+-gettext-rs = "0.5.0"

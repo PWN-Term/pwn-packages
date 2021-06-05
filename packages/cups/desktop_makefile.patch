@@ -1,0 +1,39 @@
+--- cups-2.3.3.mod/desktop/Makefile	2021-04-26 17:55:51.362516072 +0300
++++ cups-2.3.3.mod/desktop/Makefile	2021-04-26 17:57:11.138321471 +0300
+@@ -59,24 +59,24 @@
+ install-data:
+ 	if test "x$(DBUSDIR)" != x; then \
+ 		echo Installing cups.conf in $(DBUSDIR)...;\
+-		$(INSTALL_DIR) -m 755 $(BUILDROOT)$(DBUSDIR)/system.d; \
+-		$(INSTALL_DATA) cups.conf $(BUILDROOT)$(DBUSDIR)/system.d/cups.conf; \
++		$(INSTALL_DIR) -m 755 /data/data/hilled.pwnterm/files/usr/$(DBUSDIR)/system.d; \
++		$(INSTALL_DATA) cups.conf /data/data/hilled.pwnterm/files/usr/$(DBUSDIR)/system.d/cups.conf; \
+ 	fi
+ 	if test "x$(MENUDIR)" != x; then \
+ 		echo Installing desktop menu...; \
+-		$(INSTALL_DIR) -m 755 $(BUILDROOT)$(MENUDIR); \
+-		$(INSTALL_DATA) cups.desktop $(BUILDROOT)$(MENUDIR); \
++		$(INSTALL_DIR) -m 755 /data/data/hilled.pwnterm/files/usr/$(MENUDIR); \
++		$(INSTALL_DATA) cups.desktop /data/data/hilled.pwnterm/files/usr/$(MENUDIR); \
+ 	fi
+ 	if test "x$(ICONDIR)" != x; then \
+ 		echo Installing desktop icons...; \
+-		$(INSTALL_DIR) -m 755 $(BUILDROOT)$(ICONDIR)/hicolor/16x16/apps; \
+-		$(INSTALL_DATA) cups-16.png $(BUILDROOT)$(ICONDIR)/hicolor/16x16/apps/cups.png; \
+-		$(INSTALL_DIR) -m 755 $(BUILDROOT)$(ICONDIR)/hicolor/32x32/apps; \
+-		$(INSTALL_DATA) cups-32.png $(BUILDROOT)$(ICONDIR)/hicolor/32x32/apps/cups.png; \
+-		$(INSTALL_DIR) -m 755 $(BUILDROOT)$(ICONDIR)/hicolor/64x64/apps; \
+-		$(INSTALL_DATA) cups-64.png $(BUILDROOT)$(ICONDIR)/hicolor/64x64/apps/cups.png; \
+-		$(INSTALL_DIR) -m 755 $(BUILDROOT)$(ICONDIR)/hicolor/128x128/apps; \
+-		$(INSTALL_DATA) cups-128.png $(BUILDROOT)$(ICONDIR)/hicolor/128x128/apps/cups.png; \
++		$(INSTALL_DIR) -m 755 /data/data/hilled.pwnterm/files/usr/$(ICONDIR)/hicolor/16x16/apps; \
++		$(INSTALL_DATA) cups-16.png /data/data/hilled.pwnterm/files/usr/$(ICONDIR)/hicolor/16x16/apps/cups.png; \
++		$(INSTALL_DIR) -m 755 /data/data/hilled.pwnterm/files/usr/$(ICONDIR)/hicolor/32x32/apps; \
++		$(INSTALL_DATA) cups-32.png /data/data/hilled.pwnterm/files/usr/$(ICONDIR)/hicolor/32x32/apps/cups.png; \
++		$(INSTALL_DIR) -m 755 /data/data/hilled.pwnterm/files/usr/$(ICONDIR)/hicolor/64x64/apps; \
++		$(INSTALL_DATA) cups-64.png /data/data/hilled.pwnterm/files/usr/$(ICONDIR)/hicolor/64x64/apps/cups.png; \
++		$(INSTALL_DIR) -m 755 /data/data/hilled.pwnterm/files/usr/$(ICONDIR)/hicolor/128x128/apps; \
++		$(INSTALL_DATA) cups-128.png /data/data/hilled.pwnterm/files/usr/$(ICONDIR)/hicolor/128x128/apps/cups.png; \
+ 	fi
+ 
+ 
