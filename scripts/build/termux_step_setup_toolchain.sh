@@ -7,8 +7,6 @@ termux_step_setup_toolchain() {
 
 	export AS=$TERMUX_HOST_PLATFORM-clang
 	export CC=$TERMUX_HOST_PLATFORM-clang
-	export GCC=$TERMUX_HOST_PLATFORM-clang
-	export CC1=$TERMUX_HOST_PLATFORM-clang
 	export CXX=$TERMUX_HOST_PLATFORM-clang++
 	export AR=$TERMUX_HOST_PLATFORM-ar
 	export CPP=$TERMUX_HOST_PLATFORM-cpp
@@ -21,7 +19,7 @@ termux_step_setup_toolchain() {
 
 	if [ "$TERMUX_ON_DEVICE_BUILD" = "false" ]; then
 		export PATH=$TERMUX_STANDALONE_TOOLCHAIN/bin:$PATH
-		export CC_FOR_BUILD=$CC
+		export CC_FOR_BUILD=gcc
 		export PKG_CONFIG=$TERMUX_STANDALONE_TOOLCHAIN/bin/${TERMUX_HOST_PLATFORM}-pkg-config
 		export CCTERMUX_HOST_PLATFORM=$TERMUX_HOST_PLATFORM$TERMUX_PKG_API_LEVEL
 		if [ $TERMUX_ARCH = arm ]; then

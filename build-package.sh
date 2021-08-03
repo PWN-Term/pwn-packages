@@ -17,7 +17,7 @@ if [ "$(uname -o)" = "Android" ] || [ -e "/system/bin/app_process" ]; then
 
 	# This variable tells all parts of build system that build
 	# is performed on device.
-	export TERMUX_ON_DEVICE_BUILD=false
+	export TERMUX_ON_DEVICE_BUILD=true
 else
 	export TERMUX_ON_DEVICE_BUILD=false
 fi
