@@ -2,11 +2,13 @@ TERMUX_PKG_HOMEPAGE=https://www.qt.io/
 TERMUX_PKG_DESCRIPTION="A cross-platform application and UI framework"
 TERMUX_PKG_LICENSE="LGPL-3.0"
 TERMUX_PKG_MAINTAINER="Simeon Huang <symeon@librehat.com>"
-TERMUX_PKG_VERSION=5.12.10
-TERMUX_PKG_REVISION=5
+TERMUX_PKG_VERSION=5.12.11
+TERMUX_PKG_REVISION=2
 TERMUX_PKG_SRCURL="https://download.qt.io/official_releases/qt/5.12/${TERMUX_PKG_VERSION}/submodules/qtbase-everywhere-src-${TERMUX_PKG_VERSION}.tar.xz"
-TERMUX_PKG_SHA256=8088f174e6d28e779516c083b6087b6a9e3c8322b4bc161fd1b54195e3c86940
-TERMUX_PKG_DEPENDS="dbus, harfbuzz, libandroid-shmem, libc++, libice, libicu, libjpeg-turbo, libpng, libsm, libuuid, libx11, libxcb, libxi, libxkbcommon, openssl, pcre2, ttf-dejavu, freetype, xcb-util-image, xcb-util-keysyms, xcb-util-renderutil, xcb-util-wm, zlib"
+TERMUX_PKG_SHA256=1c1b4e33137ca77881074c140d54c3c9747e845a31338cfe8680f171f0bc3a39
+TERMUX_PKG_DEPENDS="dbus, double-conversion, harfbuzz, libandroid-shmem, libc++, libice, libicu, libjpeg-turbo, libpng, libsm, libuuid, libx11, libxcb, libxi, libxkbcommon, openssl, pcre2, ttf-dejavu, freetype, xcb-util-image, xcb-util-keysyms, xcb-util-renderutil, xcb-util-wm, zlib, glib"
+# gtk3 dependency is a run-time dependency only for the gtk platformtheme subpackage
+TERMUX_PKG_BUILD_DEPENDS="gtk3"
 TERMUX_PKG_BUILD_IN_SRC=true
 TERMUX_PKG_NO_STATICSPLIT=true
 
@@ -28,6 +30,7 @@ termux_step_pre_configure () {
 
     ## Create qmake.conf suitable for cross-compiling.
     sed \
+        -e "s|@TERMUX_PREFIX@|${TERMUX_PREFIX}|g" \
         -e "s|@TERMUX_CC@|${TERMUX_HOST_PLATFORM}-clang|" \
         -e "s|@TERMUX_CXX@|${TERMUX_HOST_PLATFORM}-clang++|" \
         -e "s|@TERMUX_AR@|${TERMUX_HOST_PLATFORM}-ar|" \
@@ -61,12 +64,28 @@ termux_step_configure () {
         -hostbindir "${TERMUX_PREFIX}/opt/qt/cross/bin" \
         -hostlibdir "${TERMUX_PREFIX}/opt/qt/cross/lib" \
         -I "${TERMUX_PREFIX}/include" \
+        -I "${TERMUX_PREFIX}/include/glib-2.0" \
+        -I "${TERMUX_PREFIX}/lib/glib-2.0/include" \
+        -I "${TERMUX_PREFIX}/include/gio-unix-2.0" \
+        -I "${TERMUX_PREFIX}/include/cairo" \
+        -I "${TERMUX_PREFIX}/include/pango-1.0" \
+        -I "${TERMUX_PREFIX}/include/fribidi" \
+        -I "${TERMUX_PREFIX}/include/harfbuzz" \
+        -I "${TERMUX_PREFIX}/include/atk-1.0" \
+        -I "${TERMUX_PREFIX}/include/pixman-1" \
+        -I "${TERMUX_PREFIX}/include/uuid" \
+        -I "${TERMUX_PREFIX}/include/libxml2" \
+        -I "${TERMUX_PREFIX}/include/freetype2" \
+        -I "${TERMUX_PREFIX}/include/gdk-pixbuf-2.0" \
+        -I "${TERMUX_PREFIX}/include/gtk-3.0" \
         -L "${TERMUX_PREFIX}/lib" \
         -nomake examples \
         -no-pch \
         -no-accessibility \
-        -no-glib \
+        -glib \
+        -gtk \
         -icu \
+        -system-doubleconversion \
         -system-pcre \
         -system-zlib \
         -system-freetype \
@@ -115,6 +134,15 @@ termux_step_post_make_install() {
         install -Dm644 ../../../lib/libQt5Bootstrap.a "${TERMUX_PREFIX}/lib/libQt5Bootstrap.a"
         install -Dm644 ../../../lib/libQt5Bootstrap.prl "${TERMUX_PREFIX}/lib/libQt5Bootstrap.prl"
     }
+    cd "${TERMUX_PKG_SRCDIR}/src/tools/bootstrap-dbus" && {
+        # create the dbus bootstrap archieve but we don't need to install this
+        make clean
+
+        "${TERMUX_PREFIX}/opt/qt/cross/bin/qmake" \
+            -spec "${TERMUX_PKG_SRCDIR}/mkspecs/termux-cross"
+
+        make -j "${TERMUX_MAKE_PROCESSES}"
+    }
 
     #######################################################
     ##
@@ -122,7 +150,7 @@ termux_step_post_make_install() {
     ##
     #######################################################
     ## Note: qmake can be built only on host so it is omitted here.
-    for i in moc qlalr qvkgen rcc uic; do
+    for i in moc qlalr qvkgen rcc uic qdbuscpp2xml qdbusxml2cpp; do
         cd "${TERMUX_PKG_SRCDIR}/src/tools/${i}" && {
             make clean
 
@@ -167,41 +195,24 @@ termux_step_post_make_install() {
             -exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' "{}" \;
     done
     unset i
+    sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' "${TERMUX_PREFIX}/opt/qt/cross/lib/libQt5Bootstrap.prl"
 
     ## Remove *.la files.
     find "${TERMUX_PREFIX}/lib" -iname \*.la -delete
     find "${TERMUX_PREFIX}/opt/qt/cross/lib" -iname \*.la -delete
 
-    ## Set qt spec path suitable for target.
-    sed -i \
-        's|/lib/qt//mkspecs/termux-cross"|/lib/qt/mkspecs/termux"|g' \
-        "${TERMUX_PREFIX}/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake"
-
-
     ## Create qmake.conf suitable for compiling host tools (for other modules)
-    install -Dm644 \
-        "${TERMUX_PKG_BUILDER_DIR}/qmake.host.conf" \
-        "${TERMUX_PREFIX}/lib/qt/mkspecs/termux-host/qmake.conf"
     install -Dm644 \
         "${TERMUX_PKG_BUILDER_DIR}/qplatformdefs.host.h" \
         "${TERMUX_PREFIX}/lib/qt/mkspecs/termux-host/qplatformdefs.h"
+    sed \
+        -e "s|@TERMUX_PREFIX@|${TERMUX_PREFIX}|g" \
+        "${TERMUX_PKG_BUILDER_DIR}/qmake.host.conf" > "${TERMUX_PREFIX}/lib/qt/mkspecs/termux-host/qmake.conf"
 }
 
 termux_step_create_debscripts() {
-    ## FIXME: Qt should be built with fontconfig somehow instead
-    ## of using direct path to fonts.
-    ## Currently, using post-installation script to create symlink
-    ## from /system/bin/fonts to $PREFIX/lib/fonts if possible.
+    # Some clean-up is happening via `postinst`
+    # Because we're using this package in both host (Ubuntu glibc) and device (Termux)
     cp -f "${TERMUX_PKG_BUILDER_DIR}/postinst" ./
 }
 
-termux_step_post_massage() {
-    #######################################################
-    ##
-    ##  Restore qt spec path used for cross compiling.
-    ##
-    #######################################################
-    sed -i \
-        's|/lib/qt/mkspecs/termux"|/lib/qt/mkspecs/termux-cross"|g' \
-        "${TERMUX_PREFIX}/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake"
-}

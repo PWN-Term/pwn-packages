@@ -1,6 +1,6 @@
-#!/data/data/hilled.pwnterm/files/usr/bin/sh
+#!/data/data/com.termux/files/usr/bin/sh
 set -e
-PREFIX="/data/data/hilled.pwnterm/files/usr"
+PREFIX="/data/data/com.termux/files/usr"
 
 if [ "${1}" = "triggered" ]; then
 	if [ -x "${PREFIX}/bin/update-mime-database" ]; then

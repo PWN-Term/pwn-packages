@@ -23,7 +23,7 @@ diff --git a/swift/utils/swift_build_support/swift_build_support/products/produc
 index 075b934d10..7cd51690db 100644
 --- a/swift/utils/swift_build_support/swift_build_support/products/product.py
 +++ b/swift/utils/swift_build_support/swift_build_support/products/product.py
-@@ -174,8 +174,12 @@ class Product(object):
+@@ -174,8 +174,10 @@ class Product(object):
  
          install_destdir = self.args.install_destdir
          if self.args.cross_compile_hosts:
@@ -33,8 +33,6 @@ index 075b934d10..7cd51690db 100644
 +                build_root = os.path.dirname(self.build_dir)
 +                install_destdir = '%s/intermediate-install/%s' % (build_root,
 +                                                                  host_target)
-+            else:
-+                install_destdir = os.path.join(install_destdir, host_target)
          return targets.toolchain_path(install_destdir,
                                        self.args.install_prefix)
  

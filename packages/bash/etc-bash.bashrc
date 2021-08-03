@@ -8,23 +8,35 @@
 #   with space.
 # - Do not save duplicated commands.
 
-# VER:1.2.0
+# VER:1.2.1
 # Modified by Martin Valba/@hilledkinged
 
 #
 # PWN-Stuff
 #
 
-# Some chown's even if su wasnt used
-export IDME=$(whoami)
-chown -R $IDME:$IDME /data/data/hilled.pwnterm/cache
-unset $IDME
-
-# JDK8
-#export PATH=$PATH:/data/data/hilled.pwnterm/files/usr/lib/jvm/java-8-openjdk-arm64/bin:/data/data/hilled.pwnterm/files/usr/lib/jvm/java-8-openjdk-arm64/db/bin:/data/data/hilled.pwnterm/files/usr/lib/jvm/java-8-openjdk-arm64/lib
-
 mkdir -p /data/data/hilled.pwnterm/files/usr/home
 HOME=/data/data/hilled.pwnterm/files/usr/home
+
+###
+# Cargo temp fixes
+
+# Cargo path related (Make bin and path it for further use)
+mkdir -p /data/data/hilled.pwnterm/files/usr/home/.cargo/bin
+PATH=$PATH:/data/data/hilled.pwnterm/files/usr/home/.cargo/bin
+
+# cat eof config if not present
+FILE=/data/data/hilled.pwnterm/files/usr/home/.cargo/config
+if [[ -f "$FILE" ]]; then
+    cat <<EOF > $FILE
+[http]
+cainfo = "/data/data/hilled.pwnterm/files/usr/etc/tls/cerrt.pem"
+EOF
+fi
+
+
+# End of cargo fixes
+###
 
 shopt -s histappend
 shopt -s histverify
@@ -51,7 +63,6 @@ alias full-upgrade='apt update && apt upgrade'
 alias ls='ls --color=auto $@'
 alias sudo='su -c "$@"'
 
-alias install-wireless='full-upgrade && apt install airgeddon wifite'
 alias force-reinstall='apt-get -o Dpkg::Options::="--force-overwrite" install --reinstall'
 
 # Now start on home dir

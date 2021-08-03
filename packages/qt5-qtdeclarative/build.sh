@@ -2,10 +2,10 @@ TERMUX_PKG_HOMEPAGE=https://www.qt.io/
 TERMUX_PKG_DESCRIPTION="The Qt Declarative module provides classes for using GUIs created using QML"
 TERMUX_PKG_LICENSE="LGPL-3.0"
 TERMUX_PKG_MAINTAINER="Simeon Huang <symeon@librehat.com>"
-TERMUX_PKG_VERSION=5.12.10
-TERMUX_PKG_REVISION=7
+TERMUX_PKG_VERSION=5.12.11
+TERMUX_PKG_REVISION=2
 TERMUX_PKG_SRCURL="https://download.qt.io/official_releases/qt/5.12/${TERMUX_PKG_VERSION}/submodules/qtdeclarative-everywhere-src-${TERMUX_PKG_VERSION}.tar.xz"
-TERMUX_PKG_SHA256=ae56708646954f93eae087f20408fdbce9b977af565202ddcb4a3119e90f8a16
+TERMUX_PKG_SHA256=1267e029abc8424424c419bc1681db069ec76e51270cc220994e0f442c9f78d3
 TERMUX_PKG_DEPENDS="qt5-qtbase"
 TERMUX_PKG_BUILD_DEPENDS="qt5-qtbase-cross-tools"
 TERMUX_PKG_BUILD_IN_SRC=true
@@ -60,6 +60,7 @@ termux_step_post_make_install () {
     # Install the QmlDevTools for target (needed by some packages such as qttools)
     install -Dm644 ${TERMUX_PKG_SRCDIR}/lib/libQt5QmlDevTools.a "${TERMUX_PREFIX}/lib/libQt5QmlDevTools.a"
     install -Dm644 ${TERMUX_PKG_SRCDIR}/lib/libQt5QmlDevTools.prl "${TERMUX_PREFIX}/lib/libQt5QmlDevTools.prl"
+    sed -i 's|/opt/qt/cross/|/|g' "${TERMUX_PREFIX}/lib/libQt5QmlDevTools.prl"
 
     #######################################################
     ##
@@ -118,9 +119,15 @@ termux_step_post_make_install () {
             -exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' "{}" \;
     done
     unset pref
+    sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' "${TERMUX_PREFIX}/opt/qt/cross/lib/libQt5QmlDevTools.prl"
 
     ## Remove *.la files.
     find "${TERMUX_PREFIX}/lib" -iname \*.la -delete
     find "${TERMUX_PREFIX}/opt/qt/cross/lib" -iname \*.la -delete
 }
 
+termux_step_create_debscripts() {
+    # Some clean-up is happening via `postinst`
+    # Because we're using this package in both host (Ubuntu glibc) and device (Termux)
+    cp -f "${TERMUX_PKG_BUILDER_DIR}/postinst" ./
+}

@@ -2,10 +2,10 @@ TERMUX_PKG_HOMEPAGE=https://emscripten.org
 TERMUX_PKG_DESCRIPTION="Emscripten: An LLVM-to-WebAssembly Compiler"
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="@truboxl"
-TERMUX_PKG_VERSION=2.0.20
+TERMUX_PKG_VERSION=2.0.26
 TERMUX_PKG_SRCURL=https://github.com/emscripten-core/emscripten.git
 TERMUX_PKG_GIT_BRANCH=$TERMUX_PKG_VERSION
-TERMUX_PKG_DEPENDS="python, nodejs"
+TERMUX_PKG_DEPENDS="python, nodejs, debianutils"
 TERMUX_PKG_PLATFORM_INDEPENDENT=true
 TERMUX_PKG_RECOMMENDS="emscripten-llvm, emscripten-binaryen"
 TERMUX_PKG_BUILD_IN_SRC=true
@@ -21,16 +21,19 @@ TERMUX_PKG_NO_STATICSPLIT=true
 #DEPS_JSON=$(echo -e "{\n${DEPS_REVISION}EOL" | sed -e "s|,EOL|\n}|")
 #LLVM_COMMIT=$(echo $DEPS_JSON | python3 -c "import json,sys;print(json.load(sys.stdin)[\"llvm_project_revision\"])")
 #BINARYEN_COMMIT=$(echo $DEPS_JSON | python3 -c "import json,sys;print(json.load(sys.stdin)[\"binaryen_revision\"])")
+#curl -LOC - https://github.com/llvm/llvm-project/archive/$LLVM_COMMIT.zip
+#curl -LOC - https://github.com/WebAssembly/binaryen/archive/$BINARYEN_COMMIT.zip
+#sha256sum $LLVM_COMMIT.zip $BINARYEN_COMMIT.zip
 
 # https://github.com/emscripten-core/emscripten/issues/11362
 # can switch to stable LLVM to save space once above is fixed
-LLVM_COMMIT=642df18f1437b1fffea2343fa471aebfff128c6e
-LLVM_ZIP_SHA256=5175be619a3c9bcfb8633e952a083d63ad42bfee9636606a427d7d701b4772e3
+LLVM_COMMIT=31e75512174e1bdaa242ee5c7f30fe56e68c3748
+LLVM_ZIP_SHA256=0e791aa12720be6ff02437e4e43312892e1bc37fa219e7c79c15b2349b235372
 
 # https://github.com/emscripten-core/emscripten/issues/12252
 # upstream says better bundle the right binaryen revision for now
-BINARYEN_COMMIT=14506179e55978d5f8ef4547d05f8d134bdc4c6b
-BINARYEN_ZIP_SHA256=65eb4e0b2b6359b1310b6c57b32f28d76af697f88e3e313e437b1665006fecea
+BINARYEN_COMMIT=f09bb989a15451960c1078426b61dcc50f232a0a
+BINARYEN_ZIP_SHA256=1c739ee262cd4634cb595afdff5abd2f9ea87c32e2977163bac0860b0862e282
 
 # https://github.com/emscripten-core/emsdk/blob/main/emsdk.py
 # https://chromium.googlesource.com/emscripten-releases/+/refs/heads/main/src/build.py
@@ -47,8 +50,11 @@ LLVM_BUILD_ARGS="
 -DLLVM_INSTALL_TOOLCHAIN_ONLY=ON
 -DLLVM_ENABLE_ASSERTIONS=OFF
 -DLLVM_ENABLE_BINDINGS=OFF
+-DLLVM_ENABLE_LIBEDIT=OFF
+-DLLVM_ENABLE_LIBPFM=OFF
 -DLLVM_ENABLE_LIBXML2=OFF
 -DLLVM_ENABLE_PROJECTS='clang;compiler-rt;libunwind;lld'
+-DLLVM_ENABLE_TERMINFO=OFF
 -DLLVM_TABLEGEN=$TERMUX_PKG_HOSTBUILD_DIR/bin/llvm-tblgen
 
 -DCLANG_ENABLE_ARCMT=OFF
@@ -180,9 +186,9 @@ termux_step_make_install() {
 termux_step_create_debscripts() {
 	cat <<- EOF > postinst
 	#!$TERMUX_PREFIX/bin/sh
-	echo 'Running "npm ci --no-optional" in $TERMUX_PREFIX/lib/emscripten ...'
+	echo 'Running "npm ci --no-optional --production" in $TERMUX_PREFIX/lib/emscripten ...'
 	cd "$TERMUX_PREFIX/lib/emscripten"
-	npm ci --no-optional
+	npm ci --no-optional --production
 	echo
 	echo 'Post-install notice:'
 	echo 'If this is the first time installing Emscripten,'
@@ -190,6 +196,10 @@ termux_step_create_debscripts() {
 	echo 'If you are upgrading, you may want to clear the'
 	echo 'cache by running the command below to fix issues.'
 	echo '"emcc --clear-cache"'
+	echo 'Optional: Run the command below in Emscripten'
+	echo 'directory to install tests dependencies before'
+	echo 'running test suite.'
+	echo '"npm ci --no-optional"'
 	EOF
 
 	cat <<- EOF > postrm

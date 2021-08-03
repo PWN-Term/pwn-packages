@@ -2,14 +2,13 @@ TERMUX_PKG_HOMEPAGE=https://swift.org/
 TERMUX_PKG_DESCRIPTION="Swift is a high-performance system programming language"
 TERMUX_PKG_LICENSE="Apache-2.0, NCSA"
 TERMUX_PKG_MAINTAINER="@buttaface"
-TERMUX_PKG_VERSION=5.4
-TERMUX_PKG_REVISION=1
+TERMUX_PKG_VERSION=5.4.2
 SWIFT_RELEASE="RELEASE"
 TERMUX_PKG_SRCURL=https://github.com/apple/swift/archive/swift-$TERMUX_PKG_VERSION-$SWIFT_RELEASE.tar.gz
-TERMUX_PKG_SHA256=421dafdb0dd4c55cdfed4d8736e965b42a0d97f690bb13528947f9cc3f7ddca9
+TERMUX_PKG_SHA256=df36ef943e0759b602d36d538e0f19db60a1b56b01f6b8bff2564313f665a183
 TERMUX_PKG_HOSTBUILD=true
 TERMUX_PKG_DEPENDS="binutils-gold, clang, libc++, ndk-sysroot, libandroid-glob, libandroid-spawn, libcurl, libicu, libicu-static, libsqlite, libuuid, libxml2, libdispatch, llbuild"
-TERMUX_PKG_BUILD_DEPENDS="cmake, ninja, perl, pkg-config, python2, rsync"
+TERMUX_PKG_BUILD_DEPENDS="cmake, ninja, perl, pkg-config, rsync"
 TERMUX_PKG_BLACKLISTED_ARCHES="i686"
 TERMUX_PKG_NO_STATICSPLIT=true
 
@@ -25,24 +24,24 @@ fi
 
 termux_step_post_get_source() {
 	if [ "$TERMUX_PKG_QUICK_REBUILD" = "false" ]; then
-		# The Swift build-script requires a particular organization of source directories,
-		# which the following sets up.
+		# The Swift build-script requires a particular organization of source
+		# directories, which the following sets up.
 		mkdir .temp
 		mv [a-zA-Z]* .temp/
 		mv .temp swift
 
 		declare -A library_checksums
-		library_checksums[swift-cmark]=ca30ea99bdad03b80939c74899ddcd7cc7e2a55d36fe357f98ff7f620442142e
-		library_checksums[llvm-project]=1b49d4e87f445f5dbf044e2e29690650618bea811acb82fa2b2eaab5a766a907
-		library_checksums[swift-corelibs-libdispatch]=bafbcc1feaf8ac3a82edffde27b85820936cbfd0d194c9c1a320a13c356083c0
-		library_checksums[swift-corelibs-foundation]=28f2033b6bdaf0d6d0984fb3f85fafad351b0511a5b99293b2b3ba561cb27f05
-		library_checksums[swift-corelibs-xctest]=aaf8a15b9ff5fde88ba594364a39534f2302ed9c6c5c251c54c93f71f0860c26
-		library_checksums[swift-llbuild]=91d3e454fff11b14bf89e6ab2b61bacb39395f92d5aab336923670aaa0a7e2fc
+		library_checksums[swift-cmark]=d1c2d9728667a563e9420c608ef4fcde749a86e38ee373e8b109bce5eb94510d
+		library_checksums[llvm-project]=50401b5b696292ccf6dc11f59f34f8958fdc0097c7d4db9cd862a4622ee1676a
+		library_checksums[swift-corelibs-libdispatch]=84602423596712a1fd0d866d640af0c2de56c52ea03c95864af900a55945ef37
+		library_checksums[swift-corelibs-foundation]=38e15b60188a4240fe71b9ca6e9409d423d342896102ac957db42d7fa8b4ad23
+		library_checksums[swift-corelibs-xctest]=5e0bede769b0869e65d2626a3bfdab09faf99dfe48366a37e5c72dc3b7dc9287
+		library_checksums[swift-llbuild]=d5562e63fd68f6fcd64c60820a1be0142592a2742c71c1c6fe673f34854ac599
 		library_checksums[swift-argument-parser]=6743338612be50a5a32127df0a3dd1c34e695f5071b1213f128e6e2b27c4364a
 		library_checksums[Yams]=8bbb28ef994f60afe54668093d652e4d40831c79885fa92b1c2cd0e17e26735a
-		library_checksums[swift-driver]=b12cd6c4f8500a543af139cf2b75fb9c432a773aaba97d04a98d73caa1e659a0
-		library_checksums[swift-tools-support-core]=cc89ac700acbf0fd3cbc722768229ba65f5e9a7e58201d13071ff2c416381508
-		library_checksums[swift-package-manager]=53a9afee939ccc36bfcd019a57e3d5ffe36ffa027645f99fd3fae893d4bc69a7
+		library_checksums[swift-driver]=9907e6d41236cf543a43a89b5ff67b6cb12474692f96069908d4b6f92b617518
+		library_checksums[swift-tools-support-core]=a4bc991cf601fe0f45edc7d0a6248f1a19def4d149b3e86b37361f34b0ecbd2c
+		library_checksums[swift-package-manager]=3648d7cbf74a2ad69b444d78b53e278541b1bd0e4e54fb1b8bc9002596bbaf4b
 
 		for library in "${!library_checksums[@]}"; do \
 			if [ "$library" = "swift-argument-parser" ]; then
@@ -76,7 +75,7 @@ termux_step_post_get_source() {
 			termux_download \
 				https://swift.org/builds/swift-$TERMUX_PKG_VERSION-release/ubuntu2004/swift-$TERMUX_PKG_VERSION-$SWIFT_RELEASE/$SWIFT_BIN.tar.gz \
 				$TERMUX_PKG_CACHEDIR/$SWIFT_BIN.tar.gz \
-				751ea4f939612c705e09f6da9bc45aac8d918956429c97274c806a99ac3b03c4
+				86b849d9f6ba2eda4e12ea5eafaa0748bffcd6272466b514c2b0fd4a829c63a4
 		fi
 	fi
 	# The Swift compiler searches for the clang headers so symlink against them.
