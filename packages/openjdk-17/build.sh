@@ -12,6 +12,8 @@ TERMUX_PKG_SUGGESTS="cups, fontconfig, libx11, libxrender"
 TERMUX_PKG_BUILD_IN_SRC=true
 TERMUX_PKG_HAS_DEBUG=false
 
+# 1
+
 termux_step_pre_configure() {
 	unset JAVA_HOME
 
