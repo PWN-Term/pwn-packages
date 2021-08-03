@@ -19,7 +19,7 @@ termux_step_setup_toolchain() {
 
 	if [ "$TERMUX_ON_DEVICE_BUILD" = "false" ]; then
 		export PATH=$TERMUX_STANDALONE_TOOLCHAIN/bin:$PATH
-		export CC_FOR_BUILD=gcc
+		export CC_FOR_BUILD=$CC
 		export PKG_CONFIG=$TERMUX_STANDALONE_TOOLCHAIN/bin/${TERMUX_HOST_PLATFORM}-pkg-config
 		export CCTERMUX_HOST_PLATFORM=$TERMUX_HOST_PLATFORM$TERMUX_PKG_API_LEVEL
 		if [ $TERMUX_ARCH = arm ]; then
