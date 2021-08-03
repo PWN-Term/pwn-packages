@@ -18,6 +18,8 @@ TERMUX_CACHE_DIR="/data/data/${TERMUX_APP_PACKAGE}/cache"
 TERMUX_ANDROID_HOME="${TERMUX_BASE_DIR}/home"
 TERMUX_PREFIX="${TERMUX_BASE_DIR}/usr"
 
+export PATH=/home/builder/lib/android-ndk/toolchains/llvm/prebuilt/linux-x86_64/bin:/home/builder/lib/android-ndk/toolchains/llvm/prebuilt/linux-x86_64/bin:$PATH
+
 # Allow to override setup.
 if [ -f "$HOME/.termuxrc" ]; then
 	. "$HOME/.termuxrc"

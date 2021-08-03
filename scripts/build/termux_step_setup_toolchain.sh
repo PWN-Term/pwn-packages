@@ -7,6 +7,8 @@ termux_step_setup_toolchain() {
 
 	export AS=$TERMUX_HOST_PLATFORM-clang
 	export CC=$TERMUX_HOST_PLATFORM-clang
+	export GCC=$TERMUX_HOST_PLATFORM-clang
+	export CC1=$TERMUX_HOST_PLATFORM-clang
 	export CXX=$TERMUX_HOST_PLATFORM-clang++
 	export AR=$TERMUX_HOST_PLATFORM-ar
 	export CPP=$TERMUX_HOST_PLATFORM-cpp

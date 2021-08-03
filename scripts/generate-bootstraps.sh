@@ -16,10 +16,10 @@ BOOTSTRAP_ANDROID10_COMPATIBLE=false
 # By default, bootstrap archives will be built for all architectures
 # supported by Termux application.
 # Override with option '--architectures'.
-TERMUX_ARCHITECTURES=("aarch64" "arm" "i686" "x86_64")
+TERMUX_ARCHITECTURES=("aarch64")
 
 # Can be changed by using '--repository' option.
-REPO_BASE_URL="https://packages.termux.org/apt/termux-main"
+REPO_BASE_URL="https://gitlab.com/pwn-hunter/apt-repository/-/raw/rolling"
 
 # A list of non-essential packages. By default it is empty, but can
 # be filled with option '--add'.
@@ -41,12 +41,12 @@ done
 # list is not available.
 read_package_list() {
 	local architecture
-	for architecture in all "$1"; do
+	for architecture in aarch64 "$1"; do
 		if [ ! -e "${BOOTSTRAP_TMPDIR}/packages.${architecture}" ]; then
 			echo "[*] Downloading package list for architecture '${architecture}'..."
 			if ! curl --fail --location \
 				--output "${BOOTSTRAP_TMPDIR}/packages.${architecture}" \
-				"${REPO_BASE_URL}/dists/stable/main/binary-${architecture}/Packages"; then
+				"${REPO_BASE_URL}/dists/rolling/main/binary-${architecture}/Packages"; then
 				if [ "$architecture" = "all" ]; then
 					echo "[!] Skipping architecture-independent package list as not available..."
 					continue
@@ -182,7 +182,7 @@ create_bootstrap_archive() {
 			rm -f "$link"
 		done < <(find . -type l -print0)
 
-		zip -r9 "${BOOTSTRAP_TMPDIR}/bootstrap-${1}.zip" ./*
+		zip -r2 "${BOOTSTRAP_TMPDIR}/bootstrap-${1}.zip" ./*
 	)
 
 	mv -f "${BOOTSTRAP_TMPDIR}/bootstrap-${1}.zip" ./
@@ -292,55 +292,22 @@ for package_arch in "${TERMUX_ARCHITECTURES[@]}"; do
 		touch "${BOOTSTRAP_ROOTFS}/${TERMUX_PREFIX}/var/lib/dpkg/status"
 	fi
 	mkdir -p "${BOOTSTRAP_ROOTFS}/${TERMUX_PREFIX}/tmp"
+	mkdir -p "${BOOTSTRAP_ROOTFS}/${TERMUX_PREFIX}/home"
 
 	# Read package metadata.
 	unset PACKAGE_METADATA
 	declare -A PACKAGE_METADATA
 	read_package_list "$package_arch"
 
-	# Package manager.
-	if ! ${BOOTSTRAP_ANDROID10_COMPATIBLE}; then
-		pull_package apt
-		pull_package game-repo
-		pull_package science-repo
-	fi
-
 	# Core utilities.
+	pull_package libandroid-support
+	pull_package base
 	pull_package bash
-	pull_package bzip2
-	if ! ${BOOTSTRAP_ANDROID10_COMPATIBLE}; then
-		pull_package command-not-found
-	else
-		pull_package proot
-	fi
-	pull_package coreutils
-	pull_package curl
-	pull_package dash
-	pull_package diffutils
-	pull_package findutils
-	pull_package gawk
-	pull_package grep
-	pull_package gzip
-	pull_package less
-	pull_package procps
-	pull_package psmisc
-	pull_package sed
-	pull_package tar
-	pull_package termux-exec
-	pull_package termux-tools
-	pull_package util-linux
-	pull_package xz-utils
-
-	# Additional.
-	pull_package ed
-	pull_package debianutils
-	pull_package dos2unix
-	pull_package inetutils
-	pull_package lsof
+	pull_package apt
 	pull_package nano
-	pull_package net-tools
-	pull_package patch
-	pull_package unzip
+	pull_package command-not-found
+
+
 
 	# Handle additional packages.
 	for add_pkg in "${ADDITIONAL_PACKAGES[@]}"; do
