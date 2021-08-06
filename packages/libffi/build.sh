@@ -10,7 +10,7 @@ TERMUX_PKG_REPLACES="libffi-dev"
 TERMUX_PKG_EXTRA_CONFIGURE_ARGS="--disable-multi-os-directory"
 TERMUX_PKG_RM_AFTER_INSTALL="lib/libffi-${TERMUX_PKG_VERSION}/include"
 
-# Force workflow: 1
+# Force workflow: 2
 
 termux_step_pre_configure() {
 	if [ $TERMUX_ARCH = arm ]; then
