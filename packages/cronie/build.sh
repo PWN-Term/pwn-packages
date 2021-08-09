@@ -15,6 +15,8 @@ TERMUX_PKG_EXTRA_CONFIGURE_ARGS="
 --disable-pam
 --with-editor=$TERMUX_PREFIX/bin/nano
 "
+# workflow: 1
+
 
 TERMUX_PKG_SERVICE_SCRIPT=("crond" 'exec crond -n -s')
 
