@@ -106,7 +106,7 @@ termux_step_post_make_install() {
 	cp tools/clang/docs/man/clang.1 $TERMUX_PREFIX/share/man/man1
 	cd $TERMUX_PREFIX/bin
 
-	for tool in clang clang++ cc c++ cpp gcc g++ ${TERMUX_HOST_PLATFORM}-{clang,clang++,gcc,g++,cpp}; do
+	for tool in clang clang++ ${TERMUX_HOST_PLATFORM}-{clang,clang++,gcc,g++,cpp}; do
 		ln -f -s clang-${TERMUX_PKG_VERSION:0:2} $tool
 	done
 }
