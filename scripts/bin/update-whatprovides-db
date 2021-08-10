@@ -13,7 +13,7 @@ DEBS_DIR_PATH=$(realpath "$(dirname "$0")/../../debs")
 
 list_files() {
 	FILES=$(dpkg-deb --fsys-tarfile "${1}" | tar -t | cut -b2- \
-		| xargs -rd\\n realpath -sm --relative-base="/data/data/com.termux/files/usr" -- \
+		| xargs -rd\\n realpath -sm --relative-base="/data/data/hilled.pwnterm/files/usr" -- \
 		| grep -vEx '[./]|/data(/data(/com\.termux(/files)?)?)?')
 	SORTKEYS='-k1,1'
 	MAXKEY=$(awk -F/ 'BEGIN { x=0 } { if (NF > x) x = NF } END { print x }' <<< "${FILES}")
