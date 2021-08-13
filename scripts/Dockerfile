@@ -23,11 +23,11 @@ RUN apt-get update && \
 	# su - builder -c /tmp/setup-android-sdk.sh && \
 	# Removed unused parts to make a smaller Docker image:
 	apt-get clean && \
-	rm -rf /var/lib/apt/lists/* && \
-	cd /home/builder/lib/android-ndk/ && \
-	rm -Rf sources/cxx-stl/system && \
-	cd /home/builder/lib/android-sdk/tools && \
-	rm -Rf emulator* lib* proguard templates
+	rm -rf /var/lib/apt/lists/*
+	# cd /home/builder/lib/android-ndk/ && \
+	# rm -Rf sources/cxx-stl/system && \
+	# cd /home/builder/lib/android-sdk/tools && \
+	# rm -Rf emulator* lib* proguard templates
 
 # Switch User
 USER builder:builder
