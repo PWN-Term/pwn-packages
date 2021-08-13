@@ -24,7 +24,7 @@ termux_download_deb() {
 			read -d "\n" PKG_PATH PKG_HASH <<<$(./scripts/get_hash_from_file.py "${TERMUX_COMMON_CACHEDIR}-aarch64/$PACKAGE_FILE_PATH" $PACKAGE $VERSION)
 			if [ -n "$PKG_HASH" ]; then
 				if [ ! "$TERMUX_QUIET_BUILD" = true ]; then
-					echo "Found $PACKAGE in ${TERMUX_REPO_URL[$idx-1]}/dists/${TERMUX_REPO_DISTRIBUTION[$idx-1]}"
+					echo "Found $PACKAGE in ${TERMUX_REPO_URL[$idx-1]}/${TERMUX_REPO_DISTRIBUTION[$idx-1]}/dists/${TERMUX_REPO_DISTRIBUTION[$idx-1]}"
 				fi
 				break
 			fi
@@ -32,7 +32,7 @@ termux_download_deb() {
 			read -d "\n" PKG_PATH PKG_HASH <<<$(./scripts/get_hash_from_file.py "${TERMUX_COMMON_CACHEDIR}-${PACKAGE_ARCH}/$PACKAGE_FILE_PATH" $PACKAGE $VERSION)
 			if [ -n "$PKG_HASH" ]; then
 				if [ ! "$TERMUX_QUIET_BUILD" = true ]; then
-					echo "Found $PACKAGE in ${TERMUX_REPO_URL[$idx-1]}/dists/${TERMUX_REPO_DISTRIBUTION[$idx-1]}"
+					echo "Found $PACKAGE in ${TERMUX_REPO_URL[$idx-1]}/${TERMUX_REPO_DISTRIBUTION[$idx-1]}/dists/${TERMUX_REPO_DISTRIBUTION[$idx-1]}"
 				fi
 				break
 			fi
