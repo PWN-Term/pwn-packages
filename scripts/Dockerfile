@@ -6,6 +6,8 @@
 # scripts/setup-{ubuntu,android-sdk}.sh setup scripts.
 FROM ubuntu:20.04
 
+# test: 1
+
 # Fix locale to avoid warnings:
 ENV LANG en_US.UTF-8
 
