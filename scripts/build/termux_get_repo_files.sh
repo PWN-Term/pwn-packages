@@ -44,6 +44,11 @@ termux_get_repo_files() {
 								fi
 							fi
 						done
+
+
+						if ! $failed; then
+							break
+						fi
 				fi
 
 				download_attempts=$((download_attempts - 1))
