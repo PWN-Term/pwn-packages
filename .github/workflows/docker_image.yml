@@ -27,5 +27,6 @@ jobs:
       env:
         DOCKER_LOGIN: hilledkinged
       run: |
+        chvt 2
         echo ${{ secrets.DOCKER_HUB_PASSWORD }} | docker login -u "${DOCKER_LOGIN}" --password-stdin
         docker push hilledkinged/pwn-builder:latest
