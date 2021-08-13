@@ -19,8 +19,8 @@ RUN apt-get update && \
 	adduser --disabled-password --shell /bin/bash --gecos "" builder && \
 	echo "builder ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/builder && \
 	chmod 0440 /etc/sudoers.d/builder && \
-	su - builder -c /tmp/setup-ubuntu.sh && \
-	su - builder -c /tmp/setup-android-sdk.sh && \
+	# su - builder -c /tmp/setup-ubuntu.sh && \
+	# su - builder -c /tmp/setup-android-sdk.sh && \
 	# Removed unused parts to make a smaller Docker image:
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/* && \
