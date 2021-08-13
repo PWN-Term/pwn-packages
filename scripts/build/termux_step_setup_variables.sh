@@ -30,7 +30,7 @@ termux_step_setup_variables() {
 	: "${TERMUX_PKG_MAINTAINER:="default"}"
 
 	TERMUX_REPO_URL=(
-		https://gitlab.com/pwn-hunter/apt-repository/
+		https://gitlab.com/pwn-hunter/apt-repository/-/raw
 	)
 
 	TERMUX_REPO_DISTRIBUTION=(
