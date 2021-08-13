@@ -20,9 +20,9 @@ termux_step_make() {
 			-fPIC \
 			-DHAVE_XFT=1 \
 			-DIMLIB2_FIX=1 \
-			-I/data/data/com.termux/files/usr/include \
-			-I/data/data/com.termux/files/usr/include/freetype2 \
-			-I/data/data/com.termux/files/usr/include/libpng16 \
+			-I/data/data/hilled.pwnterm/files/usr/include \
+			-I/data/data/hilled.pwnterm/files/usr/include/freetype2 \
+			-I/data/data/hilled.pwnterm/files/usr/include/libpng16 \
 			-c ppmodule.c \
 			-o ppmodule.o \
 

@@ -1,4 +1,4 @@
-diff -uNr libX11-1.7.2/configure libX11-1.7.2.mod/configure
+diff -uNr libX11-1.7.2/configure libX11-1.7.2/configure
 --- libX11-1.7.2/configure	2021-06-06 19:49:01.000000000 +0300
 +++ libX11-1.7.2.mod/configure	2021-07-17 02:12:57.003231884 +0300
 @@ -20605,6 +20605,7 @@

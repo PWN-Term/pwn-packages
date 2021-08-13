@@ -9,18 +9,7 @@ export SOURCE_DATE_EPOCH
 : "${TMPDIR:=/tmp}"
 export TMPDIR
 
-if [ "$(uname -o)" = "Android" ] || [ -e "/system/bin/app_process" ]; then
-	if [ "$(id -u)" = "0" ]; then
-		echo "On-device execution of this script as root is disabled."
-		exit 1
-	fi
-
-	# This variable tells all parts of build system that build
-	# is performed on device.
-	export TERMUX_ON_DEVICE_BUILD=true
-else
-	export TERMUX_ON_DEVICE_BUILD=false
-fi
+export TERMUX_ON_DEVICE_BUILD=false
 
 cd "$(realpath "$(dirname "$0")")"
 TERMUX_SCRIPTDIR=$(pwd)

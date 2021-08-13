@@ -1,6 +1,6 @@
-#!/data/data/com.termux/files/usr/bin/bash
+#!/data/data/hilled.pwnterm/files/usr/bin/bash
 set -e
-PREFIX="/data/data/com.termux/files/usr"
+PREFIX="/data/data/hilled.pwnterm/files/usr"
 
 if [ "${1}" = purge ]; then
 	MIMEDIR="${PREFIX}/share/mime"

@@ -1,7 +1,7 @@
 
 # Here will be termux base packages and theyre last commit that was merged in
 
-termux-packages:        7598214f5adf365fa3edb058cf846b12d9d3b93d
+termux-packages:        7598214f5adf365fa3edb058cf846b12d9d3b93d (Now mix with latest for everything beside ./packages)
 x11-packages:           466885e2d2a13fb4a646ff26ebff3b0f70ca5bff
 unstable-packages:      56d6fc345bed8e6ac199db7ffbb20e1ff1b53698
 termux-root-packages:   f6d3d285534cc7bf004616ffeb9bbf887a419499

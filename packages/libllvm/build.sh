@@ -2,9 +2,9 @@ TERMUX_PKG_HOMEPAGE=https://clang.llvm.org/
 TERMUX_PKG_DESCRIPTION="Modular compiler and toolchain technologies library"
 TERMUX_PKG_LICENSE="NCSA"
 TERMUX_PKG_MAINTAINER="@buttaface"
-TERMUX_PKG_VERSION=12.0.0
-TERMUX_PKG_REVISION=2
-TERMUX_PKG_SHA256=9ed1688943a4402d7c904cc4515798cdb20080066efa010fe7e1f2551b423628
+TERMUX_PKG_VERSION=12.0.1
+TERMUX_PKG_REVISION=1
+TERMUX_PKG_SHA256=129cb25cd13677aad951ce5c2deb0fe4afc1e9d98950f53b51bdcfb5a73afa0e
 TERMUX_PKG_SRCURL=https://github.com/llvm/llvm-project/releases/download/llvmorg-$TERMUX_PKG_VERSION/llvm-project-$TERMUX_PKG_VERSION.src.tar.xz
 TERMUX_PKG_HOSTBUILD=true
 TERMUX_PKG_RM_AFTER_INSTALL="
@@ -15,9 +15,9 @@ lib/libiomp5.a
 TERMUX_PKG_DEPENDS="binutils, libc++, ncurses, ndk-sysroot, libffi, zlib, libxml2"
 # Replace gcc since gcc is deprecated by google on android and is not maintained upstream.
 # Conflict with clang versions earlier than 3.9.1-3 since they bundled llvm.
-TERMUX_PKG_CONFLICTS="gcc, clang (<< 3.9.1-3)"
+TERMUX_PKG_CONFLICTS="clang (<< 3.9.1-3)"
 TERMUX_PKG_BREAKS="libclang, libclang-dev, libllvm-dev"
-TERMUX_PKG_REPLACES="gcc, libclang, libclang-dev, libllvm-dev"
+TERMUX_PKG_REPLACES="libclang, libclang-dev, libllvm-dev"
 # See http://llvm.org/docs/CMake.html:
 TERMUX_PKG_EXTRA_CONFIGURE_ARGS="
 -DPYTHON_EXECUTABLE=$(which python3)
@@ -106,7 +106,7 @@ termux_step_post_make_install() {
 	cp tools/clang/docs/man/clang.1 $TERMUX_PREFIX/share/man/man1
 	cd $TERMUX_PREFIX/bin
 
-	for tool in clang clang++ cc c++ cpp gcc g++ ${TERMUX_HOST_PLATFORM}-{clang,clang++,gcc,g++,cpp}; do
+	for tool in clang clang++ ${TERMUX_HOST_PLATFORM}-{clang,clang++,gcc,g++,cpp}; do
 		ln -f -s clang-${TERMUX_PKG_VERSION:0:2} $tool
 	done
 }
