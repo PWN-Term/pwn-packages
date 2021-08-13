@@ -28,5 +28,5 @@ jobs:
         DOCKER_LOGIN: hilledkinged
         DOCKER_PASS: ${{ secrets.DOCKER_HUB_PASSWORD }}
       run: |
-        docker login --username "${DOCKER_LOGIN}" --password "${DOCKER_PASS}"
+        docker login -u "${DOCKER_LOGIN}" -p "${DOCKER_PASS}"
         docker push hilledkinged/pwn-builder:latest
