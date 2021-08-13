@@ -14,6 +14,8 @@ TERMUX_PKG_RECOMMENDS="game-repo, science-repo"
 TERMUX_PKG_SUGGESTS="gnupg, unstable-repo, x11-repo"
 TERMUX_PKG_ESSENTIAL=true
 
+# 1
+
 TERMUX_PKG_CONFFILES="
 etc/apt/sources.list
 etc/apt/trusted.gpg
