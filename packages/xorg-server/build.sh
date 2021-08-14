@@ -81,6 +81,10 @@ termux_step_pre_configure() {
 
 termux_step_post_make_install () {
 	rm -f "${TERMUX_PREFIX}/usr/share/X11/xkb/compiled"
+	
+	# Manually install xwayland binary
+	mkdir -p $TERMUX_PKG_MASSAGEDIR/$TERMUX_PREFIX/bin
+	cp -rf /home/builder/termux-packages/.termux-build/xorg-server/build/hw/xwayland/Xwayland $TERMUX_PKG_MASSAGEDIR/$TERMUX_PREFIX/bin
 }
 
 ## The following is required for package 'tigervnc'.
