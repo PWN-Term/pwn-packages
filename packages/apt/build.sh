@@ -3,15 +3,14 @@ TERMUX_PKG_DESCRIPTION="Front-end for the dpkg package manager"
 TERMUX_PKG_LICENSE="GPL-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION=2.3.6
-TERMUX_PKG_REVISION=1
+TERMUX_PKG_REVISION=2
 TERMUX_PKG_SRCURL=https://fossies.org/linux/misc/apt-${TERMUX_PKG_VERSION}.tar.xz
-TERMUX_PKG_SHA256=85496d2febbe7c6b1c7f4202fca3914ab9e772e382ba65b72b5a1a25e3c78b7b
+TERMUX_PKG_SHA256=083d83be7045d3217532c75a4e4cc2ce296b118fe2fdf4f955cedc87c0f18161
 # apt-key requires utilities from coreutils, findutils, gpgv, grep, sed.
 TERMUX_PKG_DEPENDS="coreutils, dpkg, findutils, gpgv, grep, libandroid-glob, libbz2, libc++, libcurl, libgnutls, liblz4, liblzma, sed, termux-licenses, xxhash, zlib"
 TERMUX_PKG_CONFLICTS="apt-transport-https, libapt-pkg"
 TERMUX_PKG_REPLACES="apt-transport-https, libapt-pkg"
-TERMUX_PKG_RECOMMENDS="game-repo, science-repo"
-TERMUX_PKG_SUGGESTS="gnupg, unstable-repo, x11-repo"
+TERMUX_PKG_SUGGESTS="gnupg"
 TERMUX_PKG_ESSENTIAL=true
 
 # Workflows forced: 2
