@@ -9,6 +9,10 @@
 This project contains scripts and patches to build packages for the [PWN-Term](https://github.com/PWN-Term/PWN-Term)
 Android application.
 
+## Extra info
+* This repo uses its own docker image to build packages like xwayland and etc: hilledkinged/pwn-builder
+* This repo also has x11/root and etc pre-merged for easier building
+
 ## Contacts
 
 Developer / User chat: https://telegram.dog/pwn_term
