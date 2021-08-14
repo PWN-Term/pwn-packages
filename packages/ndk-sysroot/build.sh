@@ -3,7 +3,7 @@ TERMUX_PKG_DESCRIPTION="System header and library files from the Android NDK nee
 TERMUX_PKG_LICENSE="NCSA"
 TERMUX_PKG_MAINTAINER="@hilledkinged"
 TERMUX_PKG_VERSION=21e
-TERMUX_PKG_REVISION=2
+TERMUX_PKG_REVISION=3
 TERMUX_PKG_SRCURL=https://github.com/PWN-Term/ndk-sysroot/archive/refs/heads/master.tar.gz
 TERMUX_PKG_SHA256=e46b51e880e2b4973b2767f8f0fbecdb007b5a7906c35c61eab46e0c5222787d
 # This package has taken over <pty.h> from the previous libutil-dev
