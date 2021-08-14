@@ -66,7 +66,7 @@ termux_step_configure() {
 		--disable-warnings-as-errors \
 		--enable-option-checking=fatal \
 		--with-toolchain-type=gcc \
-		--with-jvm-variants=client \
+		--with-jvm-variants=server \
 		--with-devkit="$TERMUX_STANDALONE_TOOLCHAIN" \
 		--with-debug-level=release \
 		--with-cups-include="$TERMUX_PREFIX/include" \
