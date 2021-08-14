@@ -1,6 +1,6 @@
-diff -Naur ../xserver-1.20.5-orig/hw/xwayland/ashmem.h ./hw/xwayland/ashmem.h
---- ../xserver-1.20.5-orig/hw/xwayland/ashmem.h	1970-01-01 02:00:00.000000000 +0200
-+++ ./hw/xwayland/ashmem.h	2019-07-12 15:00:25.712211695 +0300
+diff -Naur xorg-server-1.20.11/hw/xwayland/ashmem.h xorg-server-1.20.11/hw/xwayland/ashmem.h
+--- xorg-server-1.20.11/hw/xwayland/ashmem.h	1970-01-01 03:00:00.000000000 +0300
++++ xorg-server-1.20.11/hw/xwayland/ashmem.h	2021-08-14 10:48:34.153323991 +0300
 @@ -0,0 +1,47 @@
 +/****************************************************************************
 + ****************************************************************************
@@ -49,9 +49,9 @@ diff -Naur ../xserver-1.20.5-orig/hw/xwayland/ashmem.h ./hw/xwayland/ashmem.h
 +#define ASHMEM_PURGE_ALL_CACHES _IO(__ASHMEMIOC, 10)
 +
 +#endif
-diff -Naur ../xserver-1.20.5-orig/hw/xwayland/xwayland-cursor.c ./hw/xwayland/xwayland-cursor.c
---- ../xserver-1.20.5-orig/hw/xwayland/xwayland-cursor.c	2019-07-12 15:14:26.885076932 +0300
-+++ ./hw/xwayland/xwayland-cursor.c	2019-07-12 14:57:25.217524468 +0300
+diff -Naur xorg-server-1.20.11/hw/xwayland/xwayland-cursor.c xorg-server-1.20.11/hw/xwayland/xwayland-cursor.c
+--- xorg-server-1.20.11/hw/xwayland/xwayland-cursor.c	2021-04-13 17:11:40.000000000 +0300
++++ xorg-server-1.20.11/hw/xwayland/xwayland-cursor.c	2021-08-14 10:48:34.153323991 +0300
 @@ -66,7 +66,8 @@
      PixmapPtr pixmap;
  
@@ -62,10 +62,10 @@ diff -Naur ../xserver-1.20.5-orig/hw/xwayland/xwayland-cursor.c ./hw/xwayland/xw
      dixSetPrivate(&cursor->devPrivates, &xwl_cursor_private_key, pixmap);
  
      return TRUE;
-diff -Naur ../xserver-1.20.5-orig/hw/xwayland/xwayland-glamor-gbm.c ./hw/xwayland/xwayland-glamor-gbm.c
---- ../xserver-1.20.5-orig/hw/xwayland/xwayland-glamor-gbm.c	2019-07-12 15:14:26.885076932 +0300
-+++ ./hw/xwayland/xwayland-glamor-gbm.c	2019-07-12 14:57:38.836704786 +0300
-@@ -212,9 +212,9 @@
+diff -Naur xorg-server-1.20.11/hw/xwayland/xwayland-glamor-gbm.c xorg-server-1.20.11/hw/xwayland/xwayland-glamor-gbm.c
+--- xorg-server-1.20.11/hw/xwayland/xwayland-glamor-gbm.c	2021-04-13 17:11:40.000000000 +0300
++++ xorg-server-1.20.11/hw/xwayland/xwayland-glamor-gbm.c	2021-08-14 10:48:34.154323986 +0300
+@@ -202,9 +202,9 @@
      PixmapPtr pixmap = NULL;
  
      if (width > 0 && height > 0 && depth >= 15 &&
@@ -78,53 +78,12 @@ diff -Naur ../xserver-1.20.5-orig/hw/xwayland/xwayland-glamor-gbm.c ./hw/xwaylan
          uint32_t format = gbm_format_for_depth(depth);
  
  #ifdef GBM_BO_WITH_MODIFIERS
-diff -Naur ../xserver-1.20.5-orig/hw/xwayland/xwayland-output.c ./hw/xwayland/xwayland-output.c
---- ../xserver-1.20.5-orig/hw/xwayland/xwayland-output.c	2019-07-12 15:14:26.889075146 +0300
-+++ ./hw/xwayland/xwayland-output.c	2019-07-12 14:54:13.242596617 +0300
-@@ -171,6 +171,40 @@
-         return 25.4 / DEFAULT_DPI;
- }
- 
-+static int
-+xwl_set_pixmap_visit_window(WindowPtr window, void *data)
-+{
-+    ScreenPtr screen = window->drawable.pScreen;
-+
-+    if (screen->GetWindowPixmap(window) == data) {
-+        screen->SetWindowPixmap(window, screen->GetScreenPixmap(screen));
-+        return WT_WALKCHILDREN;
-+    }
-+
-+    return WT_DONTWALKCHILDREN;
-+}
-+
-+static void
-+update_backing_pixmaps(struct xwl_screen *xwl_screen, int width, int height)
-+{
-+    ScreenPtr pScreen = xwl_screen->screen;
-+    WindowPtr pRoot = pScreen->root;
-+    PixmapPtr old_pixmap, new_pixmap;
-+
-+    old_pixmap = pScreen->GetScreenPixmap(pScreen);
-+    new_pixmap = pScreen->CreatePixmap(pScreen, width, height,
-+                                       pScreen->rootDepth,
-+                                       CREATE_PIXMAP_USAGE_BACKING_PIXMAP);
-+    pScreen->SetScreenPixmap(new_pixmap);
-+
-+    if (old_pixmap) {
-+        TraverseTree(pRoot, xwl_set_pixmap_visit_window, old_pixmap);
-+        pScreen->DestroyPixmap(old_pixmap);
-+    }
-+
-+    pScreen->ResizeWindow(pRoot, 0, 0, width, height, NULL);
-+}
-+
- static void
- update_screen_size(struct xwl_output *xwl_output, int width, int height)
- {
-@@ -180,6 +214,9 @@
-     if (xwl_screen->root_clip_mode == ROOT_CLIP_FULL)
-         SetRootClip(xwl_screen->screen, ROOT_CLIP_NONE);
+diff -Naur xorg-server-1.20.11/hw/xwayland/xwayland-output.c xorg-server-1.20.11/hw/xwayland/xwayland-output.c
+--- xorg-server-1.20.11/hw/xwayland/xwayland-output.c	2021-04-13 17:11:40.000000000 +0300
++++ xorg-server-1.20.11/hw/xwayland/xwayland-output.c	2021-08-14 10:49:27.882039515 +0300
+@@ -187,6 +187,9 @@
+     if (!xwl_screen->rootless && xwl_screen->screen->root)
+         update_backing_pixmaps (xwl_screen, width, height);
  
 +    if (!xwl_screen->rootless && xwl_screen->screen->root)
 +        update_backing_pixmaps (xwl_screen, width, height);
@@ -132,9 +91,9 @@ diff -Naur ../xserver-1.20.5-orig/hw/xwayland/xwayland-output.c ./hw/xwayland/xw
      xwl_screen->width = width;
      xwl_screen->height = height;
      xwl_screen->screen->width = width;
-diff -Naur ../xserver-1.20.5-orig/hw/xwayland/xwayland-shm.c ./hw/xwayland/xwayland-shm.c
---- ../xserver-1.20.5-orig/hw/xwayland/xwayland-shm.c	2019-07-12 15:14:26.889075146 +0300
-+++ ./hw/xwayland/xwayland-shm.c	2019-07-12 15:28:09.124589333 +0300
+diff -Naur xorg-server-1.20.11/hw/xwayland/xwayland-shm.c xorg-server-1.20.11/hw/xwayland/xwayland-shm.c
+--- xorg-server-1.20.11/hw/xwayland/xwayland-shm.c	2021-04-13 17:11:40.000000000 +0300
++++ xorg-server-1.20.11/hw/xwayland/xwayland-shm.c	2021-08-14 10:48:34.155323981 +0300
 @@ -40,12 +40,17 @@
  #include <string.h>
  #include <stdlib.h>
@@ -199,8 +158,9 @@ diff -Naur ../xserver-1.20.5-orig/hw/xwayland/xwayland-shm.c ./hw/xwayland/xwayl
          (width == 0 && height == 0) || depth < 15)
          return fbCreatePixmap(screen, width, height, depth, hint);
  
---- ./miext/sync/meson.build.orig	2019-07-21 03:56:18.960672711 +0300
-+++ ./miext/sync/meson.build	2019-07-21 04:02:55.926796439 +0300
+diff -Naur xorg-server-1.20.11/miext/sync/meson.build xorg-server-1.20.11/miext/sync/meson.build
+--- xorg-server-1.20.11/miext/sync/meson.build	2021-04-13 17:11:40.000000000 +0300
++++ xorg-server-1.20.11/miext/sync/meson.build	2021-08-14 10:48:34.155323981 +0300
 @@ -1,6 +1,7 @@
  srcs_miext_sync = [
      'misync.c',
