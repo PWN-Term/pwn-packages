@@ -6,7 +6,7 @@ TERMUX_PKG_VERSION=17.0
 TERMUX_PKG_REVISION=10
 TERMUX_PKG_SRCURL=https://github.com/PWN-Term/mobile/archive/master.tar.gz
 TERMUX_PKG_SHA256=0f394778df45cab60accef4cb2e1da6849ea17f59246108b5411ec905a3b00c5
-TERMUX_PKG_DEPENDS="freetype, libandroid-shmem, libandroid-spawn, libiconv, zlib, xorgproto, libx11, libxcursor, libxext, cups, fontconfig, libpng, libxrender, libxtst, libxrandr, libxt, libxi"
+TERMUX_PKG_DEPENDS="freetype, libandroid-spawn, libiconv, zlib, xorgproto, libx11, libxcursor, libxext, cups, fontconfig, libpng, libxrender, libxtst, libxrandr, libxt, libxi"
 TERMUX_PKG_BUILD_DEPENDS="cups, fontconfig, libpng, libx11, libxrender"
 TERMUX_PKG_SUGGESTS="cups, fontconfig, libx11, libxrender"
 TERMUX_PKG_BUILD_IN_SRC=true
@@ -61,7 +61,7 @@ termux_step_configure() {
 		--openjdk-target=$TERMUX_HOST_PLATFORM \
 		--with-extra-cflags="$CFLAGS $CPPFLAGS -DLE_STANDALONE -DANDROID -D__TERMUX__=1" \
 		--with-extra-cxxflags="$CXXFLAGS $CPPFLAGS -DLE_STANDALONE -DANDROID -D__TERMUX__=1" \
-		--with-extra-ldflags="${jdk_ldflags} -landroid-shmem -landroid-spawn" \
+		--with-extra-ldflags="${jdk_ldflags} -landroid-spawn" \
 		--disable-precompiled-headers \
 		--disable-warnings-as-errors \
 		--enable-option-checking=fatal \
@@ -111,7 +111,7 @@ termux_step_make_install() {
 
 	# Symlink external dependencies.
 	local l
-	for l in libandroid-shmem.so libandroid-spawn.so libfreetype.so libiconv.so libz.so.1; do
+	for l in libandroid-spawn.so libfreetype.so libiconv.so libz.so.1; do
 		ln -sfr $TERMUX_PREFIX/lib/$l \
 			$TERMUX_PREFIX/opt/openjdk/lib/$l
 	done
