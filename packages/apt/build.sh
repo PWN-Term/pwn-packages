@@ -14,7 +14,7 @@ TERMUX_PKG_RECOMMENDS="game-repo, science-repo"
 TERMUX_PKG_SUGGESTS="gnupg, unstable-repo, x11-repo"
 TERMUX_PKG_ESSENTIAL=true
 
-# 1
+# Workflows forced: 2
 
 TERMUX_PKG_CONFFILES="
 etc/apt/sources.list
