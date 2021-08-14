@@ -19,6 +19,12 @@ mkdir -p /data/data/hilled.pwnterm/files/usr/home
 HOME=/data/data/hilled.pwnterm/files/usr/home
 
 ###
+# Xwayland / xorg-server
+
+# Predefine xdg runtime path for easier startups of xwayland servers
+XDG_RUNTIME_DIR=/data/data/hilled.pwnterm/files/usr/tmp
+
+###
 # Cargo temp fixes
 
 # Cargo path related (Make bin and path it for further use)
@@ -62,8 +68,6 @@ alias full-upgrade='apt update && apt upgrade'
 
 alias ls='ls --color=auto $@'
 alias sudo='su -c "$@"'
-
-alias force-reinstall='apt-get -o Dpkg::Options::="--force-overwrite" install --reinstall'
 
 # Now start on home dir
 home
