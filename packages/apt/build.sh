@@ -4,7 +4,7 @@ TERMUX_PKG_LICENSE="GPL-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION=2.3.6
 TERMUX_PKG_REVISION=1
-TERMUX_PKG_SRCURL=http://deb.debian.org/debian/pool/main/a/apt/apt_${TERMUX_PKG_VERSION}.tar.xz
+TERMUX_PKG_SRCURL=https://fossies.org/linux/misc/apt-${TERMUX_PKG_VERSION}.tar.xz
 TERMUX_PKG_SHA256=85496d2febbe7c6b1c7f4202fca3914ab9e772e382ba65b72b5a1a25e3c78b7b
 # apt-key requires utilities from coreutils, findutils, gpgv, grep, sed.
 TERMUX_PKG_DEPENDS="coreutils, dpkg, findutils, gpgv, grep, libandroid-glob, libbz2, libc++, libcurl, libgnutls, liblz4, liblzma, sed, termux-licenses, xxhash, zlib"
