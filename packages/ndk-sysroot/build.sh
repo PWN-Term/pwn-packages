@@ -5,7 +5,7 @@ TERMUX_PKG_MAINTAINER="@hilledkinged"
 TERMUX_PKG_VERSION=21e
 TERMUX_PKG_REVISION=3
 TERMUX_PKG_SRCURL=https://github.com/PWN-Term/ndk-sysroot/archive/refs/heads/master.tar.gz
-TERMUX_PKG_SHA256=e46b51e880e2b4973b2767f8f0fbecdb007b5a7906c35c61eab46e0c5222787d
+TERMUX_PKG_SHA256=c466f86c70fdd71d0cda0291bc2ecc1bb1c2792ecf61b1afa746b2b0dd60264e
 # This package has taken over <pty.h> from the previous libutil-dev
 # and iconv.h from libandroid-support-dev:
 TERMUX_PKG_CONFLICTS="libutil-dev, libandroid-support-dev"
