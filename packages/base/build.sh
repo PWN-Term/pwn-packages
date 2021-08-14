@@ -1,6 +1,7 @@
 TERMUX_PKG_HOMEPAGE=https://gitlab.com/pwn-hunter/packages/base
 TERMUX_PKG_DESCRIPTION="Just for neofetch and other possible things "
 TERMUX_PKG_LICENSE="GPL-2.0"
+TERMUX_PKG_MAINTAINER=@hilledkinged
 TERMUX_PKG_VERSION=1.0.6
 TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://gitlab.com/pwn-hunter/packages/base/-/archive/master/base-master.tar.gz
