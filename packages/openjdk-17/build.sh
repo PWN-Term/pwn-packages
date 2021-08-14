@@ -6,7 +6,8 @@ TERMUX_PKG_VERSION=17.0
 TERMUX_PKG_REVISION=10
 TERMUX_PKG_SRCURL=https://github.com/PWN-Term/mobile/archive/master.tar.gz
 TERMUX_PKG_SHA256=0f394778df45cab60accef4cb2e1da6849ea17f59246108b5411ec905a3b00c5
-TERMUX_PKG_DEPENDS="freetype, libandroid-shmem, libandroid-spawn, libiconv, zlib, xorgproto, libx11, libxcursor, libxext, cups, fontconfig, libpng, libxrender, libxtst, libxrandr, libxt, libxi"TERMUX_PKG_BUILD_DEPENDS="cups, fontconfig, libpng, libx11, libxrender"
+TERMUX_PKG_DEPENDS="freetype, libandroid-shmem, libandroid-spawn, libiconv, zlib, xorgproto, libx11, libxcursor, libxext, cups, fontconfig, libpng, libxrender, libxtst, libxrandr, libxt, libxi"
+TERMUX_PKG_BUILD_DEPENDS="cups, fontconfig, libpng, libx11, libxrender"
 TERMUX_PKG_SUGGESTS="cups, fontconfig, libx11, libxrender"
 TERMUX_PKG_BUILD_IN_SRC=true
 TERMUX_PKG_HAS_DEBUG=false
