@@ -57,12 +57,6 @@ termux_step_pre_configure() {
 
 termux_step_configure() {
 	local jdk_ldflags="-L${TERMUX_PREFIX}/lib -Wl,-rpath=$TERMUX_PREFIX/opt/openjdk/lib -Wl,--enable-new-dtags"
-
-    export CFLAGS+=" $sameflags $CFLAGS"
-    export CXXFLAGS="$sameflags $CXXFLAGS"
-
-	sameflags="-DHEADLESS=1"
-
 	bash ./configure \
 		--openjdk-target=$TERMUX_HOST_PLATFORM \
 		--with-extra-cflags="$CFLAGS $CPPFLAGS -DLE_STANDALONE -DANDROID -D__TERMUX__=1" \
@@ -83,7 +77,7 @@ termux_step_configure() {
 		--with-zlib=system \
 		--x-includes="$TERMUX_PREFIX/include/X11" \
 		--x-libraries="$TERMUX_PREFIX/lib" \
-        --with-x="$TERMUX_PREFIX/include/X11" \
+        	--with-x="$TERMUX_PREFIX/include/X11"
 }
 
 termux_step_make() {
