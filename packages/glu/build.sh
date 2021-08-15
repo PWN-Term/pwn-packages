@@ -10,3 +10,5 @@ TERMUX_PKG_SHA256=f6f484cfcd51e489afe88031afdea1e173aa652697e4c19ddbcb8260579a10
 TERMUX_PKG_DEPENDS="libandroid-shmem, libc++, libdrm, libexpat, libx11, libxau, libxcb, libxdamage, libxdmcp, libxext, libxfixes, libxshmfence, mesa, zlib"
 TERMUX_PKG_CONFLICTS="libglu"
 TERMUX_PKG_REPLACES="libglu"
+
+# 1
