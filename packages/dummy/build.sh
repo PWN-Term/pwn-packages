@@ -7,7 +7,7 @@ TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/PWN-Term/dummy/archive/refs/heads/master.tar.gz
 TERMUX_PKG_SHA256=bf6bdabe1796cbafb747d84c683624a5000a6c8a0df97645911863483f00ae96
 # Edit me (any time)...
-TERMUX_PKG_DEPENDS="base"
+TERMUX_PKG_DEPENDS="thunar, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfwm4, tigervnc"
 TERMUX_PKG_BUILD_IN_SRC=true
 
 # ${TERMUX_PKG_DESCRIPTION} that is usable to build deps not like metapackage that makes it package but not dpe
