@@ -30,6 +30,8 @@ TERMUX_PKG_EXTRA_CONFIGURE_ARGS="
 --with-dumping=none
 "
 
+# 1
+
 if $TERMUX_DEBUG; then
 	TERMUX_PKG_EXTRA_CONFIGURE_ARGS+="
 	--enable-checking=yes,glyphs
