@@ -5,13 +5,15 @@ TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION=17.0
 TERMUX_PKG_REVISION=11
 TERMUX_PKG_SRCURL=https://github.com/PWN-Term/mobile/archive/master.tar.gz
-TERMUX_PKG_SHA256=4684c72df4115cefa03729176e5135a7b7c43addb030a819b6f2b1eade0846d1
+TERMUX_PKG_SHA256=4d28bafed97fa845df93592b8e795a63f2f6e8d5be89c62c33695912d2b9724f
 TERMUX_PKG_DEPENDS="freetype, libandroid-shmem, libandroid-spawn, libiconv, zlib, xorgproto, libx11, libxcursor, libxext, cups, fontconfig, libpng, libxrender, libxtst, libxrandr, libxt, libxi"
 TERMUX_PKG_BUILD_DEPENDS="cups, fontconfig, libpng, libx11, libxrender"
 TERMUX_PKG_SUGGESTS="cups, fontconfig, libx11, libxrender"
 TERMUX_PKG_BUILD_IN_SRC=true
 TERMUX_PKG_HAS_DEBUG=false
 TERMUX_PKG_NO_ELF_CLEANER=true
+
+# Force workflow
 
 termux_step_pre_configure() {
 	unset JAVA_HOME
