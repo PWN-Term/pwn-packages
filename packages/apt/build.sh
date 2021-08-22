@@ -2,18 +2,17 @@ TERMUX_PKG_HOMEPAGE=https://packages.debian.org/apt
 TERMUX_PKG_DESCRIPTION="Front-end for the dpkg package manager"
 TERMUX_PKG_LICENSE="GPL-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
-TERMUX_PKG_VERSION=2.3.6
-TERMUX_PKG_REVISION=2
-TERMUX_PKG_SRCURL=https://fossies.org/linux/misc/apt-${TERMUX_PKG_VERSION}.tar.xz
-TERMUX_PKG_SHA256=083d83be7045d3217532c75a4e4cc2ce296b118fe2fdf4f955cedc87c0f18161
+TERMUX_PKG_VERSION=2.3.8
+TERMUX_PKG_SRCURL=https://deb.debian.org/debian/pool/main/a/apt/apt_${TERMUX_PKG_VERSION}.tar.xz
+TERMUX_PKG_SHA256=485af1430c75e3158b715e4424dbf96d1b5641dc4dccc50f571b2c779a837f2c
 # apt-key requires utilities from coreutils, findutils, gpgv, grep, sed.
 TERMUX_PKG_DEPENDS="coreutils, dpkg, findutils, gpgv, grep, libandroid-glob, libbz2, libc++, libcurl, libgnutls, liblz4, liblzma, sed, termux-licenses, xxhash, zlib"
+TERMUX_PKG_BUILD_DEPENDS="docbook-xsl"
 TERMUX_PKG_CONFLICTS="apt-transport-https, libapt-pkg"
 TERMUX_PKG_REPLACES="apt-transport-https, libapt-pkg"
-TERMUX_PKG_SUGGESTS="gnupg"
+TERMUX_PKG_RECOMMENDS="game-repo, science-repo"
+TERMUX_PKG_SUGGESTS="gnupg, unstable-repo, x11-repo"
 TERMUX_PKG_ESSENTIAL=true
-
-# Workflows forced: 2
 
 TERMUX_PKG_CONFFILES="
 etc/apt/sources.list
@@ -47,6 +46,10 @@ lib/apt/methods/rred
 lib/apt/planners/
 lib/apt/solvers/
 lib/dpkg/
+share/man/man1/apt-extracttemplates.1
+share/man/man1/apt-sortpkgs.1
+share/man/man1/apt-transport-mirror.1
+share/man/man8/apt-cdrom.8
 "
 
 termux_step_pre_configure() {
@@ -60,6 +63,10 @@ termux_step_pre_configure() {
 	CXXFLAGS+=" -Wno-c++11-narrowing"
 	# Fix glob() on Android 7.
 	LDFLAGS+=" -Wl,--no-as-needed -landroid-glob"
+
+	# for manpage build
+	local docbook_xsl_version=$(. $TERMUX_SCRIPTDIR/packages/docbook-xsl/build.sh; echo $TERMUX_PKG_VERSION)
+	TERMUX_PKG_EXTRA_CONFIGURE_ARGS+=" -DDOCBOOK_XSL=$TERMUX_PREFIX/share/xml/docbook/xsl-stylesheets-$docbook_xsl_version-nons"
 }
 
 termux_step_post_make_install() {
@@ -69,8 +76,4 @@ termux_step_post_make_install() {
 	ln -sfr $TERMUX_PREFIX/lib/apt/methods/http $TERMUX_PREFIX/lib/apt/methods/tor
 	ln -sfr $TERMUX_PREFIX/lib/apt/methods/http $TERMUX_PREFIX/lib/apt/methods/tor+http
 	ln -sfr $TERMUX_PREFIX/lib/apt/methods/https $TERMUX_PREFIX/lib/apt/methods/tor+https
-
-	# man pages
-	mkdir -p $TERMUX_PREFIX/share/man/
-	cp -Rf $TERMUX_PKG_BUILDER_DIR/man/* $TERMUX_PREFIX/share/man/
 }
