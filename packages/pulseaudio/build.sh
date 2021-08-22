@@ -9,7 +9,7 @@ TERMUX_PKG_DEPENDS="libltdl, libsndfile, libandroid-glob, libandroid-shmem, libs
 TERMUX_PKG_BREAKS="libpulseaudio-dev, libpulseaudio"
 TERMUX_PKG_REPLACES="libpulseaudio-dev, libpulseaudio"
 # glib is only a runtime dependency of pulseaudio-glib subpackage
-TERMUX_PKG_BUILD_DEPENDS="libtool, glib"
+TERMUX_PKG_BUILD_DEPENDS="libtool, glib, libandroid-shmem"
 TERMUX_PKG_EXTRA_CONFIGURE_ARGS="--disable-neon-opt
 --disable-alsa
 --disable-esound
