@@ -11,7 +11,7 @@ TERMUX_PKG_BUILD_IN_SRC=true
 
 # ${TERMUX_PKG_DESCRIPTION} that is usable to build deps not like metapackage that makes it package but not dpe
 
-# Also its harmless if installed
+# Also its harmless if installed.
 
 termux_step_post_make_install() {
 	make install
