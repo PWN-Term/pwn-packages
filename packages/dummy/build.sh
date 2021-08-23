@@ -10,7 +10,7 @@ TERMUX_PKG_DEPENDS="bash, command-not-found, apt, file, patchelf, base"
 TERMUX_PKG_BUILD_IN_SRC=true
 
 # ${TERMUX_PKG_DESCRIPTION} that is usable to build deps not like metapackage that makes it package but not dpe
-
+# Triggers
 # Also its harmless if installed.
 
 termux_step_post_make_install() {
