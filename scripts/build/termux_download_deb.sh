@@ -43,7 +43,7 @@ termux_download_deb() {
 		return 1
 	fi
 	
-	termux_download "${TERMUX_REPO_URL[${idx}-1]}/rolling/${PKG_PATH}" \
+	termux_download "${TERMUX_REPO_URL[${idx}-1]}/test/${PKG_PATH}" \
 				"${TERMUX_COMMON_CACHEDIR}-${PACKAGE_ARCH}/${DEB_FILE}" \
 				"$PKG_HASH"
 }

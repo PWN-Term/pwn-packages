@@ -19,7 +19,7 @@ BOOTSTRAP_ANDROID10_COMPATIBLE=false
 TERMUX_ARCHITECTURES=("aarch64" "arm" "i686" "x86_64")
 
 # Can be changed by using '--repository' option.
-REPO_BASE_URL="https://gitlab.com/pwn-hunter/apt-repository/-/raw/rolling"
+REPO_BASE_URL="https://gitlab.com/pwn-hunter/apt-repository/-/raw/test"
 
 # A list of non-essential packages. By default it is empty, but can
 # be filled with option '--add'.
@@ -46,7 +46,7 @@ read_package_list() {
 			echo "[*] Downloading package list for architecture '${architecture}'..."
 			if ! curl --fail --location \
 				--output "${BOOTSTRAP_TMPDIR}/packages.${architecture}" \
-				"${REPO_BASE_URL}/dists/rolling/main/binary-${architecture}/Packages"; then
+				"${REPO_BASE_URL}/dists/test/main/binary-${architecture}/Packages"; then
 				if [ "$architecture" = "all" ]; then
 					echo "[!] Skipping architecture-independent package list as not available..."
 					continue
