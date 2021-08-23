@@ -1,9 +1,9 @@
-name: Docker image
+name: Test-Docker image
 
 on:
   push:
     branches:
-    - master
+    - test
     paths:
     - 'scripts/Dockerfile'
     - 'scripts/properties.sh'
@@ -22,11 +22,11 @@ jobs:
     - name: Build
       run: |
         cd ./scripts
-        docker build --tag hilledkinged/pwn-builder:latest .
+        docker build --tag hilledkinged/pwn-builder-test:latest .
     - name: Push to hub.docker.com
       env:
         DOCKER_LOGIN: hilledkinged
         DOCKER_PASS: ${{ secrets.DOCKER_HUB_PASSWORD }}
       run: |
         docker login -u "${DOCKER_LOGIN}" -p "${DOCKER_PASS}"
-        docker push hilledkinged/pwn-builder:latest
+        docker push hilledkinged/pwn-builder-test:latest
