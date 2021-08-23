@@ -2,7 +2,7 @@
 set -e -u
 
 CONTAINER=hilledkinged-pwn-builder
-IMAGE=hilledkinged/pwn-builder
+IMAGE=hilledkinged/pwn-builder-test
 
 docker pull $IMAGE
 

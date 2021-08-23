@@ -4,7 +4,7 @@
 #
 # .\scripts\run-docker.ps1 ./build-package.sh -a arm libandroid-support
 
-Set-Variable -Name IMAGE_NAME -Value "hilledkinged/pwn-builder"
+Set-Variable -Name IMAGE_NAME -Value "hilledkinged/pwn-builder-test"
 Set-Variable -Name CONTAINER_NAME -Value "hilledkinged-pwn-builder"
 
 Write-Output "Running container ${CONTAINER_NAME} from image ${IMAGE_NAME}..."

@@ -10,7 +10,7 @@ else
 	REPOROOT="$(dirname $(readlink -f $0))/../"
 fi
 
-: ${TERMUX_BUILDER_IMAGE_NAME:=hilledkinged/pwn-builder}
+: ${TERMUX_BUILDER_IMAGE_NAME:=hilledkinged/pwn-builder-test}
 : ${CONTAINER_NAME:=hilledkinged-pwn-builder}
 
 USER=builder

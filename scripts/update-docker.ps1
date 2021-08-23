@@ -5,7 +5,7 @@
 # .\scripts\update-docker.ps1
 
 Set-Variable -Name CONTAINER -Value "hilledkinged-pwn-builder"
-Set-Variable -Name IMAGE -Value "hilledkinged/pwn-builder"
+Set-Variable -Name IMAGE -Value "hilledkinged/pwn-builder-test"
 
 docker pull $IMAGE
 
