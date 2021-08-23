@@ -44,7 +44,7 @@ TERMUX_PKG_EXTRA_CONFIGURE_ARGS="
 -DPERL_EXECUTABLE=$(which perl)
 -DLLVM_ENABLE_FFI=ON
 "
-# Workflows forced: 1
+# Workflows forced: 1.1
 
 if [ $TERMUX_ARCH_BITS = 32 ]; then
 	# Do not set _FILE_OFFSET_BITS=64
