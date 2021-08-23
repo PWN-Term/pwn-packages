@@ -6,7 +6,6 @@ TERMUX_PKG_VERSION=1.0.0
 TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/PWN-Term/dummy/archive/refs/heads/master.tar.gz
 TERMUX_PKG_SHA256=bf6bdabe1796cbafb747d84c683624a5000a6c8a0df97645911863483f00ae96
-# ...
 TERMUX_PKG_DEPENDS="bash, command-not-found, apt, file, patchelf, base"
 TERMUX_PKG_BUILD_IN_SRC=true
 
