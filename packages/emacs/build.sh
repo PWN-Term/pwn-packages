@@ -3,13 +3,15 @@ TERMUX_PKG_DESCRIPTION="Extensible, customizable text editor-and more"
 TERMUX_PKG_LICENSE="GPL-3.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION=27.2
-TERMUX_PKG_REVISION=1
+TERMUX_PKG_REVISION=2
 TERMUX_PKG_SRCURL=https://ftp.gnu.org/gnu/emacs/emacs-${TERMUX_PKG_VERSION}.tar.xz
 TERMUX_PKG_SHA256=b4a7cc4e78e63f378624e0919215b910af5bb2a0afc819fad298272e9f40c1b9
-TERMUX_PKG_DEPENDS="ncurses, gnutls, libxml2"
+TERMUX_PKG_DEPENDS="gnutls, fontconfig, freetype, gdk-pixbuf, giflib, glib, libgnutls, libice, libjpeg-turbo, libpng, librsvg, libsm, libtiff, libx11, libxaw, libxcb, libxext, libxfixes, libxft, libxinerama, libxml2, libxmu, libxpm, libxrandr, libxrender, libxt, littlecms, ncurses, zlib, git"
 TERMUX_PKG_BREAKS="emacs-dev"
 TERMUX_PKG_REPLACES="emacs-dev"
 TERMUX_PKG_SERVICE_SCRIPT=("emacsd" 'exec emacs --fg-daemon 2>&1')
+TERMUX_PKG_HOSTBUILD=true
+
 TERMUX_PKG_EXTRA_CONFIGURE_ARGS="
 --disable-autodepend
 --with-gif=no
@@ -18,7 +20,6 @@ TERMUX_PKG_EXTRA_CONFIGURE_ARGS="
 --without-gconf
 --without-gsettings
 --without-lcms2
---without-x
 --with-png=no
 --with-tiff=no
 --with-xml2
@@ -28,9 +29,14 @@ TERMUX_PKG_EXTRA_CONFIGURE_ARGS="
 --with-modules
 --with-pdumper=yes
 --with-dumping=none
+--without-cairo
+--without-imagemagick
+--without-libotf
+--without-xaw3d
+--without-gpm
+--with-x
+--with-x-toolkit=lucid
 "
-
-# 1
 
 if $TERMUX_DEBUG; then
 	TERMUX_PKG_EXTRA_CONFIGURE_ARGS+="
@@ -98,7 +104,7 @@ termux_step_host_build() {
 	mkdir -p $NATIVE_PREFIX/share/emacs/$TERMUX_PKG_VERSION
 	ln -s $TERMUX_PKG_SRCDIR/lisp $NATIVE_PREFIX/share/emacs/$TERMUX_PKG_VERSION/lisp
 	( cd $TERMUX_PKG_SRCDIR; ./autogen.sh )
-	$TERMUX_PKG_SRCDIR/configure --prefix=$NATIVE_PREFIX --without-all --without-x
+	$TERMUX_PKG_SRCDIR/configure --prefix=$NATIVE_PREFIX --without-all --with-x-toolkit=no
 	make -j $TERMUX_MAKE_PROCESSES
 }
 
