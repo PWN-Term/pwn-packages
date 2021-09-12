@@ -5,7 +5,7 @@ TERMUX_PKG_MAINTAINER=@hilledkinged
 TERMUX_PKG_VERSION=3.2.10
 TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/PWN-Term/eudev/archive/refs/heads/3.2.10-package.tar.gz
-TERMUX_PKG_SHA256=7d58ac5888747c08a18b2c6f8b96b7c68a55dad5a6012bdf630d68b1f10ac062
+TERMUX_PKG_SHA256=f042aa59027781052cb3dba5647c402bdcf94d4b113bd60ff39399e7dd70e4b9
 TERMUX_PKG_BUILD_IN_SRC=true
 
 termux_step_post_make_install() {
