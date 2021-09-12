@@ -3,7 +3,7 @@ TERMUX_PKG_DESCRIPTION="Dynamic programming language with a focus on simplicity 
 TERMUX_PKG_LICENSE="BSD 2-Clause"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION=2.7.2
-TERMUX_PKG_REVISION=4
+TERMUX_PKG_REVISION=5
 TERMUX_PKG_SRCURL=https://cache.ruby-lang.org/pub/ruby/${TERMUX_PKG_VERSION:0:3}/ruby-${TERMUX_PKG_VERSION}.tar.xz
 TERMUX_PKG_SHA256=1b95ab193cc8f5b5e59d2686cb3d5dcf1ddf2a86cb6950e0b4bdaae5040ec0d6
 # libbffi is used by the fiddle extension module:
@@ -56,6 +56,21 @@ termux_step_make_install() {
 	perl -p -i -e 's/^.*CONFIG\["MKDIR_P"\].*$/  CONFIG["MKDIR_P"] = "mkdir -p"/' $RBCONFIG
 	perl -p -i -e 's/^.*CONFIG\["EGREP"\].*$/  CONFIG["EGREP"] = "grep -E"/' $RBCONFIG
 	perl -p -i -e 's/^.*CONFIG\["GREP"\].*$/  CONFIG["GREP"] = "grep"/' $RBCONFIG
+
+	# Rename some things so no conflicts happen with ruby3*
+	mkdir -p $TERMUX_PREFIX/bin/ruby2/
+	mv $TERMUX_PREFIX/bin/bundle $TERMUX_PREFIX/bin/ruby2/
+	mv $TERMUX_PREFIX/bin/bundler $TERMUX_PREFIX/bin/ruby2/
+	mv $TERMUX_PREFIX/bin/erb $TERMUX_PREFIX/bin/ruby2/
+	mv $TERMUX_PREFIX/bin/gem $TERMUX_PREFIX/bin/ruby2/
+	mv $TERMUX_PREFIX/bin/irb $TERMUX_PREFIX/bin/ruby2/
+	mv $TERMUX_PREFIX/bin/racc $TERMUX_PREFIX/bin/ruby2/
+	mv $TERMUX_PREFIX/bin/racc2y $TERMUX_PREFIX/bin/ruby2/
+	mv $TERMUX_PREFIX/bin/rake $TERMUX_PREFIX/bin/ruby2/
+	mv $TERMUX_PREFIX/bin/rdoc $TERMUX_PREFIX/bin/ruby2/
+	mv $TERMUX_PREFIX/bin/ruby $TERMUX_PREFIX/bin/ruby2/
+	mv $TERMUX_PREFIX/bin/y2racc $TERMUX_PREFIX/bin/ruby2/
+	mv $TERMUX_PREFIX/bin/ri $TERMUX_PREFIX/bin/ruby2/
 }
 
 termux_step_post_massage() {

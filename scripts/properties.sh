@@ -20,6 +20,9 @@ TERMUX_CACHE_DIR="/data/data/${TERMUX_APP_PACKAGE}/cache"
 TERMUX_ANDROID_HOME="${TERMUX_BASE_DIR}/usr/home"
 TERMUX_PREFIX="${TERMUX_BASE_DIR}/usr"
 
+# Pwn exclusive's
+PWN_SRC_STRIP=true	# Add it so its not unbound
+
 # Allow to override setup.
 if [ -f "$HOME/.termuxrc" ]; then
 	. "$HOME/.termuxrc"

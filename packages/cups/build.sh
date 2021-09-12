@@ -8,6 +8,9 @@ TERMUX_PKG_SHA256="261fd948bce8647b6d5cb2a1784f0c24cc52b5c4e827b71d726020bcc502f
 TERMUX_PKG_DEPENDS="libiconv, libcrypt"
 TERMUX_PKG_BUILD_IN_SRC=true
 
+TERMUX_PKG_EXTRA_CONFIGURE_ARGS="
+--with-dbusdir=/data/data/hilled.pwnterm/files/usr/etc/dbus-1
+"
 TERMUX_PKG_CONFFILES="
 etc/cups/cups-files.conf
 etc/cups/cupsd.conf

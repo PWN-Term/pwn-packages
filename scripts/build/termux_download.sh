@@ -30,6 +30,7 @@ termux_download() {
 			       "$URL" "$ACTUAL_CHECKSUM"
 		fi
 		mv "$TMPFILE" "$DESTINATION"
+		echo "File successfully downloaded"
 		return 0
 	fi
 

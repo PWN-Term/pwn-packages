@@ -15,7 +15,7 @@ TERMUX_PKG_BUILD_IN_SRC=true
 TERMUX_PKG_EXTRA_CONFIGURE_ARGS="--disable-static"
 
 termux_step_pre_configure() {
-	CFLAGS+="-isystem $TERMUX_PKG_BUILDER_DIR/include $CPPFLAGS"
+	CFLAGS+=" -isystem $TERMUX_PKG_BUILDER_DIR/include $CPPFLAGS"
 	LDFLAGS+=" -liconv"
 }
 

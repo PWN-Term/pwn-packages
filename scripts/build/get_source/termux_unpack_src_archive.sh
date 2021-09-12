@@ -14,9 +14,17 @@ termux_extract_src_archive() {
 			unzip -q "$file"
 			mv $folder "$TERMUX_PKG_SRCDIR"
 		else
-			test "$i" -gt 0 && STRIP=0
-			mkdir -p "$TERMUX_PKG_SRCDIR"
-			tar xf "$file" -C "$TERMUX_PKG_SRCDIR" --strip-components=$STRIP
+            if [ $PWN_SRC_STRIP = true ]; then
+                    test "$i" -gt 0 && STRIP=0
+                    mkdir -p "$TERMUX_PKG_SRCDIR"
+                    tar xf "$file" -C "$TERMUX_PKG_SRCDIR" --strip-components=$STRIP
+                else
+                    test "$i" -gt 0 && STRIP=0
+                    mkdir -p "$TERMUX_PKG_SRCDIR"
+                    tar xf "$file" -C "$TERMUX_PKG_SRCDIR"
+                fi
+
+
 		fi
 		set -o pipefail
 	done

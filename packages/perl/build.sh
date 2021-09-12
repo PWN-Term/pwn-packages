@@ -10,6 +10,7 @@ TERMUX_PKG_MAINTAINER="@termux"
 # - psutils
 TERMUX_PKG_VERSION=(5.34.0
                     1.3.6)
+TERMUX_PKG_DEPENDS="ndk-sysroot, libandroid-shmem"
 TERMUX_PKG_SHA256=(551efc818b968b05216024fb0b727ef2ad4c100f8cb6b43fab615fa78ae5be9a
                    4010f41870d64e3957b4b8ce70ebba10a7c4a3e86c5551acb4099c3fcbb37ce5)
 TERMUX_PKG_SRCURL=(http://www.cpan.org/src/5.0/perl-${TERMUX_PKG_VERSION}.tar.gz
@@ -56,6 +57,10 @@ termux_step_configure() {
 	ln -s /bin/sh $TERMUX_PREFIX/bin/sh
 
 	cd $TERMUX_PKG_BUILDDIR
+
+	cp -rf /home/builder/lib/android-ndk/sysroot/usr/include/sys/sem.h $TERMUX_STANDALONE_TOOLCHAIN/sysroot/usr/include/sys/sem.h
+	cp -rf $TERMUX_PREFIX/include/sys/shm.h $TERMUX_STANDALONE_TOOLCHAIN/sysroot/usr/include/sys/shm.h
+
 	$TERMUX_PKG_SRCDIR/configure \
 		--target=$TERMUX_HOST_PLATFORM \
 		-Dosname=android \
@@ -92,4 +97,7 @@ termux_step_post_make_install() {
 	if [ "$TERMUX_ARCH" == "arm" ] || [ "$TERMUX_ARCH" == "i686" ]; then
 		sed -i "s@cc => '$ORIG_CC',@cc => '$ORIG_CC -pie',@g" Config.pm
 	fi
+
+	rm -f $TERMUX_STANDALONE_TOOLCHAIN/sysroot/usr/include/sys/sem.h
+	rm -f $TERMUX_STANDALONE_TOOLCHAIN/sysroot/usr/include/sys/shm.h
 }

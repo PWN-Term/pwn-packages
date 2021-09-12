@@ -7,7 +7,9 @@ set -e
 
 . $(dirname "$(realpath "$0")")/properties.sh
 BOOTSTRAP_TMPDIR=$(mktemp -d "${TMPDIR:-/tmp}/bootstrap-tmp.XXXXXXXX")
-trap 'rm -rf $BOOTSTRAP_TMPDIR' EXIT
+echo $BOOTSTRAP_TMPDIR
+sleep 4
+#trap 'rm -rf $BOOTSTRAP_TMPDIR' EXIT
 
 # By default, bootstrap archives are compatible with Android >=7.0
 # and <10.
@@ -55,7 +57,6 @@ read_package_list() {
 			echo >> "${BOOTSTRAP_TMPDIR}/packages.${architecture}"
 		fi
 
-		echo "[*] Reading package list for '${architecture}'..."
 		while read -r -d $'\xFF' package; do
 			if [ -n "$package" ]; then
 				local package_name
@@ -299,11 +300,7 @@ for package_arch in "${TERMUX_ARCHITECTURES[@]}"; do
 	read_package_list "$package_arch"
 
 	# Core utilities.
-	pull_package bash
-	pull_package apt
 	pull_package nano
-	pull_package base
-	pull_package command-not-found
 
 	# Handle additional packages.
 	for add_pkg in "${ADDITIONAL_PACKAGES[@]}"; do

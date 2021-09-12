@@ -1,19 +1,19 @@
-TERMUX_PKG_HOMEPAGE=https://github.com/PojavLauncherTeam/mobile
-TERMUX_PKG_DESCRIPTION="Java development kit and runtime"
+TERMUX_PKG_HOMEPAGE=http://openjdk.java.net
+TERMUX_PKG_DESCRIPTION="OpenJDK 11 Java Runtime Environment (prerelease)"
 TERMUX_PKG_LICENSE="GPL-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
-TERMUX_PKG_VERSION=17.0
-TERMUX_PKG_REVISION=12
-TERMUX_PKG_SRCURL=https://github.com/PWN-Term/mobile/archive/77e6aaa354509c6dffeb009a5e5059a588f7b4b3.tar.gz
-TERMUX_PKG_SHA256=e50c8a673a0ff1bcd718bdfe6307ac28822bb665c54cff15999175a353e8e0d5
+TERMUX_PKG_VERSION=11.0.12
+TERMUX_PKG_REVISION=1
+TERMUX_PKG_SRCURL=https://github.com/PWN-Term/openjdk-jdk11u/archive/refs/heads/master.tar.gz
+TERMUX_PKG_SHA256=3ea43ab463504a6c41a539cb3dc9388f175ab949ea2b978cc8abfd5033b459c3
 TERMUX_PKG_DEPENDS="freetype, libandroid-shmem, libandroid-spawn, libiconv, zlib, xorgproto, libx11, libxcursor, libxext, cups, fontconfig, libpng, libxrender, libxtst, libxrandr, libxt, libxi"
 TERMUX_PKG_BUILD_DEPENDS="cups, fontconfig, libpng, libx11, libxrender"
 TERMUX_PKG_SUGGESTS="cups, fontconfig, libx11, libxrender"
 TERMUX_PKG_BUILD_IN_SRC=true
 TERMUX_PKG_HAS_DEBUG=false
 TERMUX_PKG_NO_ELF_CLEANER=false
+
 export COMPILER_WARNINGS_FATAL=false
-# Force workflow
 
 termux_step_pre_configure() {
 	unset JAVA_HOME
@@ -63,8 +63,8 @@ termux_step_configure() {
 	local COMPILER_WARNINGS_FATAL=false
 	bash ./configure \
 		--openjdk-target=$TERMUX_HOST_PLATFORM \
-		--with-extra-cflags=" -Wno-error $CFLAGS $CPPFLAGS -DLE_STANDALONE -DANDROID -D__TERMUX__=1" \
-		--with-extra-cxxflags=" -Wno-error $CXXFLAGS $CPPFLAGS -DLE_STANDALONE -DANDROID -D__TERMUX__=1" \
+		--with-extra-cflags=" -w -Wno-error $CFLAGS $CPPFLAGS -DLE_STANDALONE -DANDROID -D__TERMUX__=1 -D__ANDROID__=1" \
+		--with-extra-cxxflags=" -w -Wno-error $CXXFLAGS $CPPFLAGS -DLE_STANDALONE -DANDROID -D__TERMUX__=1  -D__ANDROID__=1" \
 		--with-extra-ldflags=" ${jdk_ldflags} -landroid-shmem -landroid-spawn" \
 		--disable-precompiled-headers \
 		--disable-warnings-as-errors \
@@ -81,13 +81,17 @@ termux_step_configure() {
 		--with-zlib=system \
 		--x-includes="$TERMUX_PREFIX/include/X11" \
 		--x-libraries="$TERMUX_PREFIX/lib" \
-        	--with-x="$TERMUX_PREFIX/include/X11"
+		--with-x="$TERMUX_PREFIX/include/X11"
 }
 
 termux_step_make() {
+
+    cp -rf /home/builder/lib/android-ndk/sysroot/usr/include/sys/sem.h $TERMUX_STANDALONE_TOOLCHAIN/sysroot/usr/include/sys/sem.h
+	cp -rf $TERMUX_PREFIX/include/sys/shm.h $TERMUX_STANDALONE_TOOLCHAIN/sysroot/usr/include/sys/shm.h
+
 	export COMPILER_WARNINGS_FATAL=false
 	export CFLAGS_WARNINGS_ARE_ERRORS=
-	cd build/linux-${TERMUX_ARCH/i686/x86}-server-release
+	cd build/linux-${TERMUX_ARCH/i686/x86}-normal-server-release
 	make JOBS=1 images
 
 	# Delete created library stubs.
@@ -97,7 +101,7 @@ termux_step_make() {
 termux_step_make_install() {
 	rm -rf $TERMUX_PREFIX/opt/openjdk
 	mkdir -p $TERMUX_PREFIX/opt/openjdk
-	cp -r build/linux-${TERMUX_ARCH/i686/x86}-server-release/images/jdk/* \
+	cp -r build/linux-${TERMUX_ARCH/i686/x86}-normal-server-release/images/jdk/* \
 		$TERMUX_PREFIX/opt/openjdk/
 	find $TERMUX_PREFIX/opt/openjdk -name "*.debuginfo" -delete
 
@@ -115,10 +119,6 @@ termux_step_make_install() {
 	echo "export JAVA_HOME=$TERMUX_PREFIX/opt/openjdk" > \
 		$TERMUX_PREFIX/etc/profile.d/java.sh
 
-	# Symlink external dependencies.
-	local l
-	for l in libandroid-shmem.so libandroid-spawn.so libfreetype.so libiconv.so libz.so.1; do
-		ln -sfr $TERMUX_PREFIX/lib/$l \
-			$TERMUX_PREFIX/opt/openjdk/lib/$l
-	done
+    rm -f $TERMUX_STANDALONE_TOOLCHAIN/sysroot/usr/include/sys/sem.h
+	rm -f $TERMUX_STANDALONE_TOOLCHAIN/sysroot/usr/include/sys/shm.h
 }
