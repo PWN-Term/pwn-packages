@@ -23,6 +23,9 @@ TERMUX_PREFIX="${TERMUX_BASE_DIR}/usr"
 # Pwn exclusive's
 PWN_SRC_STRIP=true	# Add it so its not unbound
 
+# Dumb thing to do ( so things arent unbound ), will be merged with latest termux base so its not needed soon ( probably ).
+TERMUX_DEBUG_BUILD=false
+
 # Allow to override setup.
 if [ -f "$HOME/.termuxrc" ]; then
 	. "$HOME/.termuxrc"
