@@ -1,9 +1,0 @@
---- libuv-v1.41.0/Makefile.am	2021-09-03 11:43:02.619158885 +0000
-+++ libuv-v1.41.0/Makefile.am	2021-09-03 11:45:30.242897031 +0000
-@@ -386,6 +386,7 @@
- uvinclude_HEADERS += include/uv/android-ifaddrs.h
- libuv_la_CFLAGS += -D_GNU_SOURCE
- libuv_la_SOURCES += src/unix/android-ifaddrs.c \
-+                   src/unix/random-getentropy.c \
-                     src/unix/pthread-fixes.c
- endif
