@@ -1,7 +1,14 @@
+# keep repology-metadata in sync with this
+
 TERMUX_ANDROID_BUILD_TOOLS_VERSION=30.0.3
-TERMUX_NDK_VERSION_NUM=21
-TERMUX_NDK_REVISION="d"
+TERMUX_NDK_VERSION_NUM=23
+TERMUX_NDK_REVISION="b"
 TERMUX_NDK_VERSION=$TERMUX_NDK_VERSION_NUM$TERMUX_NDK_REVISION
+# when changing the above:
+# remove TERMUX_PKG_REVISION in:
+#   libc++, ndk-multilib, ndk-sysroot, vulkan-loader-android
+# update SHA256 sums in scripts/setup-android-sdk.sh
+# check all packages build and run correctly and bump if needed
 
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
@@ -19,12 +26,6 @@ TERMUX_BASE_DIR="/data/data/${TERMUX_APP_PACKAGE}/files"
 TERMUX_CACHE_DIR="/data/data/${TERMUX_APP_PACKAGE}/cache"
 TERMUX_ANDROID_HOME="${TERMUX_BASE_DIR}/usr/home"
 TERMUX_PREFIX="${TERMUX_BASE_DIR}/usr"
-
-# Pwn exclusive's
-PWN_SRC_STRIP=true	# Add it so its not unbound
-
-# Dumb thing to do ( so things arent unbound ), will be merged with latest termux base so its not needed soon ( probably ).
-TERMUX_DEBUG_BUILD=false
 
 # Allow to override setup.
 if [ -f "$HOME/.termuxrc" ]; then

@@ -71,7 +71,7 @@ termux_step_install_license() {
 
 		for LICENSE in "$TERMUX_PREFIX/share/doc/$TERMUX_PKG_NAME"/LICENSE*; do
 			if [ "$LICENSE" = "$TERMUX_PREFIX/share/doc/$TERMUX_PKG_NAME/LICENSE*" ]; then
-				termux_error_exit "No LICENSE file was installed for $TERMUX_PKG_NAME"
+				echo "WARNING: No LICENSE file was installed for $TERMUX_PKG_NAME"
 			fi
 		done
 	fi

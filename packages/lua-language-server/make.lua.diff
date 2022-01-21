@@ -1,0 +1,20 @@
+--- b/make.lua	2022-01-08 12:10:22.532679720 +0530
++++ a/make.lua	2022-01-08 12:05:20.922679835 +0530
+@@ -6,6 +6,9 @@
+ 
+ lm.EXE_DIR = ""
+ 
++lm.flags = "@FLAGS@"
++lm.ldflags = "@LDFLAGS@"
++
+ if platform.OS == 'macOS' then
+     if lm.platform == nil then
+     elseif lm.platform == "darwin-arm64" then
+@@ -132,6 +135,5 @@
+ }
+ 
+ lm:default {
+-    "bee-test",
+-    "unit-test",
++    "all",
+ }

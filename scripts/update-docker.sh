@@ -1,8 +1,8 @@
 #!/bin/sh
 set -e -u
 
-CONTAINER=hilledkinged-pwn-builder
-IMAGE=hilledkinged/pwn-builder
+CONTAINER=termux-package-builder
+IMAGE=termux/package-builder
 
 docker pull $IMAGE
 

@@ -22,11 +22,11 @@ jobs:
     - name: Build
       run: |
         cd ./scripts
-        docker build --tag hilledkinged/pwn-builder:latest .
+        docker build --tag termux/package-builder:latest .
     - name: Push to hub.docker.com
       env:
-        DOCKER_LOGIN: hilledkinged
+        DOCKER_LOGIN: xeffyr
         DOCKER_PASS: ${{ secrets.DOCKER_HUB_PASSWORD }}
       run: |
-        docker login -u "${DOCKER_LOGIN}" -p "${DOCKER_PASS}"
-        docker push hilledkinged/pwn-builder:latest
+        docker login --username "${DOCKER_LOGIN}" --password "${DOCKER_PASS}"
+        docker push termux/package-builder:latest
