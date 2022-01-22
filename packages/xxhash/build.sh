@@ -1,3 +1,5 @@
+# Forced builds 1
+
 TERMUX_PKG_HOMEPAGE=https://cyan4973.github.io/xxHash/
 TERMUX_PKG_DESCRIPTION="Extremely fast non-cryptographic hash algorithm"
 TERMUX_PKG_LICENSE="BSD, GPL-2.0"
