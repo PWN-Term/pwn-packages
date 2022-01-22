@@ -1,3 +1,5 @@
+# Forced build 1
+
 TERMUX_PKG_HOMEPAGE=https://www.gnupg.org/
 TERMUX_PKG_DESCRIPTION="Implementation of the OpenPGP standard for encrypting and signing data and communication"
 TERMUX_PKG_LICENSE="GPL-2.0"
