@@ -16,10 +16,6 @@ termux_get_repo_files() {
 			if termux_download "${TERMUX_REPO_URL[$idx-1]}/${TERMUX_REPO_DISTRIBUTION[$idx-1]}/dists/${TERMUX_REPO_DISTRIBUTION[$idx-1]}/Release" \
 				"$RELEASE_FILE" SKIP_CHECKSUM; then
 
-				if ! gpg --verify "${RELEASE_FILE}.gpg" "$RELEASE_FILE"; then
-					termux_error_exit "failed to verify gpg signature of $RELEASE_FILE"
-				fi
-
 				local failed=false
 				for arch in all $TERMUX_ARCH; do
 					local PACKAGES_HASH=$(./scripts/get_hash_from_file.py ${RELEASE_FILE} $arch ${TERMUX_REPO_COMPONENT[$idx-1]})
