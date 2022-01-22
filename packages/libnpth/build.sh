@@ -1,3 +1,5 @@
+# Forced libnpth build 1
+
 TERMUX_PKG_HOMEPAGE=https://www.gnupg.org/related_software/npth/
 TERMUX_PKG_DESCRIPTION="New GNU Portable Threads Library"
 TERMUX_PKG_LICENSE="LGPL-2.0"
