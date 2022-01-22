@@ -1,3 +1,5 @@
+# Forced builds 1
+
 TERMUX_PKG_HOMEPAGE=https://lz4.github.io/lz4/
 TERMUX_PKG_DESCRIPTION="Fast LZ compression algorithm library"
 TERMUX_PKG_LICENSE="GPL-2.0"
