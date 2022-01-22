@@ -1,3 +1,5 @@
+# Forced builds 1
+
 TERMUX_PKG_HOMEPAGE=https://github.com/PWN-Term/nethunter-support
 TERMUX_PKG_DESCRIPTION="Adds support for nh when terminal gets called via modified nethunter-app"
 TERMUX_PKG_LICENSE="GPL-2.0"
