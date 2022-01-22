@@ -1,12 +1,33 @@
-diff -Naur gettext-0.21/gettext-tools/aclocal.m4 gettext-0.21/gettext-tools/aclocal.m4
+diff -Naur gettext-0.21/gettext-tools/aclocal.m4 patched-gettext-0.21/gettext-tools/aclocal.m4
 --- gettext-0.21/gettext-tools/aclocal.m4	2020-07-26 23:59:09.000000000 +0300
-+++ ettext-0.21/gettext-tools/aclocal.m4	2022-01-22 14:03:26.608022264 +0200
++++ patched-gettext-0.21/gettext-tools/aclocal.m4	2022-01-22 14:03:26.608022264 +0200
 @@ -1,4 +1,4 @@
 -# generated automatically by aclocal 1.16.2 -*- Autoconf -*-
 +# generated automatically by aclocal 1.16.4 -*- Autoconf -*-
  
  # Copyright (C) 1996-2020 Free Software Foundation, Inc.
  
+@@ -35,7 +35,7 @@
+ [am__api_version='1.16'
+ dnl Some users find AM_AUTOMAKE_VERSION and mistake it for a way to
+ dnl require some minimum version.  Point them to the right macro.
+-m4_if([$1], [1.16.2], [],
++m4_if([$1], [1.16.4], [],
+       [AC_FATAL([Do not call $0, use AM_INIT_AUTOMAKE([$1]).])])dnl
+ ])
+ 
+@@ -51,7 +51,7 @@
+ # Call AM_AUTOMAKE_VERSION and AM_AUTOMAKE_VERSION so they can be traced.
+ # This function is AC_REQUIREd by AM_INIT_AUTOMAKE.
+ AC_DEFUN([AM_SET_CURRENT_AUTOMAKE_VERSION],
+-[AM_AUTOMAKE_VERSION([1.16.2])dnl
++[AM_AUTOMAKE_VERSION([1.16.4])dnl
+ m4_ifndef([AC_AUTOCONF_VERSION],
+   [m4_copy([m4_PACKAGE_VERSION], [AC_AUTOCONF_VERSION])])dnl
+ _AM_AUTOCONF_VERSION(m4_defn([AC_AUTOCONF_VERSION]))])
+diff -Naur gettext-0.21/gettext-tools/examples/aclocal.m4 patched-gettext-0.21/gettext-tools/examples/aclocal.m4
+--- gettext-0.21/gettext-tools/examples/aclocal.m4	2020-04-11 13:02:20.000000000 +0300
++++ patched-gettext-0.21/gettext-tools/examples/aclocal.m4	2022-01-22 16:51:03.985978590 +0200
 @@ -35,7 +35,7 @@
  [am__api_version='1.16'
  dnl Some users find AM_AUTOMAKE_VERSION and mistake it for a way to
