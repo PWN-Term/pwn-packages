@@ -372,6 +372,7 @@ if [ "${TERMUX_INSTALL_DEPS-false}" = "true" ]; then
 	# Keys are obtained from our keyring package.
 	
 	# Dont force to include termux gpg files
+	echo " "
 fi
 
 for ((i=0; i<${#PACKAGE_LIST[@]}; i++)); do
