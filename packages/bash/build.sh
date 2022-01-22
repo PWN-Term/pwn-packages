@@ -1,4 +1,4 @@
-# Forced build (1)
+# Forced build (2)
 
 TERMUX_PKG_HOMEPAGE=https://www.gnu.org/software/bash/
 TERMUX_PKG_DESCRIPTION="A sh-compatible shell that incorporates useful features from the Korn shell (ksh) and C shell (csh)"
