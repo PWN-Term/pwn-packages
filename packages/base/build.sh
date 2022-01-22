@@ -1,3 +1,5 @@
+# Forced build 1
+
 TERMUX_PKG_HOMEPAGE=https://gitlab.com/pwn-hunter/packages/base
 TERMUX_PKG_DESCRIPTION="Just for neofetch and other possible things "
 TERMUX_PKG_LICENSE="GPL-2.0"
