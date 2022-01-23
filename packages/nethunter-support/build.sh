@@ -7,7 +7,7 @@ TERMUX_PKG_VERSION=1.0.5
 TERMUX_PKG_REVISION=1
 TERMUX_PKG_MAINTAINER=@Martinvlba
 TERMUX_PKG_SRCURL=https://github.com/PWN-Term/nethunter-support/archive/refs/heads/master.tar.gz
-TERMUX_PKG_SHA256=cb39bd868dc7c87435dee818855a3677bf47a4ffc32dc5bbb0efc5d884b3f779
+TERMUX_PKG_SHA256=527bf45519da53594594887b3a70a87a2b37306f46f592fd35c36bce074b6420
 TERMUX_PKG_BUILD_IN_SRC=true
 
 termux_step_post_make_install() {
