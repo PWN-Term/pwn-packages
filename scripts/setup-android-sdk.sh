@@ -1,6 +1,8 @@
 #!/bin/sh
 set -e -u
 
+# trigger docker: 1
+
 # Install desired parts of the Android SDK:
 . $(cd "$(dirname "$0")"; pwd)/properties.sh
 
