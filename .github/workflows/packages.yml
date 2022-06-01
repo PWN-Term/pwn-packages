@@ -68,7 +68,7 @@ jobs:
           if grep -qP '^scripts/(Dockerfile|setup-ubuntu\.sh)$' <<< "$CHANGED_FILES"; then
             echo "Detected changes for environment setup scripts. Building custom Docker image now."
             cd ./scripts
-            docker build -t termux/package-builder:latest .
+            docker build -t hilledkinged/pwn-builder:latest .
             cd ..
           fi
           # Parse changed files and identify new packages and deleted packages.

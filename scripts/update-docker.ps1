@@ -4,8 +4,8 @@
 #
 # .\scripts\update-docker.ps1
 
-Set-Variable -Name CONTAINER -Value "termux-package-builder"
-Set-Variable -Name IMAGE -Value "termux/package-builder"
+Set-Variable -Name CONTAINER -Value "hilledkinged-package-builder"
+Set-Variable -Name IMAGE -Value "hilledkinged/pwn-builder"
 
 docker pull $IMAGE
 
