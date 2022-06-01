@@ -1,6 +1,8 @@
 #!/bin/sh
 set -e -u
 
+# Trigger docker build: 0
+
 CONTAINER_HOME_DIR=/home/builder
 UNAME=$(uname)
 if [ "$UNAME" = Darwin ]; then
