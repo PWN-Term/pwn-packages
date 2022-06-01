@@ -22,7 +22,7 @@ jobs:
     - name: Build
       run: |
         cd ./scripts
-        docker build --tag termux/package-builder:latest .
+        docker build --tag hilledkinged/pwn-builder:latest .
     - name: Push to hub.docker.com
       env:
         DOCKER_LOGIN: hilledkinged
