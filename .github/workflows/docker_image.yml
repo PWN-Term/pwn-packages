@@ -29,4 +29,4 @@ jobs:
         DOCKER_PASS: ${{ secrets.DOCKER_HUB_PASSWORD }}
       run: |
         docker login --username "${DOCKER_LOGIN}" --password "${DOCKER_PASS}"
-        docker push termux/package-builder:latest
+        docker push hilledkinged/pwn-builder:latest
